@@ -30,7 +30,6 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
     })->name('login');
 });
 
-require __DIR__.'/auth.php';
 Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return view('dashboard.home');

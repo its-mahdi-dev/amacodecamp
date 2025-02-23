@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BootcampFilterRequest;
 use App\Models\Bootcamp;
-use App\Http\Resources\BootcampResource; // Assuming you have a resource to format the response
+use App\Http\Resources\BootcampResource;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
 class BootcampController extends Controller
@@ -41,7 +42,7 @@ class BootcampController extends Controller
      * Display the specified bootcamp by slug.
      *
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\BootcampResource
      */
     public function show($slug)
     {
@@ -49,6 +50,30 @@ class BootcampController extends Controller
         $bootcamp = Bootcamp::where('slug', $slug)->firstOrFail();
 
         // Return the bootcamp resource
-        return new BootcampResource($bootcamp);
+        return Response::success(new BootcampResource($bootcamp));
     }
+
+
+    /**
+     * Get student bootcamps.
+     *
+    //  * @return \Illuminate\Http\BootcampResource
+     */
+    public function get_student_bootcamps(Request $request)
+    {
+        return Response::success(BootcampResource::collection($request->user()->bootcamps()->get()));
+    }
+
+
+    public function get_bootcamp_license(Request $request , $bootcampId){
+        $licesne = $request->user()->getLicenseForBootcamp($bootcampId);
+
+        if($licesne == null){
+            return Response::error('you do not register for this bootcamp');
+        }
+
+        return Response::success($licesne);
+    }
+    
+
 }

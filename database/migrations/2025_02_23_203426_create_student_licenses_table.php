@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bootcamp_users', function (Blueprint $table) {
+        Schema::create('student_licenses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('bootcamp_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-
+            $table->string('license');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bootcamp_users');
+        Schema::dropIfExists('student_licenses');
     }
 };

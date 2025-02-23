@@ -30,8 +30,8 @@ class BootcampResource extends JsonResource
             'intro_video' => $this->intro_video,
             'price' => $this->price,
             'students_count' => $this->students()->count(),
-            'teachers' => UserFilterResource::collection($this->teachers()),
-            'reviews' => ReviewResource::collection($this->reviews()),
+            'teachers' => UserFilterResource::collection($this->teachers()->get()),
+            'reviews' => ReviewResource::collection($this->reviews()->get()),
         ];
     }
 }
