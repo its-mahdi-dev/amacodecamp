@@ -17,14 +17,6 @@ class User extends Authenticatable
         'first_name', 'last_name', 'avatar', 'phone', 'email','role'
     ];
 
-    protected $hidden = [
-        'otp_code', 'otp_expires_at',
-    ];
-
-    protected $casts = [
-        'otp_expires_at' => 'datetime',
-    ];
-
     /**
      * Get the full avatar URL.
      */
