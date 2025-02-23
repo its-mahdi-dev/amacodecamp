@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             // We'll store the avatar as an integer referencing e.g. 1.png, 2.png ...
-            $table->unsignedInteger('avatar')->default(1);
+            $table->string('avatar')->nullable();
 
             // Phone-based login
             $table->string('phone')->unique();
