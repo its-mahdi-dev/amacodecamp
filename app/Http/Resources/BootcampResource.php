@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Review;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class BootcampResource extends JsonResource
@@ -29,8 +30,8 @@ class BootcampResource extends JsonResource
             'intro_video' => $this->intro_video,
             'price' => $this->price,
             'students_count' => $this->students()->count(),
-            'teachers_count' => $this->teachers()->count(),
-            'reviews_count' => $this->reviews()->count(),
+            'teachers' => UserFilterResource::collection($this->teachers()),
+            'reviews' => ReviewResource::collection($this->reviews()),
         ];
     }
 }
