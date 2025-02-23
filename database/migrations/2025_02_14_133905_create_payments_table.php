@@ -11,11 +11,12 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('course_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('bootcamp_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('authority')->nullable(); // ZarinPal authority code
             $table->decimal('amount', 10, 2);
             $table->enum('status', ['pending','paid','failed'])->default('pending');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -30,7 +30,7 @@ class User extends Authenticatable
      */
     public function bootcamps()
     {
-        return $this->belongsToMany(Bootcamp::class, 'bootcamp_user')->withTimestamps();
+        return $this->belongsToMany(Bootcamp::class, 'bootcamp_users')->withTimestamps();
     }
 
     /**
@@ -39,6 +39,29 @@ class User extends Authenticatable
     public function wishlist()
     {
         return $this->belongsToMany(Bootcamp::class, 'wishlist')->withTimestamps();
+    }
+
+    /**
+     * Get the license for a specific bootcamp.
+     *
+     * @param  int  $bootcampId
+     * @return string|null
+     */
+    public function getLicenseForBootcamp($bootcampId)
+    {
+        // Find the license based on bootcamp_id and user_id
+        $license = $this->studentLicenses()->where('bootcamp_id', $bootcampId)->first();
+
+        // Return the license if found, otherwise return null
+        return $license ? $license->license : null;
+    }
+
+    /**
+     * Relationship with StudentLicense (user's licenses for bootcamps).
+     */
+    public function studentLicenses()
+    {
+        return $this->hasMany(StudentLicense::class);
     }
 
     /**
@@ -69,4 +92,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
 }
