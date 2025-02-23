@@ -15,4 +15,8 @@ Route::post('/login/send', [AuthController::class, 'sendCode']);
 Route::post('/login/validate', [AuthController::class, 'validateCode']);
 
 
-Route::get('/bootcamps' , [BootcampController::class , 'index']);
+
+Route::group(function(){
+    Route::get('/' , [BootcampController::class , 'index']);
+    Route::get('/{slug}', [BootcampController::class, 'show']);
+});

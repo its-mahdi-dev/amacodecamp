@@ -36,4 +36,19 @@ class BootcampController extends Controller
         // Return the response as a paginated resource collection
         return Response::success(BootcampResource::collection($bootcamps));
     }
+
+    /**
+     * Display the specified bootcamp by slug.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function show($slug)
+    {
+        // Find the bootcamp by slug
+        $bootcamp = Bootcamp::where('slug', $slug)->firstOrFail();
+
+        // Return the bootcamp resource
+        return new BootcampResource($bootcamp);
+    }
 }
