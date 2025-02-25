@@ -35,5 +35,6 @@ Route::prefix('/student')->middleware('auth:sanctum')->group(function () {
     Route::controller(StudentController::class)->group(function(){
         Route::get('/me' , 'get');
         Route::post('/update' , 'update');
+        Route::put('/wishlist/{bootcamp_id}' , 'add_wishlist');
     });
 });

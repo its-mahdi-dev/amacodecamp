@@ -38,7 +38,7 @@ class User extends Authenticatable
      */
     public function wishlist()
     {
-        return $this->belongsToMany(Bootcamp::class, 'wishlist')->withTimestamps();
+        return $this->belongsToMany(Bootcamp::class, 'wishlists')->withTimestamps();
     }
 
     /**
@@ -69,7 +69,7 @@ class User extends Authenticatable
      */
     public function basket()
     {
-        return $this->belongsToMany(Bootcamp::class, 'basket')->withPivot('quantity')->withTimestamps();
+        return $this->belongsToMany(Bootcamp::class, 'baskets')->withPivot('quantity')->withTimestamps();
     }
 
     /**

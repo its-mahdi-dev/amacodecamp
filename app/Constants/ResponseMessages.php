@@ -19,6 +19,8 @@ class ResponseMessages
     const GENERAT_ERROR = 'مشکلی پیش آمد. دوباره امتحان کنید';
     const SUCCESS = 'با موفقیت انجام شد';
     const VALIDATION_ERROR = 'داده های ورودی معتبر نیست.';
+    const WISHLIST_ADDED = "با موفقیت به علاقه مندی ها اضافه شد";
+    const WISHLIST_DELETED = "با موفقیت از علاقه مندی ها حذف شد";
 
 
     // Validation Errors
