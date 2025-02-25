@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\SendOtpRequest;
 use App\Http\Requests\Auth\ValidateOtpRequest;
+use App\Http\Resources\OtpValidationResource;
 use App\Jobs\SendOtpJob;
 use App\Models\Otp;
 use App\Models\User;
@@ -77,6 +78,7 @@ class AuthController extends Controller
             return Response::error('Invalid OTP', 401);
         }
 
+
         $user = User::firstOrCreate(
             ['phone' => $request->phone],
             [
@@ -88,10 +90,18 @@ class AuthController extends Controller
             ]
         );
 
+        $cachedOtp->delete();
+
+
+        $isNew = $user->wasRecentlyCreated;
 
         // Generate Sanctum token
         $token = $user->createToken('OTP Login')->plainTextToken;
 
-        return Response::success($token, 'Logged in successfully');
+        $response = new OtpValidationResource([
+            'token' => $token,
+            'is_new' => $isNew
+        ]);
+        return Response::success($response, 'Logged in successfully');
     }
 }
