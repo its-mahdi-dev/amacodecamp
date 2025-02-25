@@ -1,321 +1,861 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>آما | بوتکمپ های برنامه نویسی</title>
-    <meta name="description" content="آما | بوتکمپ های برنامه نویسی">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="TechyDevs" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <title>Aduca - Education HTML Template</title>
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon-skillgro.css">
-    <link rel="stylesheet" href="assets/css/flaticon-skillgro-new.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/default-icons.css">
-    <link rel="stylesheet" href="assets/css/select2.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/plyr.css">
-    <link rel="stylesheet" href="assets/css/spacing.css">
-    <link rel="stylesheet" href="assets/css/tg-cursor.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/modify.css">
+
+
+  <!-- Favicon -->
+  <link rel="icon" sizes="16x16" href="/assets/images/favicon.png" />
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css" />
+  <link rel="stylesheet" href="/assets/css/line-awesome.css" />
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="/assets/css/select2.min.css" />
+  <link rel="stylesheet" href="/assets/css/fancybox.css" />
+  <link rel="stylesheet" href="/assets/css/tooltipster.bundle.css" />
+  <link rel="stylesheet" href="/assets/css/animated-headline.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style-rtl.css" />
+  <!-- end inject -->
+
 
 </head>
 
 <body>
-
-    <!--Preloader-->
-    <div id="preloader">
-        <div id="loader" class="loader">
-            <div class="loader-container">
-                <div class="loader-icon"><img src="assets/img/logo/preloader.svg" alt="Preloader"></div>
-            </div>
-        </div>
+  <!-- start cssload-loader -->
+  <div class="preloader">
+    <div class="loader">
+      <svg class="spinner" viewBox="0 0 50 50">
+        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+      </svg>
     </div>
-    <!--Preloader-end -->
+  </div>
+  <!-- end cssload-loader -->
 
-    <!-- Scroll-top -->
-    <button class="scroll__top scroll-to-target" data-target="html">
-        <i class="tg-flaticon-arrowhead-up"></i>
-    </button>
-    <!-- Scroll-top-end-->
-
-    <!-- header-area -->
-    <header>
-        <div class="tg-header__top">
-            <div class="container custom-container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="tg-header__top-info list-wrap">
-                            <li><img src="assets/img/icons/map_marker.svg" alt="Icon"> <span>تهران، خیابان فلان پلاک 88</span></li>
-                            <li><img src="assets/img/icons/envelope.svg" alt="Icon"> <a href="mailto:info@amacodecamp.ir">info@amacodecamp.ir</a></li>
+  <!--======================================
+        START HEADER AREA
+    ======================================-->
+  <header class="header-menu-area bg-white">
+    <div class="header-menu-content pe-150px ps-150px bg-white">
+      <div class="container-fluid">
+        <div class="main-menu-content">
+          <a href="#" class="down-button"><i class="la la-angle-down"></i></a>
+          <div class="row align-items-center">
+            <div class="col-lg-2">
+              <div class="logo-box">
+                <a href="index.html" class="logo"><img src="/assets/images/logo.png" alt="logo" /></a>
+                <div class="user-btn-action">
+                  <div class="search-menu-toggle icon-element icon-element-sm shadow-sm me-2" data-toggle="tooltip"
+                    data-placement="top" title="Search">
+                    <i class="la la-search"></i>
+                  </div>
+                  <div class="off-canvas-menu-toggle cat-menu-toggle icon-element icon-element-sm shadow-sm me-2"
+                    data-toggle="tooltip" data-placement="top" title="Category menu">
+                    <i class="la la-th-large"></i>
+                  </div>
+                  <div class="off-canvas-menu-toggle main-menu-toggle icon-element icon-element-sm shadow-sm"
+                    data-toggle="tooltip" data-placement="top" title="Main menu">
+                    <i class="la la-bars"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col-lg-2 -->
+            <div class="col-lg-10">
+              <div class="menu-wrapper">
+                <!-- end menu-category -->
+                <form method="post">
+                  <div class="form-group mb-0">
+                    <input class="form-control form--control ps-3" type="text" name="search"
+                      placeholder="چی میخوای یاد بگیری؟ " />
+                    <span class="la la-search search-icon"></span>
+                  </div>
+                </form>
+                <nav class="main-menu">
+                  <ul>
+                    <li>
+                      <a href="#">منزل، بيت <i class="la la-angle-down fs-12"></i></a>
+                      <ul class="dropdown-menu-item">
+                        <li><a href="index.html">الصفحة الرئيسية واحد</a></li>
+                        <li><a href="home-2.html">المنزل الثاني</a></li>
+                        <li>
+                          <a href="home-3.html">الصفحة الرئيسية ثلاثة</a>
+                        </li>
+                        <li>
+                          <a href="home-4.html">الصفحة الرئيسية أربعة </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        الدورات<i class="la la-angle-down fs-12"></i></a>
+                      <ul class="dropdown-menu-item">
+                        <li><a href="course-grid.html">شبكة بالطبع</a></li>
+                        <li>
+                          <a href="course-list.html">
+                            قائمة الدورات<span class="ribbon ribbon-blue-bg">New</span></a>
+                        </li>
+                        <li>
+                          <a href="course-left-sidebar.html">الشريط الجانبي الأيسر
+                            <span class="ribbon ribbon-blue-bg">New</span></a>
+                        </li>
+                        <li>
+                          <a href="course-right-sidebar.html">
+                            الشريط الجانبي الأيمن<span class="ribbon ribbon-blue-bg">New</span></a>
+                        </li>
+                        <li>
+                          <a href="course-details.html">تفاصيل الدورة</a>
+                        </li>
+                        <li>
+                          <a href="lesson-details.html">تفاصيل الدرس</a>
+                        </li>
+                        <li><a href="my-courses.html">دوراتي</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">
+                        طالب علم<i class="la la-angle-down fs-12"></i></a>
+                      <ul class="dropdown-menu-item">
+                        <li>
+                          <a href="student-detail.html">تفاصيل الطالب</a>
+                        </li>
+                        <li><a href="student-quiz.html">تقدم للإختبار</a></li>
+                        <li>
+                          <a href="student-quiz-results.html">نتائج الاختبار</a>
+                        </li>
+                        <li>
+                          <a href="student-quiz-result-details.html">تفاصيل الاختبار</a>
+                        </li>
+                        <li>
+                          <a href="student-quiz-result-details-2.html">تفاصيل الاختبار 2</a>
+                        </li>
+                        <li>
+                          <a href="student-path.html">تفاصيل المسار
+                            <span class="ribbon ribbon-blue-bg">New</span></a>
+                        </li>
+                        <li>
+                          <a href="student-path-assessment.html">تقييم المهارات</a>
+                        </li>
+                        <li>
+                          <a href="student-path-assessment-result.html">نتيجة المهارة</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="mega-menu-has">
+                      <a href="#">الصفحات <i class="la la-angle-down fs-12"></i></a>
+                      <div class="dropdown-menu-item mega-menu">
+                        <ul class="row no-gutters">
+                          <li class="col-lg-3">
+                            <a href="dashboard.html">لوحة القيادة <span class="ribbon">Hot</span></a>
+                            <a href="about.html">حول</a>
+                            <a href="teachers.html">معلمون</a>
+                            <a href="teacher-detail.html">تفاصيل المعلم</a>
+                            <a href="categories.html">التصنيفات
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                            <a href="terms-and-conditions.html">البنود و الظروف
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                            <a href="privacy-policy.html">سياسة خاصة
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                            <a href="invite.html">دعوة صديق
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                          </li>
+                          <li class="col-lg-3">
+                            <a href="careers.html">وظائف
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                            <a href="career-details.html">تفاصيل المهنة
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                            <a href="become-a-teacher.html">أصبح مدربا</a>
+                            <a href="faq.html">أسئلة وأجوبة</a>
+                            <a href="admission.html">قبول</a>
+                            <a href="gallery.html">صالة عرض</a>
+                            <a href="pricing-table.html">جداول التسعير</a>
+                            <a href="contact.html">اتصل</a>
+                          </li>
+                          <li class="col-lg-3">
+                            <a href="for-business.html">للعمل
+                              <span class="ribbon ribbon-blue-bg">New</span></a>
+                            <a href="sign-up.html">اشتراك</a>
+                            <a href="login.html">تسجيل الدخول</a>
+                            <a href="recover.html">استعادة</a>
+                            <a href="shopping-cart.html">عربة التسوق</a>
+                            <a href="checkout.html">الدفع</a>
+                            <a href="error.html">صفحة 404</a>
+                          </li>
+                          <li class="col-lg-3">
+                            <div class="menu-banner position-relative h-100">
+                              <div class="overlay rounded-rounded opacity-4"></div>
+                              <div class="menu-banner-content p-4 position-absolute bottom-0 left-0">
+                                <h4 class="fs-20 font-weight-bold pb-3 text-white">
+                                  30 يومًا مجانًا للمستخدمين الجدد
+                                </h4>
+                                <a href="sign-up.html" class="btn theme-btn theme-btn-sm theme-btn-white">ابدا بالتعلم
+                                  <i class="la la-arrow-right icon ms-1"></i></a>
+                              </div>
+                              <img src="/assets/images/menu-banner-img.jpg" alt="menu banner image"
+                                class="w-100 h-100 rounded-rounded" />
+                            </div>
+                          </li>
                         </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="tg-header__top-right">
-                            <div class="tg-header__phone">
-                                <img src="assets/img/icons/phone.svg" alt="Icon">تماس: <a href="tel:0123456789">+123 599 8989</a>
-                            </div>
-                            <ul class="tg-header__top-social list-wrap">
-                                <li>مارو دنبال کنید :</li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#">مقالات <i class="la la-angle-down fs-12"></i></a>
+                      <ul class="dropdown-menu-item">
+                        <li>
+                          <a href="blog-full-width.html">بلوق بالحجم الكامل
+                          </a>
+                        </li>
+                        <li>
+                          <a href="blog-no-sidebar.html">بلوق لا يوجد شريط جانبي</a>
+                        </li>
+                        <li>
+                          <a href="blog-left-sidebar.html">بلوق الشريط الجانبي الأيسر</a>
+                        </li>
+                        <li>
+                          <a href="blog-right-sidebar.html">بلوق الشريط الجانبي الأيمن</a>
+                        </li>
+                        <li><a href="blog-single.html">تفاصيل المدونة</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <!-- end ul -->
+                </nav>
+                <!-- end main-menu -->
+                <div class="nav-right-button">
+                  <a href="admission.html" class="btn theme-btn d-none d-lg-inline-block"><i
+                      class="la la-user-plus me-1"></i> قبول</a>
                 </div>
+                <!-- end nav-right-button -->
+              </div>
+              <!-- end menu-wrapper -->
             </div>
+            <!-- end col-lg-10 -->
+          </div>
+          <!-- end row -->
         </div>
-        <div id="header-fixed-height"></div>
-        <div id="sticky-header" class="tg-header__area">
-            <div class="container custom-container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="tgmenu__wrap">
-                            <nav class="tgmenu__nav">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
-                                </div>
-                                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
-                                    <ul class="navigation">
-                                        <li class="active"><a href="#">خانه</a> </li>
-                                        <li class=""><a href="#">بوتکمپ‌ها</a> </li>
-                                        <li class=""><a href="#">بلاگ‌ها</a> </li>
-                                        <li class=""><a href="#">ارتباط با ما</a> </li>
+      </div>
+      <!-- end container-fluid -->
+    </div>
+    <!-- end header-menu-content -->
+    <div class="off-canvas-menu custom-scrollbar-styled main-off-canvas-menu">
+      <div class="off-canvas-menu-close main-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
+        data-placement="left" title="Close menu">
+        <i class="la la-times"></i>
+      </div>
+      <!-- end off-canvas-menu-close -->
+      <ul class="generic-list-item off-canvas-menu-list pt-90px">
+        <li>
+          <a href="#">Home</a>
+          <ul class="sub-menu">
+            <li><a href="index.html">Home One</a></li>
+            <li><a href="home-2.html">Home Two</a></li>
+            <li><a href="home-3.html">Home Three</a></li>
+            <li>
+              <a href="home-4.html">Home four <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">courses</a>
+          <ul class="sub-menu">
+            <li><a href="course-grid.html">course grid</a></li>
+            <li>
+              <a href="course-list.html">course list <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="course-left-sidebar.html">left sidebar
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="course-right-sidebar.html">right sidebar
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li><a href="course-details.html">course details</a></li>
+            <li><a href="lesson-details.html">lesson details</a></li>
+            <li><a href="my-courses.html">My courses</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Student</a>
+          <ul class="sub-menu">
+            <li><a href="student-detail.html">student detail</a></li>
+            <li><a href="student-quiz.html">take quiz</a></li>
+            <li><a href="student-quiz-results.html">quiz results</a></li>
+            <li>
+              <a href="student-quiz-result-details.html">quiz details</a>
+            </li>
+            <li>
+              <a href="student-quiz-result-details-2.html">quiz details 2</a>
+            </li>
+            <li>
+              <a href="student-path.html">path details
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="student-path-assessment.html">Skill Assessment</a>
+            </li>
+            <li>
+              <a href="student-path-assessment-result.html">Skill result</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">pages</a>
+          <ul class="sub-menu">
+            <li>
+              <a href="dashboard.html">dashboard <span class="ribbon">Hot</span></a>
+            </li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="teachers.html">Teachers</a></li>
+            <li><a href="teacher-detail.html">Teacher detail</a></li>
+            <li>
+              <a href="careers.html">careers <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="career-details.html">career details
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="categories.html">categories <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="terms-and-conditions.html">Terms & conditions
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="privacy-policy.html">privacy policy
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li>
+              <a href="for-business.html">for business
+                <span class="ribbon ribbon-blue-bg">New</span></a>
+            </li>
+            <li><a href="become-a-teacher.html">become an instructor</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="admission.html">admission</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="pricing-table.html">pricing tables</a></li>
+            <li><a href="contact.html">contact</a></li>
+            <li><a href="sign-up.html">sign-up</a></li>
+            <li><a href="login.html">login</a></li>
+            <li><a href="recover.html">recover</a></li>
+            <li><a href="shopping-cart.html">cart</a></li>
+            <li><a href="checkout.html">checkout</a></li>
+            <li><a href="error.html">page 404</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">blog</a>
+          <ul class="sub-menu">
+            <li><a href="blog-full-width.html">blog full width </a></li>
+            <li><a href="blog-no-sidebar.html">blog no sidebar</a></li>
+            <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
+            <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
+            <li><a href="blog-single.html">blog detail</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- end off-canvas-menu -->
+    <div class="off-canvas-menu custom-scrollbar-styled category-off-canvas-menu">
+      <div class="off-canvas-menu-close cat-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
+        data-placement="left" title="Close menu">
+        <i class="la la-times"></i>
+      </div>
+      <!-- end off-canvas-menu-close -->
+      <ul class="generic-list-item off-canvas-menu-list pt-90px">
+        <li>
+          <a href="course-grid.html">Development</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Development</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Mobile Apps</a></li>
+            <li><a href="#">Game Development</a></li>
+            <li><a href="#">Databases</a></li>
+            <li><a href="#">Programming Languages</a></li>
+            <li><a href="#">Software Testing</a></li>
+            <li><a href="#">Software Engineering</a></li>
+            <li><a href="#">E-Commerce</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">business</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Business</a></li>
+            <li><a href="#">Finance</a></li>
+            <li><a href="#">Entrepreneurship</a></li>
+            <li><a href="#">Strategy</a></li>
+            <li><a href="#">Real Estate</a></li>
+            <li><a href="#">Home Business</a></li>
+            <li><a href="#">Communications</a></li>
+            <li><a href="#">Industry</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">IT & Software</a>
+          <ul class="sub-menu">
+            <li><a href="#">All IT & Software</a></li>
+            <li><a href="#">IT Certification</a></li>
+            <li><a href="#">Hardware</a></li>
+            <li><a href="#">Network & Security</a></li>
+            <li><a href="#">Operating Systems</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">Finance & Accounting</a>
+          <ul class="sub-menu">
+            <li><a href="#"> All Finance & Accounting</a></li>
+            <li><a href="#">Accounting & Bookkeeping</a></li>
+            <li><a href="#">Cryptocurrency & Blockchain</a></li>
+            <li><a href="#">Economics</a></li>
+            <li><a href="#">Investing & Trading</a></li>
+            <li><a href="#">Other Finance & Economics</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">design</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Design</a></li>
+            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Design Tools</a></li>
+            <li><a href="#">3D & Animation</a></li>
+            <li><a href="#">User Experience</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">Personal Development</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Personal Development</a></li>
+            <li><a href="#">Personal Transformation</a></li>
+            <li><a href="#">Productivity</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Personal Finance</a></li>
+            <li><a href="#">Career Development</a></li>
+            <li><a href="#">Parenting & Relationships</a></li>
+            <li><a href="#">Happiness</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">Marketing</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Marketing</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Search Engine Optimization</a></li>
+            <li><a href="#">Social Media Marketing</a></li>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">Video & Mobile Marketing</a></li>
+            <li><a href="#">Affiliate Marketing</a></li>
+            <li><a href="#">Growth Hacking</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">Health & Fitness</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Health & Fitness</a></li>
+            <li><a href="#">Fitness</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Dieting</a></li>
+            <li><a href="#">Self Defense</a></li>
+            <li><a href="#">Meditation</a></li>
+            <li><a href="#">Mental Health</a></li>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Dance</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="course-grid.html">Photography</a>
+          <ul class="sub-menu">
+            <li><a href="#">All Photography</a></li>
+            <li><a href="#">Digital Photography</a></li>
+            <li><a href="#">Photography Fundamentals</a></li>
+            <li><a href="#">Commercial Photography</a></li>
+            <li><a href="#">Video Design</a></li>
+            <li><a href="#">Photography Tools</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- end off-canvas-menu -->
+    <div class="mobile-search-form">
+      <div class="d-flex align-items-center">
+        <form method="post" class="flex-grow-1 me-3">
+          <div class="form-group mb-0">
+            <input class="form-control form--control ps-3" type="text" name="search" placeholder="ابحث عن أي شيء" />
+            <span class="la la-search search-icon"></span>
+          </div>
+        </form>
+        <div class="search-bar-close icon-element icon-element-sm shadow-sm">
+          <i class="la la-times"></i>
+        </div>
+        <!-- end off-canvas-menu-close -->
+      </div>
+    </div>
+    <!-- end mobile-search-form -->
+    <div class="body-overlay"></div>
+  </header>
+  <!-- end header-menu-area -->
+  <!--======================================
+        END HEADER AREA
+======================================-->
+            
 
-                                    </ul>
-                                </div>
-                                <div class="tgmenu__search d-none d-md-block">
-                                    <form action="#" class="tgmenu__search-form">
-                                        
-                                        <div class="input-grp">
-                                            <button type="submit"><i class="flaticon-search"></i></button>
-                                            <input type="text" placeholder="کافیه بگی چی میخوای یاد بگیری...">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="tgmenu__action">
-                                    <ul class="list-wrap">
-                                        <li class="wishlist-icon">
-                                            <a href="cart.html" class="cart-count">
-                                                <img src="assets/img/icons/heart.svg" class="injectable" alt="img">
-                                                <span class="wishlist-count">0</span>
-                                            </a>
-                                        </li>
-                                        <li class="mini-cart-icon">
-                                            <a href="cart.html" class="cart-count">
-                                                <img src="assets/img/icons/cart.svg" class="injectable" alt="img">
-                                                <span class="mini-cart-count">0</span>
-                                            </a>
-                                        </li>
-                                        <li class="header-btn login-btn">
-                                            <a href="login.html">ورود / ثبت نام</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="mobile-login-btn">
-                                    <a href="login.html"><img src="assets/img/icons/user.svg" alt="" class="injectable"></a>
-                                </div>
-                                <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
-                            </nav>
-                        </div>
-                        <!-- Mobile Menu  -->
-                        <div class="tgmobile__menu">
-                            <nav class="tgmobile__menu-box">
-                                <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
-                                <div class="nav-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
-                                </div>
-                                <div class="tgmobile__search">
-                                    <form action="#">
-                                        <input type="text" placeholder="کافیه بگی چی میخوای یادبگیری...">
-                                        <button><i class="fas fa-search"></i></button>
-                                    </form>
-                                </div>
-                                <div class="tgmobile__menu-outer">
-                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                                </div>
-                                <div class="social-links">
-                                    <ul class="list-wrap">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="tgmobile__menu-backdrop"></div>
-                        <!-- End Mobile Menu -->
-                    </div>
-                </div>
+
+@yield('content', 'Default Content')
+
+
+
+
+  <!-- ================================
+         START FOOTER AREA
+================================= -->
+<section class="footer-area pt-100px">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 responsive-column-half">
+          <div class="footer-item">
+            <a href="index.html">
+              {{-- <img src="/assets/images/logo.png" alt="footer logo" class="footer__logo" /> --}}
+              {{-- <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=584524&Code=IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=584524&Code=IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe' alt='' style='cursor:pointer' code='IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe'></a> --}}
+            </a>
+            <ul class="generic-list-item pt-4">
+              <li><a href="tel:+1631237884">+163 123 7884</a></li>
+              <li>
+                <a href="mailto:support@wbsite.com">support@website.com</a>
+              </li>
+              <li>Melbourne, Australia, 105 South Park Avenue</li>
+            </ul>
+            <h3 class="fs-20 font-weight-semi-bold pt-4 pb-2">نحن على</h3>
+            <ul class="social-icons social-icons-styled">
+              <li class="me-1 ms-0">
+                <a href="#" class="facebook-bg"><i class="la la-facebook"></i></a>
+              </li>
+              <li class="me-1 ms-0">
+                <a href="#" class="twitter-bg"><i class="la la-twitter"></i></a>
+              </li>
+              <li class="me-1 ms-0">
+                <a href="#" class="instagram-bg"><i class="la la-instagram"></i></a>
+              </li>
+              <li class="me-1 ms-0">
+                <a href="#" class="linkedin-bg"><i class="la la-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column-half">
+          <div class="footer-item">
+            <h3 class="fs-20 font-weight-semi-bold pb-2">شركة</h3>
+            <div class="divider border-bottom-0"><span></span></div>
+            <ul class="generic-list-item">
+              <li><a href="#">معلومات عنا</a></li>
+              <li><a href="#">اتصل بنا</a></li>
+              <li><a href="#">يصبح مدرسا</a></li>
+              <li><a href="#">الدعم</a></li>
+              <li><a href="#">أسئلة وأجوبة</a></li>
+              <li><a href="#">مدونة او مذكرة</a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column-half">
+          <div class="footer-item">
+            <h3 class="fs-20 font-weight-semi-bold pb-2">الدورات</h3>
+            <div class="divider border-bottom-0"><span></span></div>
+            <ul class="generic-list-item">
+              <li><a href="#">تطوير الشبكة</a></li>
+              <li><a href="#">القرصنة</a></li>
+              <li><a href="#">تعلم PHP</a></li>
+              <li><a href="#">الانكليزية المحكية</a></li>
+              <li><a href="#">سيارة ذاتية القيادة</a></li>
+              <li><a href="#">جامعي القمامة</a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column-half">
+          <div class="footer-item">
+            <h3 class="fs-20 font-weight-semi-bold pb-2">تحميل التطبيق</h3>
+            <div class="divider border-bottom-0"><span></span></div>
+            <div class="mobile-app">
+              <p class="pb-3 lh-24">
+                قم بتنزيل تطبيق الهاتف المحمول الخاص بنا وتعلم أثناء التنقل.
+              </p>
+              <a href="#" class="d-block mb-2 hover-s"><img src="/assets/images/appstore.png" alt="App store"
+                  class="img-fluid" /></a>
+              <a href="#" class="d-block hover-s"><img src="/assets/images/googleplay.png" alt="Google play store"
+                  class="img-fluid" /></a>
             </div>
+          </div>
+          <!-- end footer-item -->
         </div>
-    </header>
-    <!-- header-area-end -->
-
-
-
-    <!-- main-area -->
-    <main class="main-area fix">
-            @yield('content', 'Default Content')
-    </main>
-    <!-- main-area-end -->
-
-
-
-    <!-- footer-area -->
-    <footer class="footer__area">
-        <div class="footer__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="footer__widget">
-                            <div class="logo mb-35">
-                                <a href="index.html"><img src="assets/img/logo/secondary_logo.svg" alt="img"></a>
-                            </div>
-                            <div class="footer__content">
-                                <p>لورم ایپسوم متن ساختگ یرای طراحان  صنعت چاپ و ما برنامه نویسای بدبخت</p>
-                                <ul class="list-wrap">
-                                    <li>463 7th Ave, NY 10018, USA</li>
-                                    <li>+123 88 9900 456</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">لینک‌های مفید</h4>
-                            <div class="footer__link">
-                                <ul class="list-wrap">
-                                    <li><a href="events-details.html">لورم ایپسوم</a></li>
-                                    <li><a href="events-details.html">متن</a></li>
-                                    <li><a href="events-details.html">ساختکی</a></li>
-                                    <li><a href="events-details.html">برای طراحان</a></li>
-                                    <li><a href="events-details.html">صنعت چاپ</a></li>
-                                    <li><a href="events-details.html">تمام</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">بیشتر از ما</h4>
-                            <div class="footer__link">
-                                <ul class="list-wrap">
-                                    <li><a href="contact.html">تماس با ما</a></li>
-                                    <li><a href="instructor-details.html">میخوای بوتکمپ بزاری؟</a></li>
-                                    <li><a href="blog.html">بلاگ</a></li>
-                                    <li><a href="instructor-details.html">آموزندگان</a></li>
-                                    <li><a href="events-details.html">رویدادها</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">ارتباط با ما</h4>
-                            <div class="footer__contact-content">
-                                <p>لورم ایپسوم متن ساختگی <br> برای طراحان و شما</p>
-                                <ul class="list-wrap footer__social">
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <img src="assets/img/icons/facebook.svg" alt="img" class="injectable">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <img src="assets/img/icons/twitter.svg" alt="img" class="injectable">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <img src="assets/img/icons/whatsapp.svg" alt="img" class="injectable">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <img src="assets/img/icons/instagram.svg" alt="img" class="injectable">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <img src="assets/img/icons/youtube.svg" alt="img" class="injectable">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- <div class="app-download">
-                                <a href="#"><img src="assets/img/others/google-play.svg" alt="img"></a>
-                                <a href="#"><img src="assets/img/others/apple-store.svg" alt="img"></a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
+        <!-- end col-lg-3 -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+    <div class="section-block"></div>
+    <div class="copyright-content py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p class="copy-desc">
+              &copy; 2021 Aduca. All Rights Reserved. by
+              <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+            </p>
+          </div>
+          <!-- end col-lg-6 -->
+          <div class="col-lg-6">
+            <div class="d-flex flex-wrap align-items-center justify-content-end">
+              <ul class="generic-list-item d-flex flex-wrap align-items-center fs-14">
+                <li class="me-3">
+                  <a href="terms-and-conditions.html">البنود و الظروف</a>
+                </li>
+                <li class="me-3">
+                  <a href="privacy-policy.html">سياسة الخصوصية</a>
+                </li>
+              </ul>
+              <div class="select-container select-container-sm">
+                <select class="select-container-select">
+                  <option value="1">English</option>
+                  <option value="2">Deutsch</option>
+                  <option value="3">Español</option>
+                  <option value="4">Français</option>
+                  <option value="5">Bahasa Indonesia</option>
+                  <option value="6">Bangla</option>
+                  <option value="7">日本語</option>
+                  <option value="8">한국어</option>
+                  <option value="9">Nederlands</option>
+                  <option value="10">Polski</option>
+                  <option value="11">Português</option>
+                  <option value="12">Română</option>
+                  <option value="13">Русский</option>
+                  <option value="14">ภาษาไทย</option>
+                  <option value="15">Türkçe</option>
+                  <option value="16">中文(简体)</option>
+                  <option value="17">中文(繁體)</option>
+                  <option value="17">Hindi</option>
+                </select>
+              </div>
             </div>
+          </div>
+          <!-- end col-lg-6 -->
         </div>
-        <div class="footer__bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-7">
-                        <div class="copy-right-text">
-                            <p>© 2024-2025 تمامی حقوق واسه آدا محفوظه</p>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="footer__bottom-menu">
-                            <ul class="list-wrap">
-                                <li><a href="contact.html">Term of Use</a></li>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end copyright-content -->
+  </section>
+  <!-- end footer-area -->
+  <!-- ================================
+          END FOOTER AREA
+================================= -->
+
+  <!-- start scroll top -->
+  <div id="scroll-top">
+    <i class="la la-arrow-up" title="Go top"></i>
+  </div>
+  <!-- end scroll top -->
+
+  <div class="tooltip_templates">
+    <div id="tooltip_content_1">
+      <div class="card card-item">
+        <div class="card-body">
+          <p class="card-text pb-2">
+            By <a href="teacher-detail.html">خوسيه بورتيلا</a>
+          </p>
+          <h5 class="card-title pb-1">
+            <a href="course-details.html">دورة محلل ذكاء الأعمال 2021</a>
+          </h5>
+          <div class="d-flex align-items-center pb-1">
+            <h6 class="ribbon fs-14 me-2">الأكثر مبيعا</h6>
+            <p class="text-success fs-14 font-weight-medium">
+              Updated<span class="font-weight-bold ps-1">November 2020</span>
+            </p>
+          </div>
+          <ul
+            class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
+            <li>23 total hours</li>
+            <li>جميع المستويات</li>
+          </ul>
+          <p class="card-text pt-1 fs-14 lh-22">
+            The skills you need to become a BI Analyst - Statistics, Database
+            theory, SQL, Tableau – Everything is included
+          </p>
+          <ul class="generic-list-item fs-14 py-3">
+            <li>
+              <i class="la la-check me-1 text-black"></i> Become an expert in
+              Statistics, SQL, Tableau, and problem solving
+            </li>
+            <li>
+              <i class="la la-check me-1 text-black"></i> Boost your resume
+              with in-demand skills
+            </li>
+            <li>
+              <i class="la la-check me-1 text-black"></i> Gather, organize,
+              analyze and visualize data
+            </li>
+          </ul>
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="#" class="btn theme-btn flex-grow-1 me-3"><i class="la la-shopping-cart me-1 fs-18"></i> Add to
+              Cart</a>
+            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist">
+              <i class="la la-heart-o"></i>
             </div>
+          </div>
         </div>
-    </footer>
-    <!-- footer-area-end -->
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end tooltip_templates -->
+  <div class="tooltip_templates">
+    <div id="tooltip_content_2">
+      <div class="card card-item">
+        <div class="card-body">
+          <p class="card-text pb-2">
+            By <a href="teacher-detail.html">خوسيه بورتيلا</a>
+          </p>
+          <h5 class="card-title pb-1">
+            <a href="course-details.html">تدريب فوتوشوب النهائي: من المبتدئين إلى المحترفين</a>
+          </h5>
+          <div class="d-flex align-items-center pb-1">
+            <h6 class="ribbon fs-14 me-2">الأكثر مبيعا</h6>
+            <p class="text-success fs-14 font-weight-medium">
+              Updated<span class="font-weight-bold ps-1">November 2020</span>
+            </p>
+          </div>
+          <ul
+            class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
+            <li>23 total hours</li>
+            <li>جميع المستويات</li>
+          </ul>
+          <p class="card-text pt-1 fs-14 lh-22">
+            The skills you need to become a BI Analyst - Statistics, Database
+            theory, SQL, Tableau – Everything is included
+          </p>
+          <ul class="generic-list-item fs-14 py-3">
+            <li>
+              <i class="la la-check me-1 text-black"></i> Become an expert in
+              Statistics, SQL, Tableau, and problem solving
+            </li>
+            <li>
+              <i class="la la-check me-1 text-black"></i> Boost your resume
+              with in-demand skills
+            </li>
+            <li>
+              <i class="la la-check me-1 text-black"></i> Gather, organize,
+              analyze and visualize data
+            </li>
+          </ul>
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="#" class="btn theme-btn flex-grow-1 me-3"><i class="la la-shopping-cart me-1 fs-18"></i> Add to
+              Cart</a>
+            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist">
+              <i class="la la-heart-o"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end tooltip_templates -->
+  <div class="tooltip_templates">
+    <div id="tooltip_content_3">
+      <div class="card card-item">
+        <div class="card-body">
+          <p class="card-text pb-2">
+            By <a href="teacher-detail.html">خوسيه بورتيلا</a>
+          </p>
+          <h5 class="card-title pb-1">
+            <a href="course-details.html">دورة الأعمال الكاملة لموقع الويب</a>
+          </h5>
+          <div class="d-flex align-items-center pb-1">
+            <h6 class="ribbon fs-14 me-2">الأكثر مبيعا</h6>
+            <p class="text-success fs-14 font-weight-medium">
+              Updated<span class="font-weight-bold ps-1">November 2020</span>
+            </p>
+          </div>
+          <ul
+            class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
+            <li>23 total hours</li>
+            <li>جميع المستويات</li>
+          </ul>
+          <p class="card-text pt-1 fs-14 lh-22">
+            The skills you need to become a BI Analyst - Statistics, Database
+            theory, SQL, Tableau – Everything is included
+          </p>
+          <ul class="generic-list-item fs-14 py-3">
+            <li>
+              <i class="la la-check me-1 text-black"></i> Become an expert in
+              Statistics, SQL, Tableau, and problem solving
+            </li>
+            <li>
+              <i class="la la-check me-1 text-black"></i> Boost your resume
+              with in-demand skills
+            </li>
+            <li>
+              <i class="la la-check me-1 text-black"></i> Gather, organize,
+              analyze and visualize data
+            </li>
+          </ul>
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="#" class="btn theme-btn flex-grow-1 me-3"><i class="la la-shopping-cart me-1 fs-18"></i> Add to
+              Cart</a>
+            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist">
+              <i class="la la-heart-o"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+  </div>
+  <!-- end tooltip_templates -->
 
+  <!-- template js files -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/assets/js/jquery-3.7.1.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/select2.min.js"></script>
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <script src="/assets/js/isotope.js"></script>
+  <script src="/assets/js/waypoint.min.js"></script>
+  <script src="/assets/js/jquery.counterup.min.js"></script>
+  <script src="/assets/js/fancybox.js"></script>
+  <script src="/assets/js/datedropper.min.js"></script>
+  <script src="/assets/js/emojionearea.min.js"></script>
+  <script src="/assets/js/tooltipster.bundle.min.js"></script>
+  <script src="/assets/js/animated-headline.js"></script>
+  <script src="/assets/js/jquery.lazy.min.js"></script>
+  <script src="/assets/js/main-rtl.js"></script>
 
-
-
-    <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.odometer.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/tween-max.min.js"></script>
-    <script src="assets/js/select2.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/jquery.marquee.min.js"></script>
-    <script src="assets/js/tg-cursor.min.js"></script>
-    <script src="assets/js/vivus.min.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/svg-inject.min.js"></script>
-    <script src="assets/js/jquery.circleType.js"></script>
-    <script src="assets/js/jquery.lettering.min.js"></script>
-    <script src="assets/js/plyr.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        SVGInject(document.querySelectorAll("img.injectable"));
-    </script>
+@hasSection ('customScripts')
+  @yield('customScripts')
+@else
+    
+@endif
 </body>
 
 </html>

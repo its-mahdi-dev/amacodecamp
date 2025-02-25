@@ -6,17 +6,18 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Mail;
+use Ipe\Sdk\Facades\SmsIr;
 
 class SendOtpJob implements ShouldQueue
 {
     use Dispatchable, Queueable;
 
-    public $email;
+    public $phone;
     public $otp;
 
-    public function __construct($email, $otp)
+    public function __construct($phone, $otp)
     {
-        $this->email = $email;
+        $this->phone = $phone;
         $this->otp = $otp;
     }
 
@@ -27,5 +28,15 @@ class SendOtpJob implements ShouldQueue
         //     $message->to($this->email)
         //             ->subject('Your OTP Code');
         // });
+
+        $templateId = 123456; // شناسه الگو
+        $parameters = [
+            [
+                "name" => "Code",
+                "value" => $this->otp
+            ]
+        ];
+
+        $response = SmsIr::verifySend($this->phone, $templateId, $parameters);
     }
 }

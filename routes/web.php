@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// dd(env('MAIN_DOMAIN','localhost'));
-// dd(env('DASHBOARD_DOMAIN','localhost'));
+// die(env('MAIN_DOMAIN','localhost'));
+// die(env('DASHBOARD_DOMAIN','localhost'));
+
 
 Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
     Route::get('/', function () {
