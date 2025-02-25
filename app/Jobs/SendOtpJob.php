@@ -29,7 +29,7 @@ class SendOtpJob implements ShouldQueue
         //             ->subject('Your OTP Code');
         // });
 
-        $templateId = 123456; // شناسه الگو
+        $templateId = 979235; // شناسه الگو
         $parameters = [
             [
                 "name" => "Code",
@@ -37,6 +37,9 @@ class SendOtpJob implements ShouldQueue
             ]
         ];
 
-        $response = SmsIr::verifySend($this->phone, $templateId, $parameters);
+        $response = SmsIr::verifySend($this->phone, $templateId, $parameters, [
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_CAINFO => "D:/wamp64/bin/php/php8.2.0/cacert.pem"
+        ]);
     }
 }

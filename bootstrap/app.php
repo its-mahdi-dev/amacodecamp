@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -20,20 +21,39 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (Throwable $e, Request $request) {
-            if ($e instanceof AuthenticationException) {
-                return response()->json([
-                    'status' => false,
-                    'message' => "Unauthenticated",
-                    'data' => null
-                ], 401);
-                
-            }else if($e instanceof NotFoundHttpException){
-                return response()->json([
-                    'status' => false,
-                    'message' => "Not found",
-                    'data' => null
-                ], 404);
+            if ($request->is('api/*')) {
+                if ($e instanceof AuthenticationException) {
+                    return response()->json([
+                        'status' => false,
+                        'message' => "Unauthenticated",
+                        'data' => null
+                    ], 401);
+                } elseif ($e instanceof NotFoundHttpException || $e instanceof ModelNotFoundException) {
+                    return response()->json([
+                        'status' => false,
+                        'message' => "Not found",
+                        'data' => null
+                    ], 404);
+                }
             }
-        return parent::render($request, $e);
+
+            // if (strpos($request->getHost(), 'api.') !== false) {
+            //     if ($e instanceof AuthenticationException) {
+            //         return response()->json([
+            //             'status' => false,
+            //             'message' => "Unauthenticated",
+            //             'data' => null
+            //         ], 401);
+            //     } elseif ($e instanceof NotFoundHttpException || $e instanceof ModelNotFoundException) {
+            //         return response()->json([
+            //             'status' => false,
+            //             'message' => "Not found",
+            //             'data' => null
+            //         ], 404);
+            //     }
+        
+            //     // If the exception is not one of those handled, fall through to the default handling
+            //     return parent::render($request, $e);
+            // }
         });
     })->create();
