@@ -67,7 +67,7 @@ class AuthController extends Controller
 
 
         // $url = "https://api.sms.ir/v1/send?username=09304500129&Password=Amir#1234&Line=&mobile=09369488096&text=1234";
-        return Response::success(ResponseMessages::OTP_SENT_SUCCESS);
+        return Response::success(null,ResponseMessages::OTP_SENT_SUCCESS);
     }
 
     /**

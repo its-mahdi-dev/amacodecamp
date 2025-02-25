@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BootcampController;
+use App\Http\Controllers\StudentController;
 use App\Models\Bootcamp;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,5 +30,10 @@ Route::prefix('/student')->middleware('auth:sanctum')->group(function () {
     Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function(){
         Route::get('/', 'get_student_bootcamps');
         Route::get('/license/{bootcamp_id}', 'get_bootcamp_license');
+    });
+
+    Route::controller(StudentController::class)->group(function(){
+        Route::get('/me' , 'get');
+        Route::post('/update' , 'update');
     });
 });

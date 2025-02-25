@@ -27,8 +27,6 @@ return new class extends Migration
             // For roles, you can store a single role or pivot table for many roles
             $table->enum('role', ['admin','teacher','student'])->default('student');
 
-            // Wishlists, baskets, etc. typically go in pivot or separate tables
-            // We'll keep it minimal here
 
             $table->timestamps();
             $table->softDeletes();

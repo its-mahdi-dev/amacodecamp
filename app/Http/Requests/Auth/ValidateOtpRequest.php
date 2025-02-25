@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Constants\ResponseMessages;
 use App\Http\Requests\BaseFormRequest;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -31,12 +32,12 @@ class ValidateOtpRequest extends BaseFormRequest
     public function messages(): array
     {
         return [
-            'phone.required' => 'The phone field is required.',
-            'phone.numeric' => 'The phone field must be a number.',
-            'phone.digits' => 'The phone field must be 11 digits.',
-            'otp_code.required' => 'The otp code field is required.',
-            'otp_code.numeric' => 'The otp code field must be a number.',
-            'otp_code.digits' => 'The otp code field must be 4 digits.',
+            'phone.required' => ResponseMessages::V_PHONE_REQUIRED,
+            'phone.numeric' => ResponseMessages::V_PHONE_NUMERIC,
+            'phone.digits' => ResponseMessages::V_PHONE_SIZE,
+            'otp_code.required' => ResponseMessages::V_OTP_EQUIRED,
+            'otp_code.numeric' => ResponseMessages::V_OTP_NUMERIC,
+            'otp_code.digits' => ResponseMessages::V_OTP_SIZE,
         ];
     }
 }
