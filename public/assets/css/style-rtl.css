@@ -379,10 +379,10 @@
 }
 @media only screen and (max-width: 1024px) {
   .cart-dropdown-menu {
-    //right: -100px;
+    /* right: -100px; */
   }
   .cart-dropdown-menu:after {
-    //right: 100px;
+    /* right: 100px; */
   }
 }
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -405,4 +405,19 @@
   }
 }
 @media only screen and (max-width: 320px) {
+}
+
+
+.dir-rtl{
+  direction: rtl;
+}
+.dir-ltr{
+  direction: ltr;
+}
+
+
+/* LOGIN PAGE */
+#otpContainer input {
+  font-size: 20px;
+  letter-spacing: 25px;
 }

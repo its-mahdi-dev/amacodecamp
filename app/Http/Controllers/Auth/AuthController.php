@@ -51,10 +51,10 @@ class AuthController extends Controller
             ]
         ];
 
-        $response = SmsIr::verifySend($phone, $templateId, $parameters, [
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_CAINFO => "D:/wamp64/bin/php/php8.2.0/cacert.pem"
-        ]);
+        // $response = SmsIr::verifySend($phone, $templateId, $parameters, [
+        //     CURLOPT_SSL_VERIFYPEER => false,
+        //     CURLOPT_CAINFO => "D:/wamp64/bin/php/php8.2.0/cacert.pem"
+        // ]);
 
 
         // $url = "https://api.sms.ir/v1/send?username=09304500129&Password=Amir#1234&Line=&mobile=09369488096&text=1234";
