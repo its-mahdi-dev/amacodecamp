@@ -31,7 +31,8 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
     })->name('login');
 });
 
-Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->middleware(['auth:sanctum'])->group(function () {
+
+Route::prefix('/dashboard')->group(function () {
     Route::get('/', function () {
         return view('dashboard.home');
     })->name('dashboard.home');

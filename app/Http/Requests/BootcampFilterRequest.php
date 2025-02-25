@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Constants\ResponseMessages;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BootcampFilterRequest extends BaseFormRequest
@@ -37,10 +38,10 @@ class BootcampFilterRequest extends BaseFormRequest
     public function messages(): array
     {
         return [
-            'price_min.numeric' => 'The minimum price must be a number.',
-            'price_max.numeric' => 'The maximum price must be a number.',
-            'per_page.integer' => 'The per page field must be an integer.',
-            'per_page.min' => 'The per page value must be at least 1.',
+            'price_min.numeric' => ResponseMessages::V_BOOTCAMP_PRICE_NUMERIC,
+            'price_max.numeric' => ResponseMessages::V_BOOTCAMP_PRICE_NUMERIC,
+            'per_page.integer' => ResponseMessages::V_BOOTCAMP_PERPAGE,
+            'per_page.min' => ResponseMessages::V_BOOTCAMP_PERPAGE,
         ];
     }
 }

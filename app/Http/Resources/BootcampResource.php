@@ -15,7 +15,17 @@ class BootcampResource extends JsonResource
      */
     public function toArray($request)
     {
+
+        $reviews = $this->reviews()->get();
+        $rate = 0;
+        if (count($reviews) > 0) {
+            foreach ($reviews as $r) {
+                $rate += $r->rating;
+            }
+            $rate = $rate / count($reviews);
+        }
         return [
+            'id' => $this->id,
             'slug' => $this->slug,
             'title' => $this->title,
             'thumbnail_url' => $this->thumbnail_url,
@@ -31,7 +41,8 @@ class BootcampResource extends JsonResource
             'price' => $this->price,
             'students_count' => $this->students()->count(),
             'teachers' => UserFilterResource::collection($this->teachers()->get()),
-            'reviews' => ReviewResource::collection($this->reviews()->get()),
+            'reviews' => ReviewResource::collection($reviews),
+            "rate" => $rate
         ];
     }
 }

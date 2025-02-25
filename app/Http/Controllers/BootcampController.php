@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Constants\ResponseMessages;
 use App\Http\Requests\BootcampFilterRequest;
 use App\Models\Bootcamp;
 use App\Http\Resources\BootcampResource;
@@ -69,7 +70,7 @@ class BootcampController extends Controller
         $licesne = $request->user()->getLicenseForBootcamp($bootcampId);
 
         if($licesne == null){
-            return Response::error('you do not register for this bootcamp');
+            return Response::notfound(ResponseMessages::REGISTER_BOOTCAMP_NOT_FOUND);
         }
 
         return Response::success($licesne);
