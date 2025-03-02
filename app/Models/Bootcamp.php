@@ -25,7 +25,7 @@ class Bootcamp extends Model
      */
     public function getThumbnailUrlAttribute()
     {
-        return asset("images/bootcamps/thumbnails/{$this->thumbnail}");
+        return $this->thumbnail ? asset("images/bootcamps/thumbnails/{$this->thumbnail}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -33,7 +33,7 @@ class Bootcamp extends Model
      */
     public function getCoverUrlAttribute()
     {
-        return asset("images/bootcamps/covers/{$this->cover}");
+        return $this->cover ? asset("images/bootcamps/covers/{$this->cover}") : asset("assets/images/img-loading.png");
     }
 
     /**

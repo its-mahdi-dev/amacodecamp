@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\ResponseMessages;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
@@ -32,7 +33,8 @@ return Application::configure(basePath: dirname(__DIR__))
                     return response()->json([
                         'status' => false,
                         'message' => "Not found",
-                        'data' => null
+                        'data' => null,
+                        'errors' => [ResponseMessages::NOT_FOUND]
                     ], 404);
                 }
             }

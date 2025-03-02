@@ -20,7 +20,8 @@ class BaseFormRequest extends FormRequest
             response()->json([
                 "status" => false,
                 'message' => 'Validation failed',
-                'data' => $validator->errors()
+                'data' => null,
+                'errors' =>$validator->errors()->all()
             ], 422)
         );
     }
