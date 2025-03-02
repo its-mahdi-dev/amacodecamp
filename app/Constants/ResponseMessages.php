@@ -34,4 +34,6 @@ class ResponseMessages
     const V_BOOTCAMP_PERPAGE = 'تعداد آیتم ها در صفحه نا معتبره';
     const V_STUDENT_EMAIL = 'ایمیل وارد شده نامعتبره';
     const V_STUDENT_NAME = 'حداکثر کارکتر برای اسم و فامیل 355 است';
+    const V_STUDENT_PROFILE_SIZE = 'حداکثر حجم تصویر باید 500 کیلوباید باشد';
+    const V_STUDENT_PROFILE_TYPE= 'فرمت فایل تصویر صحیح نیست';
 }

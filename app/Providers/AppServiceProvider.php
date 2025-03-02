@@ -36,8 +36,9 @@ class AppServiceProvider extends ServiceProvider
         Response::macro('error', function ($message = ResponseMessages::GENERAT_ERROR, $statusCode = 400 , $data = null) {
             return response()->json([
                 'status' => false,
-                'message' => $message,
-                'data' => $data
+                'message' => ResponseMessages::GENERAT_ERROR,
+                'data' => $data,
+                'errors' => [$message]
             ], $statusCode);
         });
 
@@ -45,7 +46,8 @@ class AppServiceProvider extends ServiceProvider
             return response()->json([
                 'status' => false,
                 'message' => ResponseMessages::NOT_FOUND,
-                'data' => null
+                'data' => $data,
+                'errors' => [ResponseMessages::NOT_FOUND]
             ], 404);
         });
 

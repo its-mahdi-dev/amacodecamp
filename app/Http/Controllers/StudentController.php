@@ -20,11 +20,27 @@ class StudentController extends Controller
 
     public function update(UpdateUserRequest $request)
     {
-        // Find the user by ID
         $user = User::findOrFail($request->user()->id);
 
+        // Handle the avatar upload
+        if ($request->hasFile('avatar') && $request->avatar != null) {
+            // Delete the old avatar if it exists
+            if ($user->avatar && file_exists(public_path($user->avatar))) {
+                unlink(public_path($user->avatar));
+            }
+
+            // Store the new avatar
+            $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            $user->avatar = $avatarPath;
+        }
+
         // Update the user's data
-        $user->update($request->validated());
+        $user->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'avatar' => $user->avatar ?? $user->avatar, // Keep the old avatar if no new one is uploaded
+        ]);
 
         // Return a successful response
         return Response::success(new UserResource($user));
