@@ -14,6 +14,8 @@ return new class extends Migration
             $table->foreignId('bootcamp_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('authority')->nullable(); // ZarinPal authority code
             $table->decimal('amount', 10, 2);
+            $table->string('referenceId')->nullable();
+            $table->string('cardPan')->nullable();
             $table->enum('status', ['pending','paid','failed'])->default('pending');
             $table->timestamps();
             $table->softDeletes();

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('key');
             $table->string('value');
             $table->integer('expiration');
+            $table->integer('counter');
             $table->softDeletes();
             $table->timestamps();
         });

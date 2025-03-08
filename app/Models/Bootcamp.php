@@ -12,7 +12,7 @@ class Bootcamp extends Model
 
     protected $fillable = [
         'slug', 'title', 'thumbnail', 'cover', 'overview', 'curriculum',
-        'level', 'duration', 'lessons', 'quizzes', 'certification', 
+        'body','level', 'duration', 'lessons', 'quizzes', 'certification', 
         'intro_video', 'price'
     ];
 
@@ -58,5 +58,10 @@ class Bootcamp extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
     }
 }

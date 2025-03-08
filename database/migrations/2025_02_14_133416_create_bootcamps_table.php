@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('cover')->nullable();     // larger image for course
             $table->text('overview')->nullable();
             $table->text('curriculum')->nullable(); // maybe a JSON or textual
+            $table->text('body')->nullable();
             $table->string('level')->nullable();    // e.g. beginner, advanced
             $table->string('duration')->nullable(); // e.g. "4 weeks", "30 hours"
             $table->unsignedInteger('lessons')->default(0);
