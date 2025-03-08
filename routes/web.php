@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 // die(env('MAIN_DOMAIN','localhost'));
 // die(env('DASHBOARD_DOMAIN','localhost'));

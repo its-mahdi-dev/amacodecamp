@@ -10,5 +10,5 @@ class Otp extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['key', 'value', 'expiration'];
+    protected $fillable = ['key', 'value', 'expiration', 'counter'] ;
 }

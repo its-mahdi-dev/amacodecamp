@@ -12,6 +12,9 @@ class ResponseMessages
     const WAIT_BEFORE_REQUEST = 'لطفاً قبل از درخواست مجدد، کمی صبر کنید.';
     const INVALID_OTP = 'کد تأیید وارد شده معتبر نیست.';
     const REGISTER_BOOTCAMP_NOT_FOUND = 'شما در این دوره ثبت نام نکرده اید';
+    const LOCK_OTP_ACCOUNT = 'حساب شما به دلیل تلاش های ناموفق مسدود شده. چند دقیقه دیگه دوباره درخواست کد بکن.';
+    const PAYMENT_NOT_FOUND = 'اطلاعات پرداخت یافت نشد.';
+    const PAYMENT_FAILED = 'پرداخت با موفقیت انجان نشد';
 
     // General Messages
     const SERVER_ERROR = 'خطای سرور رخ داده است. لطفاً دوباره تلاش کنید.';
