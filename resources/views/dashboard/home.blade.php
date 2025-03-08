@@ -728,7 +728,7 @@ END BREADCRUMB AREA
       `;
     });
 
-    document.querySelector("#wishlistBody").innerHTML = "";
+    document. ("#wishlistBody").innerHTML = "";
     data.wishlist.forEach(bootcamp => {
       document.querySelector("#wishlistBody").innerHTML += `
         <div class="col-lg-4 responsive-column-half">

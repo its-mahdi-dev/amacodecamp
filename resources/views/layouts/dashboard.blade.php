@@ -843,14 +843,15 @@
     <script src="/assets/js/main-rtl.js"></script>
 
     <script>
-      localStorage.setItem("auth_token" , "8|zbsoLKdz7h9GtgItR6BM4N6vdYeP09xnI2MHuZ6jb4a86ff9")
+    //   localStorage.setItem("auth_token" , "8|zbsoLKdz7h9GtgItR6BM4N6vdYeP09xnI2MHuZ6jb4a86ff9")
         axios.defaults.baseURL = "{{ env('API_URL', 'http://localhost:8000') }}";
 
         // Automatically attach the Bearer token from localStorage (or another storage method)
         axios.interceptors.request.use(
             function(config) {
                 const token = localStorage.getItem("auth_token"); // Get token from storage
-                if (token) {
+               
+                 if (token) {
                     config.headers.Authorization = `Bearer ${token}`;
                 }
                 return config;

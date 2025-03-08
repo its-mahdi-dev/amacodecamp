@@ -610,7 +610,7 @@
     <!-- ================================
            START CLIENT-LOGO AREA
     ================================= -->
-    <section class="client-logo-area section--padding">
+    <section class="client-logo-area section--padding" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">

@@ -16,15 +16,15 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
 
     Route::get('/blogs/{id}', function ($id) {
         return view('main.blogs.show', compact('id'));
-    })->whereNumber('id')->name('blogs.show');
+    })->name('blogs.show');
 
     Route::get('/bootcamps', function () {
         return view('main.bootcamps.index');
     })->name('bootcamps.index');
 
-    Route::get('/bootcamps/{id}', function ($id) {
-        return view('main.bootcamps.show', compact('id'));
-    })->whereNumber('id')->name('bootcamps.show');
+    Route::get('/bootcamps/{slug}', function ($slug) {
+        return view('main.bootcamps.show', compact('slug'));
+    })->name('bootcamps.show');
 
     Route::get('/login', function () {
         return view('auth.login');

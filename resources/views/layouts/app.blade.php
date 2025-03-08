@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fa" dir="rtl">
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Aduca - Education HTML Template</title>
+  <title>آما - بوت کمپ های برنامه نویسی</title>
 
 
 
@@ -74,7 +74,7 @@
             <div class="col-lg-10">
               <div class="menu-wrapper">
                 <!-- end menu-category -->
-                <form method="post">
+                <form action="/bootcamps" method="get">
                   <div class="form-group mb-0">
                     <input class="form-control form--control ps-3" type="text" name="search"
                       placeholder="چی میخوای یاد بگیری؟ " />
@@ -84,148 +84,16 @@
                 <nav class="main-menu">
                   <ul>
                     <li>
-                      <a href="#">منزل، بيت <i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li><a href="index.html">الصفحة الرئيسية واحد</a></li>
-                        <li><a href="home-2.html">المنزل الثاني</a></li>
-                        <li>
-                          <a href="home-3.html">الصفحة الرئيسية ثلاثة</a>
-                        </li>
-                        <li>
-                          <a href="home-4.html">الصفحة الرئيسية أربعة </a>
-                        </li>
-                      </ul>
+                      <a href="{{route('home')}}"><i class="la la-home fs-12"></i> خانه</a>
                     </li>
                     <li>
-                      <a href="#">
-                        الدورات<i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li><a href="course-grid.html">شبكة بالطبع</a></li>
-                        <li>
-                          <a href="course-list.html">
-                            قائمة الدورات<span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="course-left-sidebar.html">الشريط الجانبي الأيسر
-                            <span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="course-right-sidebar.html">
-                            الشريط الجانبي الأيمن<span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="course-details.html">تفاصيل الدورة</a>
-                        </li>
-                        <li>
-                          <a href="lesson-details.html">تفاصيل الدرس</a>
-                        </li>
-                        <li><a href="my-courses.html">دوراتي</a></li>
-                      </ul>
+                      <a href="{{route('bootcamps.index')}}"><i class="la la-code fs-12"></i> بوت کمپا</a>
                     </li>
                     <li>
-                      <a href="#">
-                        طالب علم<i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li>
-                          <a href="student-detail.html">تفاصيل الطالب</a>
-                        </li>
-                        <li><a href="student-quiz.html">تقدم للإختبار</a></li>
-                        <li>
-                          <a href="student-quiz-results.html">نتائج الاختبار</a>
-                        </li>
-                        <li>
-                          <a href="student-quiz-result-details.html">تفاصيل الاختبار</a>
-                        </li>
-                        <li>
-                          <a href="student-quiz-result-details-2.html">تفاصيل الاختبار 2</a>
-                        </li>
-                        <li>
-                          <a href="student-path.html">تفاصيل المسار
-                            <span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="student-path-assessment.html">تقييم المهارات</a>
-                        </li>
-                        <li>
-                          <a href="student-path-assessment-result.html">نتيجة المهارة</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="mega-menu-has">
-                      <a href="#">الصفحات <i class="la la-angle-down fs-12"></i></a>
-                      <div class="dropdown-menu-item mega-menu">
-                        <ul class="row no-gutters">
-                          <li class="col-lg-3">
-                            <a href="dashboard.html">لوحة القيادة <span class="ribbon">Hot</span></a>
-                            <a href="about.html">حول</a>
-                            <a href="teachers.html">معلمون</a>
-                            <a href="teacher-detail.html">تفاصيل المعلم</a>
-                            <a href="categories.html">التصنيفات
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="terms-and-conditions.html">البنود و الظروف
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="privacy-policy.html">سياسة خاصة
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="invite.html">دعوة صديق
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                          </li>
-                          <li class="col-lg-3">
-                            <a href="careers.html">وظائف
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="career-details.html">تفاصيل المهنة
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="become-a-teacher.html">أصبح مدربا</a>
-                            <a href="faq.html">أسئلة وأجوبة</a>
-                            <a href="admission.html">قبول</a>
-                            <a href="gallery.html">صالة عرض</a>
-                            <a href="pricing-table.html">جداول التسعير</a>
-                            <a href="contact.html">اتصل</a>
-                          </li>
-                          <li class="col-lg-3">
-                            <a href="for-business.html">للعمل
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="sign-up.html">اشتراك</a>
-                            <a href="login.html">تسجيل الدخول</a>
-                            <a href="recover.html">استعادة</a>
-                            <a href="shopping-cart.html">عربة التسوق</a>
-                            <a href="checkout.html">الدفع</a>
-                            <a href="error.html">صفحة 404</a>
-                          </li>
-                          <li class="col-lg-3">
-                            <div class="menu-banner position-relative h-100">
-                              <div class="overlay rounded-rounded opacity-4"></div>
-                              <div class="menu-banner-content p-4 position-absolute bottom-0 left-0">
-                                <h4 class="fs-20 font-weight-bold pb-3 text-white">
-                                  30 يومًا مجانًا للمستخدمين الجدد
-                                </h4>
-                                <a href="sign-up.html" class="btn theme-btn theme-btn-sm theme-btn-white">ابدا بالتعلم
-                                  <i class="la la-arrow-right icon ms-1"></i></a>
-                              </div>
-                              <img src="/assets/images/menu-banner-img.jpg" alt="menu banner image"
-                                class="w-100 h-100 rounded-rounded" />
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
+                      <a href="{{route('blogs.index')}}"><i class="la la-pen fs-12"></i>  نوشته‌هامون</a>
                     </li>
                     <li>
-                      <a href="#">مقالات <i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li>
-                          <a href="blog-full-width.html">بلوق بالحجم الكامل
-                          </a>
-                        </li>
-                        <li>
-                          <a href="blog-no-sidebar.html">بلوق لا يوجد شريط جانبي</a>
-                        </li>
-                        <li>
-                          <a href="blog-left-sidebar.html">بلوق الشريط الجانبي الأيسر</a>
-                        </li>
-                        <li>
-                          <a href="blog-right-sidebar.html">بلوق الشريط الجانبي الأيمن</a>
-                        </li>
-                        <li><a href="blog-single.html">تفاصيل المدونة</a></li>
-                      </ul>
+                      <a href="{{route('home')}}#about"><i class="la la-graduation-cap fs-12"></i>  درباره آدا </a>
                     </li>
                   </ul>
                   <!-- end ul -->
@@ -233,7 +101,7 @@
                 <!-- end main-menu -->
                 <div class="nav-right-button">
                   <a href="admission.html" class="btn theme-btn d-none d-lg-inline-block"><i
-                      class="la la-user-plus me-1"></i> قبول</a>
+                      class="la la-user-plus me-1"></i> ورود / ثبت نام</a>
                 </div>
                 <!-- end nav-right-button -->
               </div>
