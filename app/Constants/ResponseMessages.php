@@ -7,6 +7,8 @@ class ResponseMessages
     // Success Messages
     const OTP_SENT_SUCCESS = 'کد تأیید با موفقیت ارسال شد. لطفاً شماره خود را بررسی کنید.';
     const OTP_VALIDATION_SUCCESS = 'با موفقیت وارد شدید.';
+    const CUPON_VALID = "کد تخفیف صحیح می‌باشد.";
+    const CAMPAIGN_SUBMITED = "شماره شما با موفقیت ثبت شد";
 
     // Error Messages
     const WAIT_BEFORE_REQUEST = 'لطفاً قبل از درخواست مجدد، کمی صبر کنید.';
@@ -15,6 +17,8 @@ class ResponseMessages
     const LOCK_OTP_ACCOUNT = 'حساب شما به دلیل تلاش های ناموفق مسدود شده. چند دقیقه دیگه دوباره درخواست کد بکن.';
     const PAYMENT_NOT_FOUND = 'اطلاعات پرداخت یافت نشد.';
     const PAYMENT_FAILED = 'پرداخت با موفقیت انجان نشد';
+    const CUPON_NOT_VALID = "کد تخفیف صحیح نمی‌باشد.";
+
 
     // General Messages
     const SERVER_ERROR = 'خطای سرور رخ داده است. لطفاً دوباره تلاش کنید.';
@@ -39,4 +43,10 @@ class ResponseMessages
     const V_STUDENT_NAME = 'حداکثر کارکتر برای اسم و فامیل 355 است';
     const V_STUDENT_PROFILE_SIZE = 'حداکثر حجم تصویر باید 500 کیلوباید باشد';
     const V_STUDENT_PROFILE_TYPE= 'فرمت فایل تصویر صحیح نیست';
+    const V_SLUGS_REQUIRED = "لطفا بوت‌‌کمپ های مورد نظر را انتخاب کنید.";
+
+
+    public function ERR_MIN_PAY_CUPON($min){
+        return "حداقل خرید برای استفاده از کد تخفیف {$min} است.";
+    }
 }

@@ -11,9 +11,21 @@ class Bootcamp extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'slug', 'title', 'thumbnail', 'cover', 'overview', 'curriculum',
-        'body','level', 'duration', 'lessons', 'quizzes', 'certification', 
-        'intro_video', 'price'
+        'slug',
+        'title',
+        'thumbnail',
+        'cover',
+        'intro',
+        'category_id',
+        'body',
+        'level',
+        'duration',
+        'lessons',
+        'quizzes',
+        'certification',
+        'intro_video',
+        'price',
+        'capacity'
     ];
 
     protected $casts = [
@@ -63,5 +75,43 @@ class Bootcamp extends Model
     public function payments()
     {
         return $this->hasMany(Payment::class);
+    }
+
+
+    public function seasons()
+    {
+        return $this->hasMany(BootcampSeason::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'bootcamp_tags', 'bootcamp_id', 'tag_id');
+    }
+
+    public function off()
+    {
+        return $this->hasOne(Off::class);
+    }
+
+    public function getPrice()
+    {
+        $off = Off::where('bootcamp_id', $this->id)->first();
+        if ($off != null) {
+            if ($off->start_time != null) {
+                if ($off->start_time < now() && $off->end_time > now()) {
+                    if ($off->percent != null) return $this->price * (100 - $off->percent);
+                    else return $this->price - $off->price;
+                }
+            } else if ($off->amount != null) {
+                if ($off->amount > 0) {
+                    if ($off->percent != null) return $this->price * (100 - $off->percent);
+                    else return $this->price - $off->price;
+                }
+            }
+
+            return $this->price;
+        }
+
+        return $this->price;
     }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('referenceId')->nullable();
             $table->string('cardPan')->nullable();
             $table->enum('status', ['pending','paid','failed'])->default('pending');
+            $table->timestamp('paid_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
