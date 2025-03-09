@@ -10,12 +10,12 @@ class Payment extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['bootcamp_id', 'user_id' , 'amount' , 'authority' , 'referenceId' , 'status'];
+    protected $fillable = ['bootcamp_id', 'user_id' , 'amount' , 'authority' , 'referenceId' ,'cardPan', 'status' , 'paid_at'];
     public function user(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     } 
 
     public function bootcamp(){
-        return $this->belongsToMany(Bootcamp::class);
+        return $this->belongsTo(Bootcamp::class);
     } 
 }

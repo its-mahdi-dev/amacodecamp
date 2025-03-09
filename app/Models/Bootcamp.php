@@ -11,9 +11,9 @@ class Bootcamp extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'slug', 'title', 'thumbnail', 'cover', 'overview', 'curriculum',
+        'slug', 'title', 'thumbnail', 'cover', 'intro','category_id',
         'body','level', 'duration', 'lessons', 'quizzes', 'certification', 
-        'intro_video', 'price'
+        'intro_video', 'price','capacity'
     ];
 
     protected $casts = [
@@ -63,5 +63,20 @@ class Bootcamp extends Model
     public function payments()
     {
         return $this->hasMany(Payment::class);
+    }
+
+    public function basket()
+    {
+        return $this->hasMany(Basket::class);
+    }
+
+    public function seasons()
+    {
+        return $this->hasMany(BootcampSeason::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'bootcamp_tags', 'bootcamp_id', 'tag_id');
     }
 }

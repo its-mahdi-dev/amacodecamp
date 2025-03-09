@@ -10,7 +10,7 @@ class Basket extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['user_id', 'bootcamp_id', 'quantity'];
+    protected $fillable = ['user_id', 'bootcamp_id', 'quantity' , 'cupon_id'];
 
     public function user(){
         return $this->belongsTo(User::class);
@@ -18,5 +18,9 @@ class Basket extends Model
 
     public function bootcamp(){
         return $this->belongsTo(Bootcamp::class);
+    } 
+
+    public function cupon(){
+        return $this->belongsTo(Cupon::class);
     } 
 }
