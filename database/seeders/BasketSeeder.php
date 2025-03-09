@@ -11,15 +11,17 @@ class BasketSeeder extends Seeder
     {
         Basket::create([
             'user_id' => 1,
-            'bootcamp_id' => 1,
+            'bootcamps_id' => [1],
             'quantity' => 1,
+            'total_price' => 1234
         ]);
 
         Basket::create([
             'user_id' => 2,
-            'bootcamp_id' => 2,
+            'bootcamps_id' => [2],
             'quantity' => 2,
-            'cupon_id' => 1
+            'cupon_id' => 1,
+            'total_price' => 5321
         ]);
     }
 }

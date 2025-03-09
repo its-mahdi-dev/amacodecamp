@@ -20,6 +20,8 @@ return new class extends Migration
             $table->enum('level' , ['beginner' , 'medium' , 'advanced'])->nullable();  // e.g. beginner, advanced
             $table->string('duration')->nullable(); // e.g. "4 weeks", "30 hours"
             $table->integer('capacity');
+            $table->timestamp("start_time")->nullable();
+            $table->timestamp("end_time")->nullable();
             $table->unsignedInteger('lessons')->default(0);
             $table->unsignedInteger('quizzes')->default(0);
             $table->boolean('certification')->default(false);

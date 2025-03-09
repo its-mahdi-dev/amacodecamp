@@ -11,9 +11,10 @@ return new class extends Migration
         Schema::create('baskets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('bootcamp_id')->constrained()->onDelete('cascade');
+            $table->string('bootcamps_id')->default('[]');
             $table->unsignedInteger('quantity')->default(1);
             $table->foreignId('cupon_id')->nullable()->constrained()->onDelete('cascade');
+            $table->integer('total_price');
             $table->timestamps();
             $table->softDeletes();
         });

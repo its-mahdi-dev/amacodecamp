@@ -59,6 +59,8 @@ class BootcampSeeder extends Seeder
             ',
             'level' => 'beginner',
             'duration' => '4 weeks',
+            'start_time' => now(),
+            'end_time' => now()->addMonth(),
             'capacity' => 30,
             'lessons' => 10,
             'quizzes' => 3,
