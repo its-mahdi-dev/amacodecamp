@@ -4,6 +4,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BootcampController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Models\Bootcamp;
@@ -26,6 +27,8 @@ Route::controller(BootcampController::class)->prefix('/bootcamps')->group(functi
     Route::get('/' , 'index');
     Route::get('/{slug}','show');
 });
+
+Route::get('/categories' , [CategoryController::class , 'index']);
 
 Route::get('/cupons/check/{code}' , [PaymentController::class , 'checkCupon']);
 Route::post('/campains/submit' , [CampaignController::class , 'submit']);

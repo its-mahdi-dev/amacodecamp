@@ -10,20 +10,20 @@ class BootcampEpisodeSeeder extends Seeder
     public function run()
     {
         BootcampEpisode::create([
-            'session_id' => 1,
+            'bootcamp_season_id' => 1,
             'title' => 'Introduction to Laravel',
-            'type' => 'video',
-            'body' => 'This is an introductory video on Laravel.',
+            'type' => 'text',
+            'body' => '<p>This is an introductory video on Laravel.</p>',
             'start_time' => now(),
             'end_time' => now()->addHour(),
             'order' => 1
         ]);
 
         BootcampEpisode::create([
-            'session_id' => 1,
+            'bootcamp_season_id' => 1,
             'title' => 'Laravel Routes Explained',
-            'type' => 'video',
-            'body' => 'Learn about defining routes in Laravel.',
+            'type' => 'link',
+            'body' => '<a href="https://google.com">"Learn about defining routes in Laravel.</a>',
             'start_time' => now(),
             'end_time' => now()->addHour(),
             'order' => 2

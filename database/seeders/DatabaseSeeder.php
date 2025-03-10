@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             BootcampEpisodeSeeder::class,
             BootcampSeasonSeeder::class,
             BootcampUserSeeder::class,
+            BootcampTagSeeder::class,
             CampaignSeeder::class,
             CategorySeeder::class,
             CuponSeeder::class,
