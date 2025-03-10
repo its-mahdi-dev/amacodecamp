@@ -17,6 +17,7 @@ class UserFilterResource extends JsonResource
         return [
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
+            'full_name' => $this->getFullName(),
             'avatar_url' => $this->avatar_url,
             'role' => $this->role,
         ];

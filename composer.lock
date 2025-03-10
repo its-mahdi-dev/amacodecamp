@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92801df588326493245bd726966fc399",
+    "content-hash": "ff5203a71f5eddfd22c43cccd9da57f3",
     "packages": [
         {
             "name": "brick/math",
@@ -1053,6 +1053,51 @@
                 }
             ],
             "time": "2025-02-03T10:55:03+00:00"
+        },
+        {
+            "name": "ipe/smsir-php",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IPeCompany/smsir-php.git",
+                "reference": "a9c1bf0259541cc0f29317f36b868186ec5a03ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IPeCompany/smsir-php/zipball/a9c1bf0259541cc0f29317f36b868186ec5a03ba",
+                "reference": "a9c1bf0259541cc0f29317f36b868186ec5a03ba",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "SmsIr": "Ipe\\Sdk\\Facades\\SmsIr"
+                    },
+                    "providers": [
+                        "Ipe\\Sdk\\SmsIrServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ipe\\Sdk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A package for sending SMS.",
+            "support": {
+                "issues": "https://github.com/IPeCompany/smsir-php/issues",
+                "source": "https://github.com/IPeCompany/smsir-php/tree/v1.0.1"
+            },
+            "time": "2024-10-19T05:20:03+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2646,6 +2691,65 @@
                 }
             ],
             "time": "2024-07-20T21:41:07+00:00"
+        },
+        {
+            "name": "pishran/zarinpal",
+            "version": "v4.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pishran/Zarinpal.git",
+                "reference": "dd2ee1cebf3d4628ea44805f19e7f1aedaeb62c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pishran/Zarinpal/zipball/dd2ee1cebf3d4628ea44805f19e7f1aedaeb62c9",
+                "reference": "dd2ee1cebf3d4628ea44805f19e7f1aedaeb62c9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": "^7.2|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pishran\\Zarinpal\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Pishran\\Zarinpal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Farid Aghili",
+                    "email": "farid@pishranit.ir",
+                    "homepage": "https://www.faridaghili.ir",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Zarinpal library for Laravel.",
+            "homepage": "https://github.com/pishran/zarinpal",
+            "keywords": [
+                "laravel",
+                "payment",
+                "zarinpal"
+            ],
+            "support": {
+                "issues": "https://github.com/pishran/Zarinpal/issues",
+                "source": "https://github.com/pishran/Zarinpal/tree/v4.3.5"
+            },
+            "time": "2025-02-24T10:19:19+00:00"
         },
         {
             "name": "psr/clock",
@@ -5861,6 +5965,43 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "zarinpal/zarinpal",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RTLer/zarinpal-composer-library.git",
+                "reference": "a83daaa72b3df0d0e0dfaa4ee887d79161967639"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RTLer/zarinpal-composer-library/zipball/a83daaa72b3df0d0e0dfaa4ee887d79161967639",
+                "reference": "a83daaa72b3df0d0e0dfaa4ee887d79161967639",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zarinpal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL2"
+            ],
+            "authors": [
+                {
+                    "name": "hooman naghiee",
+                    "email": "hooman@rtler.com"
+                }
+            ],
+            "description": "transaction request system for zarinpal",
+            "support": {
+                "issues": "https://github.com/RTLer/zarinpal-composer-library/issues",
+                "source": "https://github.com/RTLer/zarinpal-composer-library/tree/master"
+            },
+            "time": "2015-07-01T17:38:42+00:00"
         }
     ],
     "packages-dev": [

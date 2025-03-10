@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Constants\ResponseMessages;
 use App\Http\Requests\BootcampFilterRequest;
 use App\Models\Bootcamp;
 use App\Http\Resources\BootcampResource;
@@ -19,7 +20,10 @@ class BootcampController extends Controller
 
         // Apply search filter
         if ($request->filled('search')) {
-            $query->where('title', 'like', '%' . $request->search . '%');
+            $search = $request->search;
+            $query->where('title', 'like', '%' . $search . '%')->orWhereHas('tags', function($query) use ($search) {
+                $query->where('name', $search);
+            });;
         }
 
         // Apply price range filter
@@ -29,6 +33,13 @@ class BootcampController extends Controller
 
         if ($request->filled('price_max')) {
             $query->where('price', '<=', $request->price_max);
+        }
+
+        if($request->filled('tag')){
+            $tagName = $request->tag;
+            $query->whereHas('tags', function($query) use ($tagName) {
+                $query->where('name', $tagName);
+            });
         }
 
         // Paginate the results
@@ -47,10 +58,20 @@ class BootcampController extends Controller
     public function show($slug)
     {
         // Find the bootcamp by slug
+        $slugs = explode(",", $slug);
+        if(count($slugs) > 1){
+            $bootcamps = [];
+            foreach($slugs as $s){
+                $bootcamp = Bootcamp::where('slug', $s)->firstOrFail();
+                array_push($bootcamps , $bootcamp);
+            }
+
+            return Response::success(BootcampResource::collection($bootcamps));
+        }
         $bootcamp = Bootcamp::where('slug', $slug)->firstOrFail();
 
         // Return the bootcamp resource
-        return Response::success(new BootcampResource($bootcamp));
+        return Response::success(new BootcampResource($bootcamp,["hasSeasons" => true]));
     }
 
 
@@ -69,7 +90,7 @@ class BootcampController extends Controller
         $licesne = $request->user()->getLicenseForBootcamp($bootcampId);
 
         if($licesne == null){
-            return Response::error('you do not register for this bootcamp');
+            return Response::notfound(ResponseMessages::REGISTER_BOOTCAMP_NOT_FOUND);
         }
 
         return Response::success($licesne);

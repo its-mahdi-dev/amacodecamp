@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Constants\ResponseMessages;
 use App\Http\Requests\BaseFormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
@@ -39,9 +40,9 @@ class SendOtpRequest extends BaseFormRequest
     public function messages(): array
     {
         return [
-            'phone.required' => 'The phone field is required.',
-            'phone.numeric' => 'The phone field must be a number.',
-            'phone.digits' => 'The phone field must be 11 digits.',
+            'phone.required' => ResponseMessages::V_PHONE_REQUIRED,
+            'phone.numeric' => ResponseMessages::V_PHONE_NUMERIC,
+            'phone.digits' => ResponseMessages::V_PHONE_SIZE,
         ];
     }
 }

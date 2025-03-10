@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
-// dd(env('MAIN_DOMAIN','localhost'));
-// dd(env('DASHBOARD_DOMAIN','localhost'));
+// die(env('MAIN_DOMAIN','localhost'));
+// die(env('DASHBOARD_DOMAIN','localhost'));
+
 
 Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
     Route::get('/', function () {
@@ -30,7 +32,8 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
     })->name('login');
 });
 
-Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->middleware(['auth'])->group(function () {
+
+Route::prefix('/dashboard')->group(function () {
     Route::get('/', function () {
         return view('dashboard.home');
     })->name('dashboard.home');
@@ -43,3 +46,8 @@ Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->middleware(['auth'])->group
         return view('dashboard.bootcamps');
     })->name('dashboard.bootcamps');
 });
+
+
+Route::get('/testi' , function(){
+    return "ysa";
+})->middleware(['auth:sanctum']);

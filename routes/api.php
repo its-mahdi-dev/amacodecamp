@@ -3,6 +3,10 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BootcampController;
+use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StudentController;
 use App\Models\Bootcamp;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,10 +28,26 @@ Route::controller(BootcampController::class)->prefix('/bootcamps')->group(functi
     Route::get('/{slug}','show');
 });
 
+Route::get('/categories' , [CategoryController::class , 'index']);
+
+Route::get('/cupons/check/{code}' , [PaymentController::class , 'checkCupon']);
+Route::post('/campains/submit' , [CampaignController::class , 'submit']);
+
 Route::prefix('/student')->middleware('auth:sanctum')->group(function () {
 
     Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function(){
         Route::get('/', 'get_student_bootcamps');
         Route::get('/license/{bootcamp_id}', 'get_bootcamp_license');
+    });
+
+    Route::controller(StudentController::class)->group(function(){
+        Route::get('/me' , 'get');
+        Route::post('/update' , 'update');
+        Route::put('/wishlist/{bootcamp_id}' , 'add_wishlist');
+    });
+
+    Route::controller(PaymentController::class)->prefix('/payment')->group(function(){
+        Route::post('/send' , [PaymentController::class , 'send']);
+        Route::get('/verify' , [PaymentController::class , 'verify']);
     });
 });

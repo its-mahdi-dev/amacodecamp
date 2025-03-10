@@ -17,12 +17,16 @@ class User extends Authenticatable
         'first_name', 'last_name', 'avatar', 'phone', 'email','role'
     ];
 
+
+    public function getFullName(){
+        return $this->first_name ." " . $this->last_name;
+    }
     /**
      * Get the full avatar URL.
      */
     public function getAvatarUrlAttribute()
     {
-        return asset("avatars/{$this->avatar}.png");
+        return asset('uploads/'.$this->avatar);
     }
 
     /**
@@ -38,7 +42,7 @@ class User extends Authenticatable
      */
     public function wishlist()
     {
-        return $this->belongsToMany(Bootcamp::class, 'wishlist')->withTimestamps();
+        return $this->belongsToMany(Bootcamp::class, 'wishlists')->withTimestamps();
     }
 
     /**
@@ -69,7 +73,7 @@ class User extends Authenticatable
      */
     public function basket()
     {
-        return $this->belongsToMany(Bootcamp::class, 'basket')->withPivot('quantity')->withTimestamps();
+        return $this->belongsToMany(Bootcamp::class, 'baskets')->withPivot('quantity')->withTimestamps();
     }
 
     /**

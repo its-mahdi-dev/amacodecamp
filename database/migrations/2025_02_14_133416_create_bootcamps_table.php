@@ -12,17 +12,21 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique(); // for /bootcamps/{slug}
             $table->string('title');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('thumbnail')->nullable(); // path to thumbnail image
             $table->string('cover')->nullable();     // larger image for course
-            $table->text('overview')->nullable();
-            $table->text('curriculum')->nullable(); // maybe a JSON or textual
-            $table->string('level')->nullable();    // e.g. beginner, advanced
+            $table->text('intro')->nullable();
+            $table->text('body')->nullable();
+            $table->enum('level' , ['beginner' , 'medium' , 'advanced'])->nullable();  // e.g. beginner, advanced
             $table->string('duration')->nullable(); // e.g. "4 weeks", "30 hours"
+            $table->integer('capacity');
+            $table->timestamp("start_time")->nullable();
+            $table->timestamp("end_time")->nullable();
             $table->unsignedInteger('lessons')->default(0);
             $table->unsignedInteger('quizzes')->default(0);
             $table->boolean('certification')->default(false);
             $table->string('intro_video')->nullable();
-            $table->decimal('price', 10, 2)->default(0);
+            $table->integer('price')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

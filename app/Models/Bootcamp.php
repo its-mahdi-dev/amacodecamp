@@ -11,21 +11,32 @@ class Bootcamp extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'slug', 'title', 'thumbnail', 'cover', 'overview', 'curriculum',
-        'level', 'duration', 'lessons', 'quizzes', 'certification', 
-        'intro_video', 'price'
+        'slug',
+        'title',
+        'thumbnail',
+        'cover',
+        'intro',
+        'category_id',
+        'body',
+        'level',
+        'duration',
+        'lessons',
+        'quizzes',
+        'certification',
+        'intro_video',
+        'price',
+        'capacity',
+        'start_time',
+        'end_time'
     ];
 
-    protected $casts = [
-        'curriculum' => 'array',
-    ];
 
     /**
      * Get the full thumbnail URL.
      */
     public function getThumbnailUrlAttribute()
     {
-        return asset("images/bootcamps/thumbnails/{$this->thumbnail}");
+        return $this->thumbnail ? asset("images/bootcamps/thumbnails/{$this->thumbnail}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -33,7 +44,7 @@ class Bootcamp extends Model
      */
     public function getCoverUrlAttribute()
     {
-        return asset("images/bootcamps/covers/{$this->cover}");
+        return $this->cover ? asset("images/bootcamps/covers/{$this->cover}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -58,5 +69,53 @@ class Bootcamp extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+
+    public function seasons()
+    {
+        return $this->hasMany(BootcampSeason::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'bootcamp_tags', 'bootcamp_id', 'tag_id');
+    }
+
+    public function off()
+    {
+        return $this->hasOne(Off::class);
+    }
+
+    public function getPrice()
+    {
+        $off = Off::where('bootcamp_id', $this->id)->first();
+        if ($off != null) {
+            if ($off->start_time != null) {
+                if ($off->start_time < now() && $off->end_time > now()) {
+                    if ($off->percent != null) return $this->price * (100 - $off->percent);
+                    else return $this->price - $off->price;
+                }
+            } else if ($off->amount != null) {
+                if ($off->amount > 0) {
+                    if ($off->percent != null) return $this->price * (100 - $off->percent);
+                    else return $this->price - $off->price;
+                }
+            }
+
+            return $this->price;
+        }
+
+        return $this->price;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }
