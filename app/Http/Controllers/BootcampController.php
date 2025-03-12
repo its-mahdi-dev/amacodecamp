@@ -22,7 +22,7 @@ class BootcampController extends Controller
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where('title', 'like', '%' . $search . '%')->orWhereHas('tags', function($query) use ($search) {
-                $query->where('name', $search);
+                $query->where('name' , 'like','%'. $search . '%');
             });;
         }
 
