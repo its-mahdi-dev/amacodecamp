@@ -32,6 +32,7 @@ class BootcampResource extends JsonResource
             'cover_url' => $this->cover_url,
             'overview' => $this->overview,
             'curriculum' => $this->curriculum,
+            'body' => $this->body,
             'level' => $this->level,
             'duration' => $this->duration,
             'lessons' => $this->lessons,

@@ -53,10 +53,10 @@
           <div class="row align-items-center">
             <div class="col-lg-2">
               <div class="logo-box">
-                <a href="index.html" class="logo"><img src="/assets/images/logo.png" alt="logo" /></a>
+                <a href="index.html" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
                 <div class="user-btn-action">
                   <div class="search-menu-toggle icon-element icon-element-sm shadow-sm me-2" data-toggle="tooltip"
-                    data-placement="top" title="Search">
+                    data-placement="top" title="جستجو">
                     <i class="la la-search"></i>
                   </div>
                   <div class="off-canvas-menu-toggle cat-menu-toggle icon-element icon-element-sm shadow-sm me-2"
@@ -64,7 +64,7 @@
                     <i class="la la-th-large"></i>
                   </div>
                   <div class="off-canvas-menu-toggle main-menu-toggle icon-element icon-element-sm shadow-sm"
-                    data-toggle="tooltip" data-placement="top" title="Main menu">
+                    data-toggle="tooltip" data-placement="top" title="منوی اصلی">
                     <i class="la la-bars"></i>
                   </div>
                 </div>
@@ -78,7 +78,11 @@
                   <div class="form-group mb-0">
                     <input class="form-control form--control ps-3" type="text" name="search"
                       placeholder="چی میخوای یاد بگیری؟ " />
-                    <span class="la la-search search-icon"></span>
+
+                    <button class="btn search-icon">
+                    <span class="la la-search"></span>
+                    
+                    </button>
                   </div>
                 </form>
                 <nav class="main-menu">
@@ -91,6 +95,9 @@
                     </li>
                     <li>
                       <a href="{{route('blogs.index')}}"><i class="la la-pen fs-12"></i>  نوشته‌هامون</a>
+                    </li>
+                    <li>
+                      <a href="{{route('basket')}}"><i class="la la-shopping-basket fs-12"></i>  سبدت</a>
                     </li>
                     <li>
                       <a href="{{route('home')}}#about"><i class="la la-graduation-cap fs-12"></i>  درباره آدا </a>
@@ -117,7 +124,7 @@
     <!-- end header-menu-content -->
     <div class="off-canvas-menu custom-scrollbar-styled main-off-canvas-menu">
       <div class="off-canvas-menu-close main-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
-        data-placement="left" title="Close menu">
+        data-placement="left" title="بستن منو">
         <i class="la la-times"></i>
       </div>
       <!-- end off-canvas-menu-close -->
@@ -234,138 +241,11 @@
         </li>
       </ul>
     </div>
-    <!-- end off-canvas-menu -->
-    <div class="off-canvas-menu custom-scrollbar-styled category-off-canvas-menu">
-      <div class="off-canvas-menu-close cat-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
-        data-placement="left" title="Close menu">
-        <i class="la la-times"></i>
-      </div>
-      <!-- end off-canvas-menu-close -->
-      <ul class="generic-list-item off-canvas-menu-list pt-90px">
-        <li>
-          <a href="course-grid.html">Development</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Development</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Mobile Apps</a></li>
-            <li><a href="#">Game Development</a></li>
-            <li><a href="#">Databases</a></li>
-            <li><a href="#">Programming Languages</a></li>
-            <li><a href="#">Software Testing</a></li>
-            <li><a href="#">Software Engineering</a></li>
-            <li><a href="#">E-Commerce</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">business</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Business</a></li>
-            <li><a href="#">Finance</a></li>
-            <li><a href="#">Entrepreneurship</a></li>
-            <li><a href="#">Strategy</a></li>
-            <li><a href="#">Real Estate</a></li>
-            <li><a href="#">Home Business</a></li>
-            <li><a href="#">Communications</a></li>
-            <li><a href="#">Industry</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">IT & Software</a>
-          <ul class="sub-menu">
-            <li><a href="#">All IT & Software</a></li>
-            <li><a href="#">IT Certification</a></li>
-            <li><a href="#">Hardware</a></li>
-            <li><a href="#">Network & Security</a></li>
-            <li><a href="#">Operating Systems</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Finance & Accounting</a>
-          <ul class="sub-menu">
-            <li><a href="#"> All Finance & Accounting</a></li>
-            <li><a href="#">Accounting & Bookkeeping</a></li>
-            <li><a href="#">Cryptocurrency & Blockchain</a></li>
-            <li><a href="#">Economics</a></li>
-            <li><a href="#">Investing & Trading</a></li>
-            <li><a href="#">Other Finance & Economics</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">design</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Design</a></li>
-            <li><a href="#">Graphic Design</a></li>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Design Tools</a></li>
-            <li><a href="#">3D & Animation</a></li>
-            <li><a href="#">User Experience</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Personal Development</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Personal Development</a></li>
-            <li><a href="#">Personal Transformation</a></li>
-            <li><a href="#">Productivity</a></li>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Personal Finance</a></li>
-            <li><a href="#">Career Development</a></li>
-            <li><a href="#">Parenting & Relationships</a></li>
-            <li><a href="#">Happiness</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Marketing</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Marketing</a></li>
-            <li><a href="#">Digital Marketing</a></li>
-            <li><a href="#">Search Engine Optimization</a></li>
-            <li><a href="#">Social Media Marketing</a></li>
-            <li><a href="#">Branding</a></li>
-            <li><a href="#">Video & Mobile Marketing</a></li>
-            <li><a href="#">Affiliate Marketing</a></li>
-            <li><a href="#">Growth Hacking</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Health & Fitness</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Health & Fitness</a></li>
-            <li><a href="#">Fitness</a></li>
-            <li><a href="#">Sports</a></li>
-            <li><a href="#">Dieting</a></li>
-            <li><a href="#">Self Defense</a></li>
-            <li><a href="#">Meditation</a></li>
-            <li><a href="#">Mental Health</a></li>
-            <li><a href="#">Yoga</a></li>
-            <li><a href="#">Dance</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Photography</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Photography</a></li>
-            <li><a href="#">Digital Photography</a></li>
-            <li><a href="#">Photography Fundamentals</a></li>
-            <li><a href="#">Commercial Photography</a></li>
-            <li><a href="#">Video Design</a></li>
-            <li><a href="#">Photography Tools</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- end off-canvas-menu -->
     <div class="mobile-search-form">
       <div class="d-flex align-items-center">
         <form method="post" class="flex-grow-1 me-3">
           <div class="form-group mb-0">
-            <input class="form-control form--control ps-3" type="text" name="search" placeholder="ابحث عن أي شيء" />
+            <input class="form-control form--control ps-3" type="text" name="search" placeholder="چی میخوای یاد بگیری؟؟" />
             <span class="la la-search search-icon"></span>
           </div>
         </form>

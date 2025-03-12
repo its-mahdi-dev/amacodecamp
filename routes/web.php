@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 // die(env('MAIN_DOMAIN','localhost'));
 // die(env('DASHBOARD_DOMAIN','localhost'));
@@ -9,7 +10,9 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
     Route::get('/', function () {
         return view('main.home');
     })->name('home');
-
+    Route::get('/basket', function () {
+        return view('main.basket');
+    })->name('basket');
     Route::get('/blogs', function () {
         return view('main.blogs.index');
     })->name('blogs.index');

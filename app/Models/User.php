@@ -17,12 +17,16 @@ class User extends Authenticatable
         'first_name', 'last_name', 'avatar', 'phone', 'email','role'
     ];
 
+
+    public function getFullName(){
+        return $this->first_name ." " . $this->last_name;
+    }
     /**
      * Get the full avatar URL.
      */
     public function getAvatarUrlAttribute()
     {
-        return asset("avatars/{$this->avatar}.png");
+        return asset('uploads/'.$this->avatar);
     }
 
     /**

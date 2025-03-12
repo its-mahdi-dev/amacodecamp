@@ -28,8 +28,7 @@ class UpdateUserRequest extends BaseFormRequest
         return [
             'first_name' => 'nullable|string|max:255',
             'last_name' => 'nullable|string|max:255',
-            'avatar' => 'nullable|string', // Assume you're storing the avatar as a filename
-            'phone' => 'string|size:11', // Ensure phone is unique, excluding current user
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:500',
             'email' => 'nullable|email', // Ensure email is unique, excluding current user
         ];
     }
@@ -45,6 +44,8 @@ class UpdateUserRequest extends BaseFormRequest
             'email.email' => ResponseMessages::V_STUDENT_EMAIL,
             'first_name.max' => ResponseMessages::V_STUDENT_NAME,
             'last_name.max' => ResponseMessages::V_STUDENT_NAME,
+            'avatar.mimes' => ResponseMessages::V_STUDENT_PROFILE_TYPE,
+            'avatar.max' => ResponseMessages::V_STUDENT_PROFILE_SIZE,
         ];
     }
 }

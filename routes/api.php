@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BootcampController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Models\Bootcamp;
 use App\Models\User;
@@ -38,6 +39,13 @@ Route::domain(env('API_DOMAIN', 'localhost/api'))->group(function(){
             Route::post('/update' , 'update');
             Route::put('/wishlist/{bootcamp_id}' , 'add_wishlist');
         });
+
+        
     });
-    
+
+    Route::controller(PaymentController::class)->prefix('/payment')->group(function(){
+        Route::post('/{id}' , [PaymentController::class , 'send']);
+        Route::get('/verify' , [PaymentController::class , 'verify']);
+    });
+
 });

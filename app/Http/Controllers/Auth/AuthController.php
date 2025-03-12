@@ -46,7 +46,8 @@ class AuthController extends Controller
         Otp::create([
             "key" => $phone,
             "value" => $otpCode,
-            "expiration" => now()->addMinutes(2)->timestamp
+            "expiration" => now()->addMinutes(2)->timestamp,
+            "counter" => 0
         ]);
     }
 
@@ -82,8 +83,15 @@ class AuthController extends Controller
             return Response::notfound();
         }
 
+
+        if ($cachedOtp->counter >= 5){
+            return Response::error(ResponseMessages::LOCK_OTP_ACCOUNT , 403);
+        }
         // Compare the OTP
         if ($otp  != $cachedOtp->value) {
+            $cachedOtp->update([
+                "counter" => $cachedOtp->counter + 1
+            ]);
             return Response::error(ResponseMessages::INVALID_OTP, 401);
         }
 
@@ -93,7 +101,7 @@ class AuthController extends Controller
             [
                 'first_name' => '',
                 'last_name' => '',
-                'avatar' => '',
+                'avatar' => '/assets/images/user.png',
                 'email' => null,
                 'role' => 'student'
             ]

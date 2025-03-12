@@ -12,7 +12,7 @@ class Bootcamp extends Model
 
     protected $fillable = [
         'slug', 'title', 'thumbnail', 'cover', 'overview', 'curriculum',
-        'level', 'duration', 'lessons', 'quizzes', 'certification', 
+        'body','level', 'duration', 'lessons', 'quizzes', 'certification', 
         'intro_video', 'price'
     ];
 
@@ -25,7 +25,7 @@ class Bootcamp extends Model
      */
     public function getThumbnailUrlAttribute()
     {
-        return asset("images/bootcamps/thumbnails/{$this->thumbnail}");
+        return $this->thumbnail ? asset("images/bootcamps/thumbnails/{$this->thumbnail}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -33,7 +33,7 @@ class Bootcamp extends Model
      */
     public function getCoverUrlAttribute()
     {
-        return asset("images/bootcamps/covers/{$this->cover}");
+        return $this->cover ? asset("images/bootcamps/covers/{$this->cover}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -58,5 +58,10 @@ class Bootcamp extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
     }
 }

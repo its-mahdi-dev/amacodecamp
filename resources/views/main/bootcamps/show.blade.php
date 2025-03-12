@@ -224,9 +224,9 @@
                             </div>
                             <a class="collapse-btn collapse--btn fs-15" data-bs-toggle="collapse" href="#collapseMore"
                                 role="button" aria-expanded="false" aria-controls="collapseMore">
-                                <span class="collapse-btn-hide">أظهر المزيد<i
+                                <span class="collapse-btn-hide">بقیشو ببینم<i
                                         class="la la-angle-down ms-1 fs-14"></i></span>
-                                <span class="collapse-btn-show">عرض أقل<i class="la la-angle-up ms-1 fs-14"></i></span>
+                                <span class="collapse-btn-show">کمتر نشون بده<i class="la la-angle-up ms-1 fs-14"></i></span>
                             </a>
                         </div>
                         <!-- end course-overview-card -->
