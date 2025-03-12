@@ -23,7 +23,8 @@ class CampainSubmitRequest extends BaseFormRequest
     public function rules(): array
     {
         return [
-            'phone' => 'required|numeric|digits:11'
+            'phone' => 'required|numeric|digits:11',
+            'name' => 'required|string|min:6'
         ];
     }
 
@@ -38,6 +39,7 @@ class CampainSubmitRequest extends BaseFormRequest
             'phone.required' => ResponseMessages::V_PHONE_REQUIRED,
             'phone.numeric' => ResponseMessages::V_PHONE_NUMERIC,
             'phone.digits' => ResponseMessages::V_PHONE_SIZE,
+            
         ];
     }
 }

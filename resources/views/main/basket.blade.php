@@ -78,11 +78,15 @@
                     <ul class="generic-list-item pb-4">
                         <li class="d-flex align-items-center justify-content-between font-weight-semi-bold">
                             <span class="text-black">قیمت کلی: </span>
-                            <span>44,000,000 تومان</span>
+                            <span id="price">
+
+                            </span>
                         </li>
                         <li class="d-flex align-items-center justify-content-between font-weight-semi-bold">
                             <span class="text-black">پولی که باید پرداخت کنی:</span>
-                            <span>42,200,000 تومان</span>
+                            <span id="shouldPay">
+
+                            </span>
                         </li>
                     </ul>
                     <a href="checkout.html" class="btn theme-btn w-100">پرداخت <i
@@ -226,10 +230,8 @@
                 console.log(error);
             })
 
-        function deleteFromBasket(slug) {
-            let basketArr = basket.split(",");
-            basketArr = basketArr.filter(el => el != slug);
-            localStorage.setItem('basket', basketArr.join(','));
+        function removeFromBasket(slug) {
+            basket.removeFromBasket(slug)
         }
 
         function checkCupon(cupon) {
@@ -245,9 +247,7 @@
         }
 
         function addToBasket(slug) {
-            let basketArr = basket.split(",");
-            basketArr.push(slug);
-            localStorage.setItem('basket', basketArr.join(','));
+            basket.addToBasket(slug)
         }
     </script>
 @endsection

@@ -28,14 +28,14 @@ Route::domain(env('API_DOMAIN', 'localhost/api'))->group(function () {
         Route::get('/{slug}', 'show');
     });
 
+    Route::get('/cupons/check/{code}', [PaymentController::class, 'checkCupon']);
+    Route::post('/campains/submit', [CampaignController::class, 'submit']);
     Route::prefix('/student')->middleware('auth:sanctum')->group(function () {
 
         Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function () {
             Route::get('/', 'get_student_bootcamps');
             Route::get('/license/{bootcamp_id}', 'get_bootcamp_license');
         });
-        Route::get('/cupons/check/{code}', [PaymentController::class, 'checkCupon']);
-        Route::post('/campains/submit', [CampaignController::class, 'submit']);
         Route::controller(StudentController::class)->group(function () {
             Route::get('/me', 'get');
             Route::post('/update', 'update');

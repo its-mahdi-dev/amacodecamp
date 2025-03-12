@@ -59,7 +59,7 @@
                                     <label class="label-text">اسمت</label>
                                     <div class="form-group">
                                         <input class="form-control form--control" type="text" name="name"
-                                            placeholder="مثلا امیر امیری" />
+                                            placeholder="مثلا امیر امیری" id="campaignName"/>
                                         <span class="la la-user input-icon"></span>
                                     </div>
                                 </div>
@@ -67,14 +67,14 @@
                                 <div class="input-box">
                                     <label class="label-text">شمارت</label>
                                     <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="phone"
-                                            placeholder="مثلا 09123456789" />
+                                        <input class="form-control form--control dir-ltr text-start" type="text" name="phone"
+                                            placeholder="مثلا 09123456789" id="campaignPhone" />
                                         <span class="la la-phone input-icon"></span>
                                     </div>
                                 </div>
                                 <!-- end input-box -->
                                 <div class="btn-box pt-2">
-                                    <button class="btn theme-btn" type="submit">
+                                    <button class="btn theme-btn" type="button" id="campaignSubmit">
                                         زنگ بزنید بهم :)
                                         <i class="la la-arrow-right icon ms-1"></i>
                                     </button>
@@ -1120,4 +1120,89 @@
     <!--======================================
             END SUBSCRIBER AREA
     ======================================-->
+@endsection
+
+
+@section('customScripts')
+<script>
+    axios.defaults.baseURL = "http://api.amacodecamp.test";
+
+    const campaignName = document.getElementById("campaignName");
+    const campaignPhone = document.getElementById("campaignPhone");
+    const campaignSubmit = document.getElementById("campaignSubmit");
+
+    campaignSubmit.addEventListener('click', ()=>{
+        let error = null;
+        if(!/^09\d{9}$/.test(campaignPhone.value.trim()))
+            error = "شماره ای که وارد کردی درست نیست"
+        if(!/^(?=.{6,})[^\d\s]+ [^\d\s]+.*$/.test(campaignName.value.trim()))
+            error = "نام و نام خانوادگی رو درست وارد کن";
+
+
+        if(error)
+        {
+            alert(error);
+            return;
+        }
+        axios.post('/campains/submit', {
+            name : campaignName.value.trim(),
+            phone : campaignPhone.value.trim(),
+        })
+        .then(function(response) {
+            let d = response.data;
+            alert(d.message);
+
+        })
+        .catch(function(error) {
+            let e = response.errors;
+            e.forEach(err => {
+            alert(err)
+             })
+         })
+      .finally(()=>{
+            campaignName.value = '';
+            campaignPhone.value = '';
+        });
+    });
+
+/*
+    axios.get('/bootcamps/')
+        .then(function(response) {
+            let d = response.data.data;
+            bootcampHeader.innerHTML = `
+                    <div class="section-heading placeholder-glow d-block">
+                        <h2 class="section__title">
+                            ${d.title}
+                        </h2>
+                        <p class="section__desc pt-2 lh-30" >
+                            ${d.overview}
+                        </p>
+                    </div>
+                    <!-- end section-heading -->
+                    <div class="d-flex flex-wrap align-items-center pt-3 placeholder-glow">
+                        <h6 class="ribbon ribbon-lg me-2 bg-3 text-white">
+                            الأكثر مبيعا
+                        </h6>
+                        <div class="rating-wrap d-flex flex-wrap align-items-center">
+                            <div class="review-stars">
+                                <span class="rating-number">4.4</span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star-o"></span>
+                            </div>
+                            <span class="rating-total ps-1">(20,230 التقييمات)</span>
+                            <span class="student-total ps-2">${d.students_count}</span>
+                        </div>
+                    </div>
+                    <!-- end d-flex -->
+            `;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+        */
+</script>
 @endsection

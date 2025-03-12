@@ -168,62 +168,13 @@
                         </div>
                         <!-- end course-overview-card -->
                         <div class="course-overview-card">
-                            <h3 class="fs-24 font-weight-semi-bold pb-3">وصف</h3>
-                            <p class="fs-15 pb-2">
-                                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
-                                سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع
-                                الفقرات في الصفحة التي يقرأها. الهدف من استخدام Lorem Ipsum هو
-                                أنه يحتوي على توزيع طبيعي -إلى حد ما- للأحرف ، بدلاً من
-                                استخدام "يوجد محتوى هنا ، يوجد محتوى هنا"
-                            </p>
-                            <p class="fs-15 pb-2">
-                                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
-                                سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع
-                                الفقرات في الصفحة التي يقرأها. الهدف من استخدام Lorem Ipsum هو
-                                أنه يحتوي على توزيع طبيعي -إلى حد ما- للأحرف ، بدلاً من
-                                استخدام "يوجد محتوى هنا ، يوجد محتوى هنا"
-                            </p>
-                            <p class="fs-15 pb-1">
-                                - إنها حقيقة مثبتة منذ زمن طويل وهي أن القارئ
-                            </p>
-                            <p class="fs-15 pb-1">
-                                - إنها حقيقة مثبتة منذ زمن طويل وهي أن القارئ
-                            </p>
-                            <p class="fs-15 pb-1">
-                                - إنها حقيقة مثبتة منذ زمن طويل وهي أن القارئ
-                            </p>
-                            <p class="fs-15 pt-3 pb-2 lh-22">
-                                <strong class="font-weight-semi-bold text-black">هل تهدف إلى الحصول على أول وظيفة في برمجة
-                                    Java ولكنك تكافح
-                                    لمعرفة المهارات التي يريدها أصحاب العمل
-                                </strong>
-                                وما هي الدورة التدريبية التي ستمنحك هذه المهارات؟
-                            </p>
-                            <p class="fs-15 pb-2">
-                                تم تصميم هذه الدورة لتزويدك بمهارات Java التي تحتاجها للحصول
-                                على وظيفة كمطور Java. بحلول نهاية الدورة ، سوف تفهم Java جيدًا
-                                وستكون قادرًا على إنشاء تطبيقات Java الخاصة بك وتكون منتجًا
-                                كمطور برامج.
-                            </p>
-                            <div class="collapse" id="collapseMore">
-                                <p class="fs-15 pb-2">
-                                    تمت تغطية مادة جافا الأساسية التي تحتاجها لتعلم تطوير جافا
-                                    في الأقسام السبعة الأولى (حوالي 14 ساعة في المجموع). يتم
-                                    تناول أساسيات Java في تلك الأقسام. يغطي الجزء المتبقي من
-                                    الدورة المواد المتوسطة والمتقدمة والاختيارية التي لا تحتاج
-                                    من الناحية الفنية للخوض فيها.
-                                </p>
-                                <h4 class="fs-20 font-weight-semi-bold py-2">
-                                    لمن هذه الدورة:
-                                </h4>
-                                <ul class="generic-list-item generic-list-item-bullet fs-15">
-                                    <li>أي شخص يريد أن يصبح مبرمج كمبيوتر</li>
-                                    <li>أي شخص يريد أن يصبح مبرمج كمبيوتر</li>
-                                    <li>أي شخص يريد أن يصبح مبرمج كمبيوتر</li>
-                                </ul>
+                            <h3 class="fs-24 font-weight-semi-bold pb-3">آشنایی با این بوت کمپ</h3>
+
+                            <div class="collapse" id="bootcampBody">
+
                             </div>
-                            <a class="collapse-btn collapse--btn fs-15" data-bs-toggle="collapse" href="#collapseMore"
-                                role="button" aria-expanded="false" aria-controls="collapseMore">
+                            <a class="collapse-btn collapse--btn fs-15" data-bs-toggle="collapse" href="#bootcampBody"
+                                role="button" aria-expanded="false" aria-controls="bootcampBody">
                                 <span class="collapse-btn-hide">بقیشو ببینم<i
                                         class="la la-angle-down ms-1 fs-14"></i></span>
                                 <span class="collapse-btn-show">کمتر نشون بده<i class="la la-angle-up ms-1 fs-14"></i></span>
@@ -1518,7 +1469,7 @@
                                 ${d.title}
                             </h2>
                             <p class="section__desc pt-2 lh-30" >
-                                ${d.overview}
+                                ${d.intro}
                             </p>
                         </div>
                         <!-- end section-heading -->

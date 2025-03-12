@@ -54,15 +54,18 @@
             <div class="col-lg-2">
               <div class="logo-box">
                 <a href="index.html" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
-                <div class="user-btn-action">
+                
+                <div class="user-btn-action d-flex align-items-center">
+
+                  <a href="{{route('dashboard.home')}}" class="d-lg-none icon-element icon-element-sm shadow-sm me-2" data-toggle="tooltip"
+                    data-placement="top" title="ورود / ثبت نام">
+                    <i class="la la-user  "></i>
+                  </a>
                   <div class="search-menu-toggle icon-element icon-element-sm shadow-sm me-2" data-toggle="tooltip"
-                    data-placement="top" title="جستجو">
-                    <i class="la la-search"></i>
-                  </div>
-                  <div class="off-canvas-menu-toggle cat-menu-toggle icon-element icon-element-sm shadow-sm me-2"
-                    data-toggle="tooltip" data-placement="top" title="Category menu">
-                    <i class="la la-th-large"></i>
-                  </div>
+                  data-placement="top" title="جستجو">
+                  <i class="la la-search"></i>
+                </div>
+                  
                   <div class="off-canvas-menu-toggle main-menu-toggle icon-element icon-element-sm shadow-sm"
                     data-toggle="tooltip" data-placement="top" title="منوی اصلی">
                     <i class="la la-bars"></i>
@@ -107,7 +110,7 @@
                 </nav>
                 <!-- end main-menu -->
                 <div class="nav-right-button">
-                  <a href="admission.html" class="btn theme-btn d-none d-lg-inline-block"><i
+                  <a href="{{route('dashboard.home')}}" class="btn theme-btn d-none d-lg-inline-block"><i
                       class="la la-user-plus me-1"></i> ورود / ثبت نام</a>
                 </div>
                 <!-- end nav-right-button -->
@@ -129,117 +132,27 @@
       </div>
       <!-- end off-canvas-menu-close -->
       <ul class="generic-list-item off-canvas-menu-list pt-90px">
-        <li>
-          <a href="#">Home</a>
-          <ul class="sub-menu">
-            <li><a href="index.html">Home One</a></li>
-            <li><a href="home-2.html">Home Two</a></li>
-            <li><a href="home-3.html">Home Three</a></li>
-            <li>
-              <a href="home-4.html">Home four <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">courses</a>
-          <ul class="sub-menu">
-            <li><a href="course-grid.html">course grid</a></li>
-            <li>
-              <a href="course-list.html">course list <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="course-left-sidebar.html">left sidebar
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="course-right-sidebar.html">right sidebar
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li><a href="course-details.html">course details</a></li>
-            <li><a href="lesson-details.html">lesson details</a></li>
-            <li><a href="my-courses.html">My courses</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Student</a>
-          <ul class="sub-menu">
-            <li><a href="student-detail.html">student detail</a></li>
-            <li><a href="student-quiz.html">take quiz</a></li>
-            <li><a href="student-quiz-results.html">quiz results</a></li>
-            <li>
-              <a href="student-quiz-result-details.html">quiz details</a>
-            </li>
-            <li>
-              <a href="student-quiz-result-details-2.html">quiz details 2</a>
-            </li>
-            <li>
-              <a href="student-path.html">path details
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="student-path-assessment.html">Skill Assessment</a>
-            </li>
-            <li>
-              <a href="student-path-assessment-result.html">Skill result</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">pages</a>
-          <ul class="sub-menu">
-            <li>
-              <a href="dashboard.html">dashboard <span class="ribbon">Hot</span></a>
-            </li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="teacher-detail.html">Teacher detail</a></li>
-            <li>
-              <a href="careers.html">careers <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="career-details.html">career details
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="categories.html">categories <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="terms-and-conditions.html">Terms & conditions
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="privacy-policy.html">privacy policy
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="for-business.html">for business
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li><a href="become-a-teacher.html">become an instructor</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="admission.html">admission</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="pricing-table.html">pricing tables</a></li>
-            <li><a href="contact.html">contact</a></li>
-            <li><a href="sign-up.html">sign-up</a></li>
-            <li><a href="login.html">login</a></li>
-            <li><a href="recover.html">recover</a></li>
-            <li><a href="shopping-cart.html">cart</a></li>
-            <li><a href="checkout.html">checkout</a></li>
-            <li><a href="error.html">page 404</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">blog</a>
-          <ul class="sub-menu">
-            <li><a href="blog-full-width.html">blog full width </a></li>
-            <li><a href="blog-no-sidebar.html">blog no sidebar</a></li>
-            <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-            <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-            <li><a href="blog-single.html">blog detail</a></li>
-          </ul>
-        </li>
+          <li>
+            <a class="d-block" href="{{route('home')}}"><i class="me-2 la la-home fs-12"></i> خانه</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('bootcamps.index')}}"><i class="me-2 la la-code fs-12"></i> بوت کمپا</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('blogs.index')}}"><i class="me-2 la la-pen fs-12"></i>  نوشته‌هامون</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('basket')}}"><i class="me-2 la la-shopping-basket fs-12"></i>  سبدت</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('home')}}#about"><i class="me-2 la la-graduation-cap fs-12"></i>  درباره آدا </a>
+          </li>
       </ul>
+      <div class="nav-right-button d-flex justify-content-center mt-5">
+        <a href="{{route('dashboard.home')}}" class="btn theme-btn d d-inline-block"><i
+            class="la la-user-plus me-1"></i> ورود / ثبت نام</a>
+      </div>
+
     </div>
     <div class="mobile-search-form">
       <div class="d-flex align-items-center">
