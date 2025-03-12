@@ -1,189 +1,123 @@
 <?php
 
 namespace Database\Seeders;
-
-use App\Models\Bootcamp;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Bootcamp;
+use App\Models\Category; // Ensure to import Category model
 
 class BootcampSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        $bootcamps = [
-            [
-                'slug' => 'web-development',
-                'title' => 'بوتکمپ توسعه وب',
-                'thumbnail' => 'web-dev.jpg',
-                'cover' => 'web-dev-cover.jpg',
-                'overview' => 'آموزش کامل توسعه وب از صفر تا صد با جدیدترین تکنولوژی‌ها.',
-                'curriculum' => json_encode(['HTML', 'CSS', 'JavaScript', 'React', 'Node.js']),
-                'level' => 'مبتدی تا پیشرفته',
-                'duration' => '۶ ماه',
-                'lessons' => 45,
-                'quizzes' => 10,
-                'certification' => true,
-                'intro_video' => 'web-dev-intro.mp4',
-                'price' => 5000000,
-            ],
-            [
-                'slug' => 'data-science',
-                'title' => 'بوتکمپ علم داده',
-                'thumbnail' => 'data-science.jpg',
-                'cover' => 'data-science-cover.jpg',
-                'overview' => 'یادگیری علم داده با پایتون و یادگیری ماشین.',
-                'curriculum' => json_encode(['Python', 'Pandas', 'Machine Learning', 'Deep Learning']),
-                'level' => 'متوسط تا پیشرفته',
-                'duration' => '۴ ماه',
-                'lessons' => 30,
-                'quizzes' => 8,
-                'certification' => true,
-                'intro_video' => 'data-science-intro.mp4',
-                'price' => 6000000,
-            ],
-            [
-                'slug' => 'cyber-security',
-                'title' => 'بوتکمپ امنیت سایبری',
-                'thumbnail' => 'cyber-security.jpg',
-                'cover' => 'cyber-security-cover.jpg',
-                'overview' => 'مهارت‌های لازم برای امنیت سایبری و هک اخلاقی.',
-                'curriculum' => json_encode(['Networking', 'Ethical Hacking', 'Penetration Testing']),
-                'level' => 'متوسط تا پیشرفته',
-                'duration' => '۵ ماه',
-                'lessons' => 35,
-                'quizzes' => 9,
-                'certification' => true,
-                'intro_video' => 'cyber-security-intro.mp4',
-                'price' => 7000000,
-            ],
-            [
-                'slug' => 'mobile-development',
-                'title' => 'بوتکمپ توسعه اپلیکیشن موبایل',
-                'thumbnail' => 'mobile-dev.jpg',
-                'cover' => 'mobile-dev-cover.jpg',
-                'overview' => 'ساخت اپلیکیشن‌های موبایل با Flutter و React Native.',
-                'curriculum' => json_encode(['Flutter', 'Dart', 'React Native', 'Swift']),
-                'level' => 'مبتدی تا پیشرفته',
-                'duration' => '۵ ماه',
-                'lessons' => 40,
-                'quizzes' => 7,
-                'certification' => true,
-                'intro_video' => 'mobile-dev-intro.mp4',
-                'price' => 5500000,
-            ],
-            [
-                'slug' => 'ai-ml',
-                'title' => 'بوتکمپ هوش مصنوعی و یادگیری ماشین',
-                'thumbnail' => 'ai-ml.jpg',
-                'cover' => 'ai-ml-cover.jpg',
-                'overview' => 'هوش مصنوعی و یادگیری ماشین با تمرین‌های عملی.',
-                'curriculum' => json_encode(['Python', 'TensorFlow', 'Neural Networks']),
-                'level' => 'پیشرفته',
-                'duration' => '۶ ماه',
-                'lessons' => 50,
-                'quizzes' => 12,
-                'certification' => true,
-                'intro_video' => 'ai-ml-intro.mp4',
-                'price' => 8000000,
-            ],
-            [
-                'slug' => 'game-development',
-                'title' => 'بوتکمپ توسعه بازی',
-                'thumbnail' => 'game-dev.jpg',
-                'cover' => 'game-dev-cover.jpg',
-                'overview' => 'یادگیری توسعه بازی‌های دوبعدی و سه‌بعدی.',
-                'curriculum' => json_encode(['Unity', 'C#', 'Game Design']),
-                'level' => 'متوسط',
-                'duration' => '۴ ماه',
-                'lessons' => 30,
-                'quizzes' => 6,
-                'certification' => true,
-                'intro_video' => 'game-dev-intro.mp4',
-                'price' => 6500000,
-            ],
-            [
-                'slug' => 'devops',
-                'title' => 'بوتکمپ DevOps',
-                'thumbnail' => 'devops.jpg',
-                'cover' => 'devops-cover.jpg',
-                'overview' => 'مبانی DevOps، CI/CD و Docker/Kubernetes.',
-                'curriculum' => json_encode(['Linux', 'Docker', 'Kubernetes', 'CI/CD']),
-                'level' => 'پیشرفته',
-                'duration' => '۴ ماه',
-                'lessons' => 35,
-                'quizzes' => 9,
-                'certification' => true,
-                'intro_video' => 'devops-intro.mp4',
-                'price' => 7000000,
-            ],
-            [
-                'slug' => 'blockchain',
-                'title' => 'بوتکمپ بلاکچین',
-                'thumbnail' => 'blockchain.jpg',
-                'cover' => 'blockchain-cover.jpg',
-                'overview' => 'مفاهیم بلاکچین، قراردادهای هوشمند و Web3.',
-                'curriculum' => json_encode(['Ethereum', 'Solidity', 'Smart Contracts']),
-                'level' => 'پیشرفته',
-                'duration' => '۵ ماه',
-                'lessons' => 40,
-                'quizzes' => 8,
-                'certification' => true,
-                'intro_video' => 'blockchain-intro.mp4',
-                'price' => 7500000,
-            ],
-            [
-                'slug' => 'digital-marketing',
-                'title' => 'بوتکمپ دیجیتال مارکتینگ',
-                'thumbnail' => 'digital-marketing.jpg',
-                'cover' => 'digital-marketing-cover.jpg',
-                'overview' => 'یادگیری تبلیغات دیجیتال، SEO و بازاریابی محتوا.',
-                'curriculum' => json_encode(['SEO', 'Google Ads', 'Social Media']),
-                'level' => 'مبتدی تا متوسط',
-                'duration' => '۳ ماه',
-                'lessons' => 25,
-                'quizzes' => 5,
-                'certification' => true,
-                'intro_video' => 'digital-marketing-intro.mp4',
-                'price' => 4000000,
-            ],
-            [
-                'slug' => 'ux-ui',
-                'title' => 'بوتکمپ طراحی UX/UI',
-                'thumbnail' => 'ux-ui.jpg',
-                'cover' => 'ux-ui-cover.jpg',
-                'overview' => 'اصول طراحی تجربه و رابط کاربری با Figma و Adobe XD.',
-                'curriculum' => json_encode(['Figma', 'Adobe XD', 'User Research']),
-                'level' => 'مبتدی تا متوسط',
-                'duration' => '۴ ماه',
-                'lessons' => 30,
-                'quizzes' => 6,
-                'certification' => true,
-                'intro_video' => 'ux-ui-intro.mp4',
-                'price' => 5000000,
-            ],
-            [
-                'slug' => 'cloud-computing',
-                'title' => 'بوتکمپ رایانش ابری',
-                'thumbnail' => 'cloud.jpg',
-                'cover' => 'cloud-cover.jpg',
-                'overview' => 'آموزش AWS، Azure و Google Cloud.',
-                'curriculum' => json_encode(['AWS', 'Azure', 'Google Cloud']),
-                'level' => 'پیشرفته',
-                'duration' => '۶ ماه',
-                'lessons' => 40,
-                'quizzes' => 10,
-                'certification' => true,
-                'intro_video' => 'cloud-intro.mp4',
-                'price' => 8500000,
-            ],
-        ];
+        // Fetch a category to assign to the bootcamp (you can modify this to create a new category if needed)
+        $category = Category::first(); // Use the first category or default to category ID 1
 
-        foreach ($bootcamps as $bootcamp) {
-            Bootcamp::create($bootcamp);
-        }
+        Bootcamp::create([
+            'slug' => 'laravel-for-beginners',
+            'title' => 'Laravel for Beginners',
+            'category_id' => $category ? $category->id : 1, // Default to category 1 if no categories exist
+            'thumbnail' => 'storage/thumbnails/laravel-beginner.jpg',
+            'cover' => 'storage/covers/laravel-beginner-cover.jpg',
+            'intro' => 'Learn the basics of Laravel, a powerful PHP framework for web development.',
+            'body' => '
+                <div class="bootcamp-description">
+                    <h2>About This Bootcamp</h2>
+                    <p>This bootcamp is designed for individuals who want to learn <strong>Laravel</strong>, one of the most popular PHP frameworks used for modern web development. Whether you\'re a beginner or an experienced developer, this bootcamp will guide you through the essential concepts of Laravel.</p>
 
+                    <h3>What You Will Learn</h3>
+                    <ul>
+                        <li><strong>Introduction to Laravel</strong>: Understand the Laravel framework and its architecture.</li>
+                        <li><strong>Routing</strong>: Learn how to define and manage routes in Laravel.</li>
+                        <li><strong>Controllers</strong>: Create and manage controllers to handle HTTP requests.</li>
+                        <li><strong>Models and Eloquent ORM</strong>: Work with Laravel’s Eloquent ORM to interact with databases.</li>
+                        <li><strong>Blade Templating</strong>: Build dynamic user interfaces with the Blade templating engine.</li>
+                        <li><strong>Authentication and Authorization</strong>: Implement user authentication and roles within your app.</li>
+                        <li><strong>Testing and Debugging</strong>: Learn how to write tests and debug your Laravel applications effectively.</li>
+                    </ul>
+
+                    <h3>Bootcamp Structure</h3>
+                    <p>This bootcamp consists of the following modules:</p>
+                    <ol>
+                        <li><strong>Module 1</strong>: Laravel Basics – Learn the fundamentals of Laravel.</li>
+                        <li><strong>Module 2</strong>: Advanced Laravel – Dive deeper into more complex Laravel features.</li>
+                        <li><strong>Module 3</strong>: Real-World Projects – Build real applications using Laravel.</li>
+                    </ol>
+
+                    <h3>What You Need</h3>
+                    <p>This bootcamp is suitable for anyone with basic programming knowledge. For the best experience, you should have a basic understanding of HTML, CSS, and JavaScript.</p>
+
+                    <h3>Prerequisites</h3>
+                    <ul>
+                        <li>Basic understanding of PHP</li>
+                        <li>Familiarity with databases and SQL</li>
+                        <li>A passion for learning and improving your skills</li>
+                    </ul>
+
+                    <h3>Enroll Now</h3>
+                    <p>Ready to take your skills to the next level? <strong>Enroll today</strong> and start your journey to becoming a Laravel expert!</p>
+                </div>
+            ',
+            'level' => 'beginner',
+            'duration' => '4 weeks',
+            'start_time' => now(),
+            'end_time' => now()->addMonth(),
+            'capacity' => 30,
+            'lessons' => 10,
+            'quizzes' => 3,
+            'certification' => true,
+            'intro_video' => 'storage/videos/intro-laravel.mp4',
+            'price' => 100,
+        ]);
+
+        Bootcamp::create([
+            'slug' => 'advanced-laravel-techniques',
+            'title' => 'Advanced Laravel Techniques',
+            'category_id' => $category ? $category->id : 1,
+            'thumbnail' => 'storage/thumbnails/advanced-laravel.jpg',
+            'cover' => 'storage/covers/advanced-laravel-cover.jpg',
+            'intro' => 'Dive deep into advanced Laravel techniques for web developers with experience.',
+            'body' => '
+                <div class="bootcamp-description">
+                    <h2>About This Bootcamp</h2>
+                    <p>This bootcamp is aimed at experienced developers who want to master advanced Laravel techniques and deepen their understanding of the Laravel ecosystem.</p>
+
+                    <h3>What You Will Learn</h3>
+                    <ul>
+                        <li><strong>Advanced Routing</strong>: Working with complex routes, route groups, and route model binding.</li>
+                        <li><strong>Queueing and Broadcasting</strong>: Handle large tasks asynchronously and broadcast events in real time.</li>
+                        <li><strong>Unit Testing and Debugging</strong>: Master testing and debugging techniques in Laravel.</li>
+                        <li><strong>Custom Middleware</strong>: Create and manage custom middleware to filter HTTP requests.</li>
+                        <li><strong>Optimizing Laravel Performance</strong>: Learn best practices for optimizing performance in Laravel applications.</li>
+                    </ul>
+
+                    <h3>Bootcamp Structure</h3>
+                    <p>This bootcamp consists of the following modules:</p>
+                    <ol>
+                        <li><strong>Module 1</strong>: Advanced Routing and Middleware – Explore routing techniques and how to use middleware.</li>
+                        <li><strong>Module 2</strong>: Queues and Broadcasting – Handle asynchronous tasks and broadcast real-time events.</li>
+                        <li><strong>Module 3</strong>: Laravel Performance Tuning – Learn techniques to optimize the performance of your application.</li>
+                    </ol>
+
+                    <h3>Prerequisites</h3>
+                    <ul>
+                        <li>Intermediate knowledge of Laravel</li>
+                        <li>Experience with databases and SQL</li>
+                        <li>Familiarity with modern PHP development practices</li>
+                    </ul>
+
+                    <h3>Enroll Now</h3>
+                    <p>If you want to advance your Laravel skills, <strong>enroll today</strong> and become an expert in the Laravel framework!</p>
+                </div>
+            ',
+            'level' => 'advanced',
+            'duration' => '6 weeks',
+            'capacity' => 25,
+            'lessons' => 12,
+            'quizzes' => 4,
+            'certification' => true,
+            'intro_video' => 'storage/videos/intro-advanced-laravel.mp4',
+            'price' => 200,
+        ]);
     }
 }
+

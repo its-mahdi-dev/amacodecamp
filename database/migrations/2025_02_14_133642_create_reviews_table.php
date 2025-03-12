@@ -14,7 +14,6 @@ return new class extends Migration
             $table->foreignId('bootcamp_id')->constrained()->onDelete('cascade');
             $table->integer('rating')->unsigned(); // 1-5
             $table->text('comment')->nullable();
-
             $table->timestamps();
             $table->softDeletes();
         });
