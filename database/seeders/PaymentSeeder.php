@@ -12,6 +12,7 @@ class PaymentSeeder extends Seeder
         Payment::create([
             'user_id' => 1,
             'amount' => 500,
+            'basket_id' => 1,
             'authority' => 'testauth',
             'status' => 'paid',
             'referenceId' => 'TX123456',
@@ -21,6 +22,7 @@ class PaymentSeeder extends Seeder
         Payment::create([
             'user_id' => 2,
             'amount' => 200,
+            'basket_id' => 2,
             'authority' => 'auth2',
             'status' => 'pending',
             'referenceId' => 'TX654321',

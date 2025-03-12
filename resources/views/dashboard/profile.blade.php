@@ -161,12 +161,13 @@
 
         });
 
-        const MAX_FILE_SIZE = 5 * 1024;
+        const MAX_FILE_SIZE = 500 * 1024;
         const ALLOWED_FILE_TYPES = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/svg'];
 
         function updateProfile() {
             errorWraapper.innerHTML = '';
             const file = document.getElementsByName('files')[0].files[0];
+            console.log(file);
             if (file) {
                 if (file.size > MAX_FILE_SIZE) {
                     errorWraapper.innerHTML = 'حداکثر حجم مجاز برای آپلود 500 کیلوبایت می‌باشد';
@@ -205,14 +206,14 @@
     {{-- payment api --}}
 
     <script>
-    let bootcampId = 1;
-    axios.post('/student/payment/' + bootcampId , {} )
-    .then(function(response){
-      console.log(response);
-    })
-    .catch(function(error){
-      console.log(error);
-    })
+    // let bootcampId = 1;
+    // axios.post('/student/payment/' + bootcampId , {} )
+    // .then(function(response){
+    //   console.log(response);
+    // })
+    // .catch(function(error){
+    //   console.log(error);
+    // })
 
 
     const urlParams = new URLSearchParams(window.location.search);

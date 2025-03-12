@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('bootcamp_episodes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('session_id')->constrained()->onDelete('cascade');
+            $table->foreignId('bootcamp_season_id')->constrained()->onDelete('cascade');
             $table->string('title');
-            $table->enum('type' , ['video' , 'file' , 'link' , 'quiz']);
+            $table->enum('type' , ['video' , 'file' , 'link' , 'quiz' , 'text']);
             $table->string('body')->nullable();
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();

@@ -22,7 +22,7 @@ class BootcampSeason extends Model
         return $this->belongsTo(Bootcamp::class);
     }
 
-    public function bootcampEpisodes()
+    public function episodes()
     {
         return $this->hasMany(BootcampEpisode::class);
     }

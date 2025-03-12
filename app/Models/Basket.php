@@ -23,4 +23,9 @@ class Basket extends Model
     public function cupon(){
         return $this->belongsTo(Cupon::class);
     } 
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
 }

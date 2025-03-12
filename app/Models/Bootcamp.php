@@ -25,12 +25,11 @@ class Bootcamp extends Model
         'certification',
         'intro_video',
         'price',
-        'capacity'
+        'capacity',
+        'start_time',
+        'end_time'
     ];
 
-    protected $casts = [
-        'curriculum' => 'array',
-    ];
 
     /**
      * Get the full thumbnail URL.
@@ -113,5 +112,10 @@ class Bootcamp extends Model
         }
 
         return $this->price;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -28,7 +28,7 @@ class UpdateUserRequest extends BaseFormRequest
         return [
             'first_name' => 'nullable|string|max:255',
             'last_name' => 'nullable|string|max:255',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:500',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:5120',
             'email' => 'nullable|email', // Ensure email is unique, excluding current user
         ];
     }

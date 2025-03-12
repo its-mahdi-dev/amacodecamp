@@ -25,7 +25,6 @@ class UserResource extends JsonResource
             'full_name' => $this->getFullName(),
             'bootcamps' => BootcampResource::collection($this->bootcamps()->get()),
             'wishlist' => BootcampResource::collection($this->wishlist()->get()),
-            'basket' => BootcampResource::collection($this->basket()->get()),
             'reviews' => ReviewResource::collection($this->reviews()->get()),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
