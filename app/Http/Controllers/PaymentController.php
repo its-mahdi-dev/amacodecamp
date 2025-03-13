@@ -63,7 +63,7 @@ class PaymentController extends Controller
             ->amount(1000) // مبلغ تراکنش
             ->request()
             ->description("buy for id: {$user->id}") // توضیحات تراکنش
-            ->callbackUrl(env('APP_URL', 'http://localhost:8000') . "/dashboard") // آدرس برگشت پس از پرداخت
+            ->callbackUrl(env('APP_URL', 'http://localhost:8000') . "/dashboard/payment") // آدرس برگشت پس از پرداخت
             ->mobile($user->phone) // شماره موبایل مشتری - اختیاری
             ->email($user->email ?? "") // ایمیل مشتری - اختیاری
             ->send();
@@ -111,7 +111,7 @@ class PaymentController extends Controller
 
         if (!$response->success()) {
             $payment->update(['status' => 'failed']);
-            return Response::error($response->error()->code() , 400);
+            return Response::error($response->error()->code() , 400 , $response->referenceId());
         }
 
         $payment->update([
