@@ -14,7 +14,8 @@ class CampaignController extends Controller
     public function submit(CampainSubmitRequest $request)
     {
         Campaign::create([
-            "phone" => $request->phone
+            "phone" => $request->phone,
+            "name" => $request->name,
         ]);
 
         return Response::success("",ResponseMessages::CAMPAIGN_SUBMITED);

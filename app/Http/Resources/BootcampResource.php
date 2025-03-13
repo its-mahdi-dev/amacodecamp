@@ -52,7 +52,7 @@ class BootcampResource extends JsonResource
             'price' => $this->price,
             'price_off' => $this->getPrice(),
             'off' => $this->off(),
-            'students_count' => $this->students()->count(),
+            'students_count' => number_format($this->students()->count()),
             'teachers' => UserFilterResource::collection($this->teachers()->get()),
             'reviews' => ReviewResource::collection($reviews),
             "tags" => $this->tags,
@@ -63,7 +63,7 @@ class BootcampResource extends JsonResource
         if($this->hasSeasons){
             
             $sortedSeasons = $this->seasons->sortBy('order');
-            $result["sessons"] = SeasonResource::collection($sortedSeasons);
+            $result["seasons"] = SeasonResource::collection($sortedSeasons);
         }
 
         return $result;

@@ -175,7 +175,8 @@
                     const token = d.token;
                     localStorage.setItem("auth_token", token);
                     if(d.is_new) location.assign("https://google.com");
-                    location.assign("{{ env('DASHBOARD_URL') }}");
+                    // location.assign("{{ env('DASHBOARD_URL') }}");
+                    location.assign("/dashboard");
                 })
                 .catch(error => {
                     // it should change to error.response.data.errors

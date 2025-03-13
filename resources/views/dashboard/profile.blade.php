@@ -234,11 +234,6 @@
         console.log(error);
       })
 
-      // if (response.ok) {
-      //     alert("Payment successful! Reference ID: " + data.referenceId);
-      // } else {
-      //     alert("Payment failed: " + data.error);
-      // }
   }
 
     // Call this function on the verification page
