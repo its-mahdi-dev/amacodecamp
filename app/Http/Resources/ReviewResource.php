@@ -16,7 +16,7 @@ class ReviewResource extends JsonResource
     {
         return [
             'user' => new UserFilterResource($this->user), // Assuming UserResource exists
-            'rating' => $this->rating,
+            'rate' => $this->rating,
             'comment' => $this->comment,
             "created_at" => Jalalian::forge($this->created_at)->format('%A, %d %B %y'),
             "updated_at" => Jalalian::forge($this->updated_at)->format('%A, %d %B %y')
