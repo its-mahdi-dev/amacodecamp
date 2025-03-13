@@ -2,15 +2,19 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Bootcamp;
+use App\Models\BootcampUser;
 use App\Models\Review;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Laravel\Sanctum\PersonalAccessToken;
+use Morilog\Jalali\Jalalian;
 
 class BootcampResource extends JsonResource
 {
 
     protected $hasSeasons;
 
-    public function __construct($resource, $hasSeasons = false)
+    public function __construct($resource, $hasSeasons = false , $isStudent = false)
     {
         parent::__construct($resource);
         $this->hasSeasons = $hasSeasons;
@@ -24,6 +28,25 @@ class BootcampResource extends JsonResource
      */
     public function toArray($request)
     {
+
+        $token = request()->bearerToken(); // Manually retrieve Bearer token
+    $user = null;
+    $isStudent = false;
+
+    if ($token) {
+        $accessToken = PersonalAccessToken::findToken($token);
+        if ($accessToken) {
+            $user = $accessToken->tokenable; // Retrieve user from token
+        }
+    }
+
+    if ($user) {
+        $bootcampUser = BootcampUser::where("bootcamp_id", $this->id)
+            ->where("user_id", $user->id)
+            ->first();
+
+        $isStudent = $bootcampUser ? true : false;
+    }
 
         $reviews = $this->reviews()->get();
         $rate = 0;
@@ -40,7 +63,6 @@ class BootcampResource extends JsonResource
             'thumbnail_url' => $this->thumbnail_url,
             'cover_url' => $this->cover_url,
             'intro' => $this->intro,
-            'curriculum' => $this->curriculum,
             'body' => $this->body,
             'level' => $this->level,
             'duration' => $this->duration,
@@ -51,14 +73,20 @@ class BootcampResource extends JsonResource
             'intro_video' => $this->intro_video,
             'price' => $this->price,
             'price_off' => $this->getPrice(),
-            'off' => $this->off(),
+            'off' => $this->off,
+            'capacity' => $this->capacity,
             'students_count' => number_format($this->students()->count()),
             'teachers' => UserFilterResource::collection($this->teachers()->get()),
             'reviews' => ReviewResource::collection($reviews),
             "tags" => $this->tags,
             'category' => $this->category->name,
-            "rate" => $rate
+            "rate" => $rate,
+            "is_student" => $isStudent,
+            "is_login" =>  $user ? true : false,
+            "created_at" => Jalalian::forge($this->created_at)->format('%A, %d %B %y'),
+            "updated_at" => Jalalian::forge($this->updated_at)->format('%A, %d %B %y')
         ];
+
 
         if($this->hasSeasons){
             
