@@ -440,7 +440,264 @@
                     <!-- end course-details-content-wrap -->
                 </div>
                 <!-- end col-lg-8 -->
-  
+                <div class="col-lg-4">
+                    <div class="sidebar sidebar-negative">
+                        <div class="card card-item">
+                            <div class="card-body">
+                                <div class="preview-course-video">
+                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#previewModal">
+                                        <img src="images/img-loading.png" data-src="images/preview-img.jpg"
+                                            alt="course-img" class="w-100 rounded lazy" />
+                                        <div class="preview-course-video-content">
+                                            <div class="overlay"></div>
+                                            <div class="play-button">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                    viewBox="-307.4 338.8 91.8 91.8"
+                                                    style="
+                            enable-background: new -307.4 338.8 91.8 91.8;
+                          "
+                                                    xml:space="preserve">
+                                                    <style type="text/css">
+                                                        .st0 {
+                                                            fill: #ffffff;
+                                                            border-radius: 100px;
+                                                        }
+
+                                                        .st1 {
+                                                            fill: #000000;
+                                                        }
+                                                    </style>
+                                                    <g>
+                                                        <circle class="st0" cx="-261.5" cy="384.7" r="45.9">
+                                                        </circle>
+                                                        <path class="st1"
+                                                            d="M-272.9,363.2l35.8,20.7c0.7,0.4,0.7,1.3,0,1.7l-35.8,20.7c-0.7,0.4-1.5-0.1-1.5-0.9V364C-274.4,363.3-273.5,362.8-272.9,363.2z">
+                                                        </path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <p class="fs-15 font-weight-bold text-white pt-3">
+                                                معاينة هذه الدورة
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- end preview-course-video -->
+                                <div class="preview-course-feature-content pt-40px">
+                                    <p class="d-flex align-items-center pb-2">
+                                        <span class="fs-35 font-weight-semi-bold text-black">$76.99</span>
+                                        <span class="before-price mx-1">$104.99</span>
+                                        <span class="price-discount">24% off</span>
+                                    </p>
+                                    <p class="preview-price-discount-text pb-35px">
+                                        <span class="text-color-3">4 أيام</span>غادر عند هذا
+                                        السعر!
+                                    </p>
+                                    <div class="buy-course-btn-box">
+                                        <button type="button" class="btn theme-btn w-100 mb-2">
+                                            <i class="la la-shopping-cart fs-18 me-1"></i>أضف إلى
+                                            السلة
+                                        </button>
+                                        <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2">
+                                            <i class="la la-shopping-bag me-1"></i>شراء هذه الدورة
+                                        </button>
+                                    </div>
+                                    <p class="fs-14 text-center pb-4">
+                                        ضمان استرداد الأموال لمدة 30 يومًا
+                                    </p>
+                                    <div class="preview-course-incentives">
+                                        <h3 class="card-title fs-18 pb-2">تشمل هذه الدورة</h3>
+                                        <ul class="generic-list-item pb-3">
+                                            <li>
+                                                <i class="la la-play-circle-o me-2 text-color"></i>2.5
+                                                ساعات الفيديو عند الطلب
+                                            </li>
+                                            <li>
+                                                <i class="la la-file me-2 text-color"></i>34 مقالات
+                                            </li>
+                                            <li>
+                                                <i class="la la-file-text me-2 text-color"></i>12
+                                                الموارد القابلة للتنزيل
+                                            </li>
+                                            <li>
+                                                <i class="la la-code me-2 text-color"></i>51 تمارين
+                                                الترميز
+                                            </li>
+                                            <li>
+                                                <i class="la la-key me-2 text-color"></i>وصول كامل مدى
+                                                الحياة
+                                            </li>
+                                            <li>
+                                                <i class="la la-television me-2 text-color"></i>الوصول
+                                                على الهاتف المحمول والتلفزيون
+                                            </li>
+                                            <li>
+                                                <i class="la la-certificate me-2 text-color"></i>شهادة
+                                                إتمام
+                                            </li>
+                                        </ul>
+                                        <div class="section-block"></div>
+                                        <div class="buy-for-team-container pt-4">
+                                            <h3 class="fs-18 font-weight-semi-bold pb-2">
+                                                تدريب 5 أشخاص أو أكثر؟
+                                            </h3>
+                                            <p class="lh-24 pb-3">
+                                                احصل على وصول فريقك إلى أكثر من 3000 دورة تدريبية من
+                                                أفضل دورات Aduca في أي وقت وفي أي مكان.
+                                            </p>
+                                            <a href="for-business.html"
+                                                class="btn theme-btn theme-btn-sm theme-btn-transparent lh-30 w-100">جرب
+                                                Aduca للأعمال</a>
+                                        </div>
+                                    </div>
+                                    <!-- end preview-course-incentives -->
+                                </div>
+                                <!-- end preview-course-content -->
+                            </div>
+                        </div>
+                        <!-- end card -->
+                        <div class="card card-item">
+                            <div class="card-body">
+                                <h3 class="card-title fs-18 pb-2">ميزات الدورة</h3>
+                                <div class="divider"><span></span></div>
+                                <ul class="generic-list-item generic-list-item-flash">
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-clock me-2 text-color"></i>مدة</span>
+                                        2.5 ساعات
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-play-circle-o me-2 text-color"></i>محاضرات</span>
+                                        17
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-file-text-o me-2 text-color"></i>موارد</span>
+                                        12
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-bolt me-2 text-color"></i>الإختبارات</span>
+                                        26
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-eye me-2 text-color"></i>معاينة
+                                            الدروس</span>
+                                        4
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-language me-2 text-color"></i>لغة</span>
+                                        English
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-lightbulb me-2 text-color"></i>مستوى
+                                            المهارة</span>كل المستويات
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-users me-2 text-color"></i>الطلاب</span>
+                                        30,506
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span><i class="la la-certificate me-2 text-color"></i>شهادة</span>نعم
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                        <div class="card card-item">
+                            <div class="card-body">
+                                <h3 class="card-title fs-18 pb-2">فئات الدورة</h3>
+                                <div class="divider"><span></span></div>
+                                <ul class="generic-list-item">
+                                    <li><a href="#">تطوير</a></li>
+                                    <li><a href="#">تصميم المواقع</a></li>
+                                    <li><a href="#">تقنية</a></li>
+                                    <li><a href="#">برمجة</a></li>
+                                    <li><a href="#">الخلفية</a></li>
+                                    <li><a href="#">تسويق</a></li>
+                                    <li><a href="#">التصوير</a></li>
+                                    <li><a href="#">نهاية المقدمة</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                        <div class="card card-item">
+                            <div class="card-body">
+                                <h3 class="card-title fs-18 pb-2">الدورات ذات الصلة</h3>
+                                <div class="divider"><span></span></div>
+                                <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
+                                    <a href="course-details.html" class="media-img">
+                                        <img class="me-3 lazy" src="images/img-loading.png"
+                                            data-src="images/small-img-2.jpg" alt="Related course image" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="fs-15">
+                                            <a href="course-details.html">دورة JavaScript الكاملة 2021</a>
+                                        </h5>
+                                        <span class="d-block lh-18 py-1 fs-14">قمران أحمد</span>
+                                        <p class="text-black font-weight-semi-bold lh-18 fs-15">
+                                            $12.99 <span class="before-price fs-14">$129.99</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- end media -->
+                                <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
+                                    <a href="course-details.html" class="media-img">
+                                        <img class="me-3 lazy" src="images/img-loading.png"
+                                            data-src="images/small-img-3.jpg" alt="Related course image" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="fs-15">
+                                            <a href="course-details.html">تعلم jQuery Mobile للمبتدئين</a>
+                                        </h5>
+                                        <span class="d-block lh-18 py-1 fs-14">قمران أحمد</span>
+                                        <p class="text-black font-weight-semi-bold lh-18 fs-15">
+                                            $129.99
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- end media -->
+                                <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
+                                    <a href="course-details.html" class="media-img">
+                                        <img class="me-3 lazy" src="images/img-loading.png"
+                                            data-src="images/small-img-4.jpg" alt="Related course image" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="fs-15">
+                                            <a href="course-details.html">مقدمة LearnPress - LMS plugin</a>
+                                        </h5>
+                                        <span class="d-block lh-18 py-1 fs-14">قمران أحمد</span>
+                                        <p class="text-black font-weight-semi-bold lh-18 fs-15">
+                                            حر
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- end media -->
+                                <div class="view-all-course-btn-box">
+                                    <a href="course-grid.html" class="btn theme-btn w-100">
+                                        عرض جميع الدورات<i class="la la-arrow-right icon ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                        <div class="card card-item">
+                            <div class="card-body">
+                                <h3 class="card-title fs-18 pb-2">علامات الدورة</h3>
+                                <div class="divider"><span></span></div>
+                                <ul class="generic-list-item generic-list-item-boxed d-flex flex-wrap fs-15">
+                                    <li class="me-2"><a href="#">مبتدئ</a></li>
+                                    <li class="me-2"><a href="#">متقدم</a></li>
+                                    <li class="me-2"><a href="#">نصائح</a></li>
+                                    <li class="me-2"><a href="#">محل تصوير</a></li>
+                                    <li class="me-2"><a href="#">برمجة</a></li>
+                                    <li class="me-2"><a href="#">الخلفية</a></li>
+                                    <li class="me-2"><a href="#">حسابهم الخاص</a></li>
+                                    <li class="me-2"><a href="#">نهاية المقدمة</a></li>
+                                    <li class="me-2"><a href="#">تقنية</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end sidebar -->
+                </div>
                 <!-- end col-lg-4 -->
             </div>
             <!-- end row -->
