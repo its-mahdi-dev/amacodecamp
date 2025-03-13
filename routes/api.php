@@ -22,14 +22,14 @@ Route::domain(env('API_DOMAIN', 'localhost/api'))->group(function () {
         return response()->json($user, 200);
     })->middleware('auth:sanctum');
 
-Route::post('/login/send', [AuthController::class, 'sendCode']);
-Route::post('/login/validate', [AuthController::class, 'validateCode']);
-Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function(){
-    Route::get('/' , 'index');
-    Route::get('/{slug}','show');
-});
+    Route::post('/login/send', [AuthController::class, 'sendCode']);
+    Route::post('/login/validate', [AuthController::class, 'validateCode']);
+    Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{slug}', 'show');
+    });
 
-Route::get('/categories' , [CategoryController::class , 'index']);
+    Route::get('/categories', [CategoryController::class, 'index']);
 
     Route::get('/cupons/check/{code}', [PaymentController::class, 'checkCupon']);
     Route::post('/campains/submit', [CampaignController::class, 'submit']);
@@ -43,6 +43,7 @@ Route::get('/categories' , [CategoryController::class , 'index']);
             Route::get('/me', 'get');
             Route::post('/update', 'update');
             Route::put('/wishlist/{bootcamp_id}', 'add_wishlist');
+            Route::put('/review/{id}' , 'submit_review');
         });
 
         Route::controller(PaymentController::class)->prefix('/payment')->group(function () {
