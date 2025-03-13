@@ -16,6 +16,7 @@ class BootcampController extends Controller
      */
     public function index(BootcampFilterRequest $request)
     {
+
         $query = Bootcamp::query();
 
         // Apply search filter
