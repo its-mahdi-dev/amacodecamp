@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("phone")->nullable();
             $table->string("name")->nullable();
+            $table->string("ip_address")->nullable();
+            $table->text('user_agent')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

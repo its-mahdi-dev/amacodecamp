@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Constants\ResponseMessages;
+use App\Http\Requests\ReviewRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Bootcamp;
+use App\Models\BootcampUser;
+use App\Models\Review;
 use App\Models\User;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
@@ -87,5 +90,23 @@ class StudentController extends Controller
             return Response::success('' , ResponseMessages::WISHLIST_ADDED);
         }
 
+    }
+
+
+    public function submit_review($id , ReviewRequest $request){
+        
+        $isSign = BootcampUser::where('user_id' , $request->user()->id)->where('bootcamp_id' , $id)->first();
+
+        if($isSign == null){
+            return REsponse::error(ResponseMessages::BOOTCAMP_NOT_SIGN);
+        }
+        Review::create([
+            "bootcamp_id" => $id,
+            "comment" => $request->comment,
+            "rating" => $request->rate
+        ]);
+
+
+        return Response::success("" , ResponseMessages::REVIEW_SUCCESS);
     }
 }
