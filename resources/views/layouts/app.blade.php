@@ -511,6 +511,10 @@
   <script src="/assets/js/animated-headline.js"></script>
   <script src="/assets/js/jquery.lazy.min.js"></script>
   <script src="/assets/js/main-rtl.js"></script>
+  <script>
+    const API_URL = "{{ env('API_URL', 'http://localhost:8000') }}";
+  </script>
+  <script src="/assets/js/app.js"></script>
 
 @hasSection ('customScripts')
   @yield('customScripts')

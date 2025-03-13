@@ -222,7 +222,7 @@
     async function verifyPayment() {
 
       if (!authority || !status) {
-          alert("Invalid payment response");
+          customAlert("Invalid payment response");
           return;
       }
 

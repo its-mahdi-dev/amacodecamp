@@ -10,7 +10,7 @@ class Review extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['user_id', 'bootcamp_id', 'rating', 'comment'];
+    protected $fillable = ['user_id', 'bootcamp_id', 'rate', 'comment'];
 
     public function user(){
         return $this->belongsTo(User::class);

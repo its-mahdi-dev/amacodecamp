@@ -102,64 +102,7 @@
 
 @section('customScripts')
     <script>
-        class StorageManager {
-            constructor(key) {
-                this.key = key;
-            }
 
-            get() {
-                const data = localStorage.getItem(this.key);
-                return data ? data.split(",") : [];
-            }
-
-            set(value) {
-                localStorage.setItem(this.key, value.join(","));
-                return value; // return updated array
-            }
-
-            add(item) {
-                let data = this.get();
-                if (!data.includes(item)) {
-                    data.push(item);
-                    this.set(data);
-                }
-                return data;
-            }
-
-            remove(item) {
-                let data = this.get().filter(el => el !== item);
-                this.set(data);
-                return data;
-            }
-
-            clear() {
-                localStorage.removeItem(this.key);
-            }
-        }
-
-        class Basket {
-            constructor() {
-                this.storage = new StorageManager("basket");
-            }
-
-            getItems() {
-                return this.storage.get();
-            }
-
-            addToBasket(slug) {
-                return this.storage.add(slug);
-            }
-
-            removeFromBasket(slug) {
-                return this.storage.remove(slug);
-            }
-
-        
-        }
-
-        // Usage
-
-        const basket = new Basket();
 
         /*
             basket.addToBasket("fullstack-bootcamp");
@@ -175,10 +118,11 @@
         emptyBasketHTML = `
         <div class="d-flex flex-column justify-content-center align-items-center">
           <h1 class="text-center"><i class="las la-frown"></i> هیچی تو سبد خریدت نداری</h1>
-          <a href="{{ route('home') }}" class="btn theme-btn mt-5">بریم ببینم چیا میخوام <i class="la la-arrow-right icon ms-1"></i></a>
+          <a href="{{ route('bootcamps.index') }}" class="btn theme-btn mt-5">بریم ببینم چیا میخوام <i class="la la-arrow-right icon ms-1"></i></a>
         </div>  
         
         `;
+
         const bootcamps = document.getElementById("bootcamps");
         const bootcampsBody = document.getElementById("bootcampsBody");
         axios.get(`/bootcamps?slugs=${basket.getItems()}`)
@@ -189,7 +133,9 @@
                     return;
                 }
                 bootcampsBody.innerHTML = '';
+                const keepSlugs = [];
                 d.forEach(bootcamp => {
+                    keepSlugs.push(bootcamp.slug);
                     price += Number(bootcamp.price);
                     const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
                     const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
@@ -215,7 +161,7 @@
                             </ul>
                         </td>
                         <td>
-                            <button type="button" class="icon-element icon-element-xs shadow-sm border-0" onclick="deleteFromBasket(${bootcamp.slug})" data-toggle="tooltip"
+                            <button type="button" class="icon-element icon-element-xs shadow-sm border-0" onclick="removeFromBasketF(this, '${bootcamp.slug}')" data-toggle="tooltip"
                                 data-placement="top"   title="نمیخوامش">
                                 <i class="la la-times"></i>
                             </button>
@@ -223,6 +169,7 @@
                     </tr>
                   `;
                 });
+                basket.resetBasket(keepSlugs);
 
             })
             .catch(function(error) {
@@ -230,15 +177,13 @@
                 console.log(error);
             })
 
-        function removeFromBasket(slug) {
-            basket.removeFromBasket(slug)
-        }
+
 
         function checkCupon(cupon) {
             axios.get(`/cupon/check/${cupon}`)
                 .then(function(response) {
                     let d = response.data.data;
-
+                        
 
                 })
                 .catch(function(error) {
@@ -246,8 +191,14 @@
                 })
         }
 
-        function addToBasket(slug) {
-            basket.addToBasket(slug)
+        function removeFromBasketF(el,slug)
+        {
+            removeFromBasket(slug);
+            el.parentNode.parentNode.remove();
+            customAlert('از سبد خریدت حذف شد');
+            if (!basket.getItems().length) {
+                bootcamps.innerHTML = emptyBasketHTML;
+            }
         }
     </script>
 @endsection

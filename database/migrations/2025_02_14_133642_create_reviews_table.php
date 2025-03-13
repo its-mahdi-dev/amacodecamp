@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('bootcamp_id')->constrained()->onDelete('cascade');
-            $table->integer('rating')->unsigned(); // 1-5
+            $table->integer('rate')->unsigned(); // 1-5
             $table->text('comment')->nullable();
             $table->timestamps();
             $table->softDeletes();
