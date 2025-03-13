@@ -13,9 +13,15 @@ class CampaignController extends Controller
 
     public function submit(CampainSubmitRequest $request)
     {
+        $campaign = Campaign::where('phone' , $request->phone)->first();
+        if($campaign != null){
+            return Response::error(ResponseMessages::CAMPAIGN_EXISTED);
+        }
         Campaign::create([
             "phone" => $request->phone,
             "name" => $request->name,
+            "ip_address" => $request->ip(),
+            "user_agent" => $request->header('User-Agent')
         ]);
 
         return Response::success("",ResponseMessages::CAMPAIGN_SUBMITED);
