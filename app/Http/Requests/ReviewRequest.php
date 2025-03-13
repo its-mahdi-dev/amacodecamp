@@ -23,7 +23,7 @@ class ReviewRequest extends BaseFormRequest
     public function rules(): array
     {
         return [
-            "rate" => "required|numeric|digit|max:5|min:1",
+            "rate" => "required|numeric|max:5|min:1",
             "comment" => "required|string|max:255"
         ];
     }

@@ -1141,7 +1141,7 @@
 
         if(error)
         {
-            alert(error);
+            customAlert(error);
             return;
         }
         axios.post('/campains/submit', {
@@ -1150,13 +1150,14 @@
         })
         .then(function(response) {
             let d = response.data;
-            alert(d.message);
+            customAlert(d.message, 'success');
 
         })
         .catch(function(error) {
-            let e = response.errors;
+            
+            let e = error.response.data.errors;
             e.forEach(err => {
-            alert(err)
+            customAlert(err, 'error')
              })
          })
       .finally(()=>{

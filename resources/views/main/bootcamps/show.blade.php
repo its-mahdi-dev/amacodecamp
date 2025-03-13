@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <!-- ================================
-                        START BREADCRUMB AREA
-                    ================================= -->
+                                START BREADCRUMB AREA
+                            ================================= -->
     <section class="breadcrumb-area pt-50px pb-50px bg-white pattern-bg">
         <div class="container">
             <div class="col-lg-8 me-auto">
@@ -24,12 +24,12 @@
     </section>
     <!-- end breadcrumb-area -->
     <!-- ================================
-                      END BREADCRUMB AREA
-                    ================================= -->
+                              END BREADCRUMB AREA
+                            ================================= -->
 
     <!--======================================
-                      START COURSE DETAILS AREA
-                ======================================-->
+                              START COURSE DETAILS AREA
+                        ======================================-->
     <section class="course-details-area pb-20px">
         <div class="container">
             <div class="row">
@@ -114,9 +114,9 @@
                                             <!-- end review-wrap -->
                                         </div>
                                         <!-- end course-overview-card -->
-                                        <div class="course-overview-card pt-4">
+                                        <div class="course-overview-card pt-4 d-none" id="reviewSubmitContainer">
                                             <h3 class="fs-24 font-weight-semi-bold pb-4">
-                                                إضافة إلى استعراض
+                                                نظرتو بگو 🫂
                                             </h3>
                                             <div class="leave-rating-wrap pb-4">
                                                 <div class="leave-rating leave--rating">
@@ -134,44 +134,19 @@
                                                 <!-- end leave-rating -->
                                             </div>
                                             <form method="post" class="row">
-                                                <div class="input-box col-lg-6">
-                                                    <label class="label-text">اسم</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control" type="text"
-                                                            name="name" placeholder="اسم" />
-                                                        <span class="la la-user input-icon"></span>
-                                                    </div>
-                                                </div>
-                                                <!-- end input-box -->
-                                                <div class="input-box col-lg-6">
-                                                    <label class="label-text">بريد إلكتروني</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control" type="email"
-                                                            name="email" placeholder="بريد إلكتروني" />
-                                                        <span class="la la-envelope input-icon"></span>
-                                                    </div>
-                                                </div>
                                                 <!-- end input-box -->
                                                 <div class="input-box col-lg-12">
-                                                    <label class="label-text">رسالة</label>
+                                                    <label class="label-text">کامنت</label>
                                                     <div class="form-group">
-                                                        <textarea class="form-control form--control ps-3" name="message" placeholder="رسالة" rows="5"></textarea>
+                                                        <textarea class="form-control form--control ps-3" name="message" id="reviewMessage"
+                                                            placeholder="مثلا دوره خیلی خوب بود 😚" rows="5"></textarea>
                                                     </div>
                                                 </div>
                                                 <!-- end input-box -->
                                                 <div class="btn-box col-lg-12">
-                                                    <div class="custom-control custom-checkbox mb-3 fs-15">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="saveCheckbox" required />
-                                                        <label class="custom-control-label custom--control-label"
-                                                            for="saveCheckbox">
-                                                            احفظ اسمي ، والبريد الإلكتروني في هذا المتصفح لاستخدامها
-                                                            في المرة القادمة في تعليقي.
-                                                        </label>
-                                                    </div>
                                                     <!-- end custom-control -->
-                                                    <button class="btn theme-btn" type="submit">
-                                                        إرسال المراجعة
+                                                    <button class="btn theme-btn" type="button" id="reviewSubmitter">
+                                                        همینو بفرست
                                                     </button>
                                                 </div>
                                                 <!-- end btn-box -->
@@ -182,6 +157,15 @@
                                     <div class="tab-pane fade" id="curriculum" role="tabpanel"
                                         aria-labelledby="curriculum-tab">
                                     </div>
+
+                                    <div class="tab-pane fade" id="teachers" role="tabpanel"
+                                    aria-labelledby="teachers-tab">
+                                    <div class="container">
+                                        <div class="row" id="teachersContent">
+
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
 
@@ -195,203 +179,8 @@
                 </div>
                 <!-- end col-lg-8 -->
                 <div class="col-lg-4">
-                    <div class="sidebar sidebar-negative">
-                        <div class="card card-item">
-                            <div class="card-body">
-                                <div class="preview-course-video">
-                                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#previewModal">
-                                        <img src="images/img-loading.png" data-src="images/preview-img.jpg"
-                                            alt="course-img" class="w-100 rounded lazy" />
-                                        <div class="preview-course-video-content">
-                                            <div class="overlay"></div>
-                                            <div class="play-button">
-                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                                                    viewBox="-307.4 338.8 91.8 91.8"
-                                                    style="
-                            enable-background: new -307.4 338.8 91.8 91.8;
-                          "
-                                                    xml:space="preserve">
-                                                    <style type="text/css">
-                                                        .st0 {
-                                                            fill: #ffffff;
-                                                            border-radius: 100px;
-                                                        }
+                    <div class="sidebar sidebar-negative" id="sidebar">
 
-                                                        .st1 {
-                                                            fill: #000000;
-                                                        }
-                                                    </style>
-                                                    <g>
-                                                        <circle class="st0" cx="-261.5" cy="384.7" r="45.9">
-                                                        </circle>
-                                                        <path class="st1"
-                                                            d="M-272.9,363.2l35.8,20.7c0.7,0.4,0.7,1.3,0,1.7l-35.8,20.7c-0.7,0.4-1.5-0.1-1.5-0.9V364C-274.4,363.3-273.5,362.8-272.9,363.2z">
-                                                        </path>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <p class="fs-15 font-weight-bold text-white pt-3">
-                                                معاينة هذه الدورة
-                                            </p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- end preview-course-video -->
-                                <div class="preview-course-feature-content pt-40px">
-                                    <p class="d-flex align-items-center pb-2">
-                                        <span class="fs-35 font-weight-semi-bold text-black" id="price_final"></span>
-                                        <span class="before-price mx-1" id="price_real"></span>
-                                        <span class="price-discount" id="price_off"></span>
-                                    </p>
-                                    <p class="preview-price-discount-text pb-35px">
-                                        <span class="text-color-3">4 نفر</span>
-                                        <span>ظرفیت مونده</span>
-                                    </p>
-                                    <div class="buy-course-btn-box">
-                                        <button type="button" class="btn theme-btn w-100 mb-2">
-                                            <i class="la la-shopping-cart fs-18 me-1"></i>
-                                            <span>افزودن به سبد خرید</span>
-                                        </button>
-                                        <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2">
-                                            <i class="la la-shopping-bag me-1"></i>
-                                            <span>همین الان می‌خرم</span>
-                                         </button>
-                                    </div>
-                                    <p class="fs-14 text-center pb-4">
-                                        ضمان استرداد الأموال لمدة 30 يومًا
-                                    </p>
-                                    <div class="preview-course-incentives">
-                                        <h3 class="card-title fs-18 pb-2">تشمل هذه الدورة</h3>
-                                        <ul class="generic-list-item pb-3">
-                                            <li>
-                                                <i class="la la-play-circle-o me-2 text-color"></i>2.5
-                                                ساعات الفيديو عند الطلب
-                                            </li>
-                                            <li>
-                                                <i class="la la-file me-2 text-color"></i>34 مقالات
-                                            </li>
-                                            <li>
-                                                <i class="la la-file-text me-2 text-color"></i>12
-                                                الموارد القابلة للتنزيل
-                                            </li>
-                                            <li>
-                                                <i class="la la-code me-2 text-color"></i>51 تمارين
-                                                الترميز
-                                            </li>
-                                            <li>
-                                                <i class="la la-key me-2 text-color"></i>وصول كامل مدى
-                                                الحياة
-                                            </li>
-                                            <li>
-                                                <i class="la la-television me-2 text-color"></i>الوصول
-                                                على الهاتف المحمول والتلفزيون
-                                            </li>
-                                            <li>
-                                                <i class="la la-certificate me-2 text-color"></i>شهادة
-                                                إتمام
-                                            </li>
-                                        </ul>
-                                        <div class="section-block"></div>
-                                        <div class="buy-for-team-container pt-4">
-                                            <h3 class="fs-18 font-weight-semi-bold pb-2">
-                                                تدريب 5 أشخاص أو أكثر؟
-                                            </h3>
-                                            <p class="lh-24 pb-3">
-                                                احصل على وصول فريقك إلى أكثر من 3000 دورة تدريبية من
-                                                أفضل دورات Aduca في أي وقت وفي أي مكان.
-                                            </p>
-                                            <a href="for-business.html"
-                                                class="btn theme-btn theme-btn-sm theme-btn-transparent lh-30 w-100">جرب
-                                                Aduca للأعمال</a>
-                                        </div>
-                                    </div>
-                                    <!-- end preview-course-incentives -->
-                                </div>
-                                <!-- end preview-course-content -->
-                            </div>
-                        </div>
-                        <!-- end card -->
-                        <div class="card card-item">
-                            <div class="card-body">
-                                <h3 class="card-title fs-18 pb-2">ميزات الدورة</h3>
-                                <div class="divider"><span></span></div>
-                                <ul class="generic-list-item generic-list-item-flash">
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-clock me-2 text-color"></i>مدة</span>
-                                        2.5 ساعات
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-play-circle-o me-2 text-color"></i>محاضرات</span>
-                                        17
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-file-text-o me-2 text-color"></i>موارد</span>
-                                        12
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-bolt me-2 text-color"></i>الإختبارات</span>
-                                        26
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-eye me-2 text-color"></i>معاينة
-                                            الدروس</span>
-                                        4
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-language me-2 text-color"></i>لغة</span>
-                                        فارسی
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-lightbulb me-2 text-color"></i>مستوى
-                                            المهارة</span>كل المستويات
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-users me-2 text-color"></i>الطلاب</span>
-                                        30,506
-                                    </li>
-                                    <li class="d-flex align-items-center justify-content-between">
-                                        <span><i class="la la-certificate me-2 text-color"></i>شهادة</span>نعم
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                        <div class="card card-item">
-                            <div class="card-body">
-                                <h3 class="card-title fs-18 pb-2">بوتکمپ های مرتبط</h3>
-                                <div class="divider"><span></span></div>
-                                {{-- <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
-                                    <a href="course-details.html" class="media-img">
-                                        <img class="me-3 lazy" src="images/img-loading.png"
-                                            data-src="images/small-img-4.jpg" alt="Related course image" />
-                                    </a>
-                                    <div class="media-body">
-                                        <h5 class="fs-15">
-                                            <a href="course-details.html">مقدمة LearnPress - LMS plugin</a>
-                                        </h5>
-                                        <span class="d-block lh-18 py-1 fs-14">قمران أحمد</span>
-                                        <p class="text-black font-weight-semi-bold lh-18 fs-15">
-                                            حر
-                                        </p>
-                                    </div>
-                                </div> --}}
-                                <div class="view-all-course-btn-box">
-                                    <a href="{{route('bootcamps.index')}}" class="btn theme-btn w-100">
-                                        <span>مشاهده همه بوتکمپ ها</span><i class="la la-arrow-right icon ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                        <div class="card card-item">
-                            <div class="card-body">
-                                <h3 class="card-title fs-18 pb-2">برچسب ها</h3>
-                                <div class="divider"><span></span></div>
-                                <ul class="generic-list-item generic-list-item-boxed d-flex flex-wrap fs-15">
-                                    {{-- <li class="me-2"><a href="#">عنوان</a></li> --}}
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- end card -->
                     </div>
                     <!-- end sidebar -->
                 </div>
@@ -403,22 +192,25 @@
     </section>
     <!-- end course-details-area -->
     <!--======================================
-                      END COURSE DETAILS AREA
-                ======================================-->
+                              END COURSE DETAILS AREA
+                        ======================================-->
 @endsection
 
 
 @section('customScripts')
     <script>
         axios.defaults.baseURL = "http://api.amacodecamp.test";
-
+        const sidebar = document.getElementById("sidebar");
         const bootcampHeader = document.getElementById("bootcampHeader");
         const bootcampBody = document.getElementById("bootcampBody");
         const curriculum = document.getElementById("curriculumContent");
         const reviews = document.getElementById("reviewsContent");
+        const reviewSubmitter = document.getElementById("reviewSubmitter");
+        const teachers = document.getElementById("teachersContent");
         axios.get('/bootcamps/{{ $slug }}')
             .then(function(response) {
                 let d = response.data.data;
+                addSidebar(d);
                 bootcampBody.innerHTML = d.body;
                 bootcampHeader.innerHTML = `
                         <div class="section-heading placeholder-glow d-block">
@@ -560,11 +352,354 @@
                             </div>
                         </div>
                     `;
+                });
+
+                d.teachers.forEach(teacher=>{
+                    teachers.innerHTML+=`
+                    <div class="col-lg-6 responsive-column-half">
+                        <div class="card card-item member-card text-center">
+                        <div class="card-image">
+                            <img
+                            class="card-img-top"
+                            src="${teacher.avatar_url}"
+                            alt="${teacher.full_name}"
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                            <a href="teacher-detail.html">${teacher.full_name}</a>
+                            </h5>
+                            <p class="card-text">${teacher.role}</p>
+                            <!--
+                            <a
+                            href="#"
+                            class="btn theme-btn theme-btn-sm theme-btn-transparent mt-3"
+                            >پروفایل استاد <i class="la la-arrow-right icon ms-1"></i
+                            ></a>
+                            -->
+                        </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    `;
                 })
+
+                // TODO : REVERSE THIS
+                if (!d.is_student)
+                    document.getElementById('reviewSubmitContainer').classList.remove('d-none')
+
+                reviewSubmitter.addEventListener('click', () => {
+                    let rate = 0;
+                    let comment = document.getElementById("reviewMessage").value;
+                    document.querySelectorAll('input[name=rate]').forEach(el => {
+                        if (el.checked) rate++;
+                        else return;
+                    })
+
+                    axios.put(`/student/review/${d.id}`, {
+                            comment,
+                            rate
+                        })
+                        .then(function(response) {
+                            let d = response.data;
+                            customAlert(d.message);
+                        }).catch(function(error) {
+                            let e = error.response.data.errors;
+                            e.forEach(err => {
+                                customAlert(err,'error',4000)
+                            })
+                        }).finally(() => {
+                            document.querySelectorAll('input[name=rate]').forEach(el => {
+                                el.checked = false;
+                            })
+                            document.getElementById("reviewMessage").value = '';
+                        });
+
+
+                })
+
 
             })
             .catch(function(error) {
                 console.log(error);
             })
+    
+
+
+        const addToBasketButton = document.getElementById("addToBas")
+        function buyNow(el, slug)
+        {
+            el.innerHTML = `
+                <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                <span role="status">در حال انتقال...</span>
+            `;
+
+            axios.post('/student/payment/send', {
+                slugs: slug,
+            })
+            .then(response=>{
+                let payment_url = response.data.data;
+                window.location.assign(payment_url);
+            });
+        }
+        function addToBasketF(el, slug)
+        {
+            addToBasket(slug);
+            el.innerHTML = `
+                <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                <span role="status">در حال انتقال...</span>
+            `;
+            window.location.assign("{{route('basket')}}")
+        }
+        function removeFromBasketF(el, slug)
+        {
+            removeFromBasket(slug);
+            el.setAttribute('onclick', `addToBasketF(this, '${slug}')`);
+            el.innerHTML = `
+                <i class="la la-shopping-cart fs-18 me-1"></i>
+                <span>افزودن به سبد خرید</span>
+            `;
+            customAlert('از سبد خریدت حذف شد');
+        }
+        function addSidebar(data)
+        {
+
+
+            let buyingButtons = `
+                <button type="button" class="btn theme-btn w-100 mb-2" onclick="removeFromBasketF(this, '${data.slug}')">
+                    <i class="la la-shopping-cart fs-18 me-1"></i>
+                    <spanحذف از سبد خرید</span>
+                </button>
+                <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this,'${data.slug}')">
+                    <i class="la la-shopping-bag me-1"></i>
+                    <span>همین الان می‌خرم</span>
+                </button>
+            `;
+            if(data.is_student)
+            {
+                buyingButtons = 'شما دانشجوی این دوره هستید❤️';
+            }else if(isInBasket(data.slug)){
+                buyingButtons = `
+                    <button type="button" class="btn theme-btn w-100 mb-2" onclick="removeFromBasketF(this, '${data.slug}')">
+                        <i class="la la-trash fs-18 me-1"></i>
+                        <span>حذف از سبد خرید</span>
+                    </button>
+                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this, '${data.slug}')">
+                        <i class="la la-shopping-bag me-1"></i>
+                        <span>همین الان می‌خرم</span>
+                    </button>
+                `;
+            }else{//not student, not in basket
+                buyingButtons = `
+                    <button   button type="button" class="btn theme-btn w-100 mb-2" onclick="addToBasketF(this, '${data.slug}')">
+                        <i class="la la-shopping-cart fs-18 me-1"></i>
+                        <span>افزودن به سبد خرید</span>
+                    </button>
+                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this, '${data.slug}')">
+                        <i class="la la-shopping-bag me-1"></i>
+                        <span>همین الان می‌خرم</span>
+                    </button>
+                `;
+            }
+
+            let tagsHTML = '';
+            data.tags.forEach(tag=>{
+                let url = `{{route('bootcamps.index')}}?tags=${tag.name}`;
+                tagsHTML += `
+                <li class="me-2"><a href="${url}">${tag.name}</a></li>
+                `;
+            })
+            sidebar.innerHTML = `
+            <div class="card card-item">
+                        <div class="card-body">
+                            <div class="preview-course-video">
+                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#previewModal">
+                                    <img src="images/img-loading.png" data-src="${data.thumbnail_url}"
+                                        alt="course-img" class="w-100 rounded lazy" />
+                                    <div class="preview-course-video-content">
+                                        <div class="overlay"></div>
+                                        <div class="play-button">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                viewBox="-307.4 338.8 91.8 91.8"
+                                                style="
+                        enable-background: new -307.4 338.8 91.8 91.8;
+                        "
+                                                xml:space="preserve">
+                                                <style type="text/css">
+                                                    .st0 {
+                                                        fill: #ffffff;
+                                                        border-radius: 100px;
+                                                    }
+
+                                                    .st1 {
+                                                        fill: #000000;
+                                                    }
+                                                </style>
+                                                <g>
+                                                    <circle class="st0" cx="-261.5" cy="384.7" r="45.9">
+                                                    </circle>
+                                                    <path class="st1"
+                                                        d="M-272.9,363.2l35.8,20.7c0.7,0.4,0.7,1.3,0,1.7l-35.8,20.7c-0.7,0.4-1.5-0.1-1.5-0.9V364C-274.4,363.3-273.5,362.8-272.9,363.2z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <p class="fs-15 font-weight-bold text-white pt-3">
+                                            معاينة هذه الدورة
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end preview-course-video -->
+                            <div class="preview-course-feature-content pt-40px">
+                                <p class="d-flex align-items-center pb-2">
+                                    <span class="fs-35 font-weight-semi-bold text-black" id="price_final"></span>
+                                    <span class="before-price mx-1" id="price_real"></span>
+                                    <span class="price-discount" id="price_off"></span>
+                                </p>
+                                <p class="preview-price-discount-text pb-35px">
+                                    <span class="text-color-3">${data.capacity} نفر</span>
+                                    <span>ظرفیت مونده</span>
+                                </p>
+                                <div class="buy-course-btn-box">
+                                    ${buyingButtons}
+                                </div>
+                                <p class="fs-14 text-center pb-4">
+                                    ضمان استرداد الأموال لمدة 30 يومًا
+                                </p>
+                                <div class="preview-course-incentives">
+                                    <h3 class="card-title fs-18 pb-2">تشمل هذه الدورة</h3>
+                                    <ul class="generic-list-item pb-3">
+                                        <li>
+                                            <i class="la la-play-circle-o me-2 text-color"></i>2.5
+                                            ساعات الفيديو عند الطلب
+                                        </li>
+                                        <li>
+                                            <i class="la la-file me-2 text-color"></i>34 مقالات
+                                        </li>
+                                        <li>
+                                            <i class="la la-file-text me-2 text-color"></i>12
+                                            الموارد القابلة للتنزيل
+                                        </li>
+                                        <li>
+                                            <i class="la la-code me-2 text-color"></i>51 تمارين
+                                            الترميز
+                                        </li>
+                                        <li>
+                                            <i class="la la-key me-2 text-color"></i>وصول كامل مدى
+                                            الحياة
+                                        </li>
+                                        <li>
+                                            <i class="la la-television me-2 text-color"></i>الوصول
+                                            على الهاتف المحمول والتلفزيون
+                                        </li>
+                                        <li>
+                                            <i class="la la-certificate me-2 text-color"></i>شهادة
+                                            إتمام
+                                        </li>
+                                    </ul>
+                                    <div class="section-block"></div>
+                                    <div class="buy-for-team-container pt-4">
+                                        <h3 class="fs-18 font-weight-semi-bold pb-2">
+                                            تدريب 5 أشخاص أو أكثر؟
+                                        </h3>
+                                        <p class="lh-24 pb-3">
+                                            احصل على وصول فريقك إلى أكثر من 3000 دورة تدريبية من
+                                            أفضل دورات Aduca في أي وقت وفي أي مكان.
+                                        </p>
+                                        <a href="for-business.html"
+                                            class="btn theme-btn theme-btn-sm theme-btn-transparent lh-30 w-100">جرب
+                                            Aduca للأعمال</a>
+                                    </div>
+                                </div>
+                                <!-- end preview-course-incentives -->
+                            </div>
+                            <!-- end preview-course-content -->
+                        </div>
+                    </div>
+                    <!-- end card -->
+                    <div class="card card-item">
+                        <div class="card-body">
+                            <h3 class="card-title fs-18 pb-2">اطلاعات دوره</h3>
+                            <div class="divider"><span></span></div>
+                            <ul class="generic-list-item generic-list-item-flash">
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-clock me-2 text-color"></i>مدة</span>
+                                    2.5 ساعات
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-play-circle-o me-2 text-color"></i>محاضرات</span>
+                                    17
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-file-text-o me-2 text-color"></i>موارد</span>
+                                    12
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-bolt me-2 text-color"></i>الإختبارات</span>
+                                    26
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-eye me-2 text-color"></i>معاينة
+                                        الدروس</span>
+                                    4
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-language me-2 text-color"></i>لغة</span>
+                                    فارسی
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-lightbulb me-2 text-color"></i>مستوى
+                                        المهارة</span>كل المستويات
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-users me-2 text-color"></i>الطلاب</span>
+                                    30,506
+                                </li>
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <span><i class="la la-certificate me-2 text-color"></i>شهادة</span>نعم
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                    <div class="card card-item">
+                        <div class="card-body">
+                            <h3 class="card-title fs-18 pb-2">بوتکمپ های مرتبط</h3>
+                            <div class="divider"><span></span></div>
+                            {{-- <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
+                                <a href="course-details.html" class="media-img">
+                                    <img class="me-3 lazy" src="images/img-loading.png"
+                                        data-src="images/small-img-4.jpg" alt="Related course image" />
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="fs-15">
+                                        <a href="course-details.html">مقدمة LearnPress - LMS plugin</a>
+                                    </h5>
+                                    <span class="d-block lh-18 py-1 fs-14">قمران أحمد</span>
+                                    <p class="text-black font-weight-semi-bold lh-18 fs-15">
+                                        حر
+                                    </p>
+                                </div>
+                            </div> --}}
+                            <div class="view-all-course-btn-box">
+                                <a href="{{ route('bootcamps.index') }}" class="btn theme-btn w-100">
+                                    <span>مشاهده همه بوتکمپ ها</span><i class="la la-arrow-right icon ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                    <div class="card card-item">
+                        <div class="card-body">
+                            <h3 class="card-title fs-18 pb-2">برچسب ها</h3>
+                            <div class="divider"><span></span></div>
+                            <ul class="generic-list-item generic-list-item-boxed d-flex flex-wrap fs-15">
+                                ${tagsHTML}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end card -->
+            `;
+        }
     </script>
 @endsection

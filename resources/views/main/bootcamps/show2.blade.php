@@ -75,26 +75,7 @@
             
                         </div>
                         <!-- end course-overview-card -->
-                        <div class="course-overview-card">
-                            <div class="curriculum-header d-flex align-items-center justify-content-between pb-4">
-                                <h3 class="fs-24 font-weight-semi-bold">سرفصل ها    </h3>
-                                <div class="curriculum-duration fs-15">
-                                    <span class="curriculum-total__text me-2"><strong
-                                            class="text-black font-weight-semi-bold">مجموع:</strong>17 محاضرة
-                                    </span>
-                                    <span class="curriculum-total__hours"><strong
-                                            class="text-black font-weight-semi-bold">مدت زمان: </strong>
-                                        02:35:47</span>
-                                </div>
-                            </div>
-                            <div class="curriculum-content">
-                                <div id="curriculum" class="generic-accordion">
-
-                                </div>
-                                <!-- end generic-accordion -->
-                            </div>
-                            <!-- end curriculum-content -->
-                        </div>
+                      
                         <!-- end course-overview-card -->
                         <div class="course-overview-card pt-4">
                             <h3 class="fs-24 font-weight-semi-bold pb-4">
