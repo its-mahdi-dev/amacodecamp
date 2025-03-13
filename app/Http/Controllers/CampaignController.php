@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Response;
 
 class CampaignController extends Controller
 {
+
     public function submit(CampainSubmitRequest $request)
     {
         Campaign::create([

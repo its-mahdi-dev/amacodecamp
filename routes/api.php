@@ -4,6 +4,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BootcampController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentController;
 use App\Models\Bootcamp;
@@ -21,12 +22,14 @@ Route::domain(env('API_DOMAIN', 'localhost/api'))->group(function () {
         return response()->json($user, 200);
     })->middleware('auth:sanctum');
 
-    Route::post('/login/send', [AuthController::class, 'sendCode']);
-    Route::post('/login/validate', [AuthController::class, 'validateCode']);
-    Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function () {
-        Route::get('/', 'index');
-        Route::get('/{slug}', 'show');
-    });
+Route::post('/login/send', [AuthController::class, 'sendCode']);
+Route::post('/login/validate', [AuthController::class, 'validateCode']);
+Route::controller(BootcampController::class)->prefix('/bootcamps')->group(function(){
+    Route::get('/' , 'index');
+    Route::get('/{slug}','show');
+});
+
+Route::get('/categories' , [CategoryController::class , 'index']);
 
     Route::get('/cupons/check/{code}', [PaymentController::class, 'checkCupon']);
     Route::post('/campains/submit', [CampaignController::class, 'submit']);

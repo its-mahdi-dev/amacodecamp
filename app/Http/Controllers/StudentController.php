@@ -29,9 +29,34 @@ class StudentController extends Controller
                 unlink(public_path($user->avatar));
             }
 
+            $image = imagecreatefromstring(file_get_contents($request->file('avatar')->getRealPath()));
+    
+            // Resize the image to 150*150
+            $newWidth = 150;
+            $newHeight = 150;
+            $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
+            
+            // Preserve transparency for PNG images
+            imagealphablending($resizedImage, false);
+            imagesavealpha($resizedImage, true);
+            
+            list($width, $height) = getimagesize($request->file('avatar')->getRealPath());
+            imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+            
+            // Define the storage path
+            $fileName = 'avatars/' . time() . '.jpg';
+            $filePath = public_path('uploads/'.$fileName);
+            
+            // Compress and save the image at 90% quality
+            imagejpeg($resizedImage, $filePath, 90);
+            
+            // Free up memory
+            imagedestroy($image);
+            imagedestroy($resizedImage);
+
             // Store the new avatar
-            $avatarPath = $request->file('avatar')->store('avatars', 'public');
-            $user->avatar = $avatarPath;
+            // $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            $user->avatar = $fileName;
         }
 
         // Update the user's data

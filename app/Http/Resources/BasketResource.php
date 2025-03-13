@@ -15,7 +15,6 @@ class BasketResource extends JsonResource
     {
         return [
             'user_id' => $this->user_id,
-            'bootcamp' => new BootcampResource($this->whenLoaded('bootcamp')), // Assuming BootcampResource exists
             'quantity' => $this->quantity,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
