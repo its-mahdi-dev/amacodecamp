@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Morilog\Jalali\Jalalian;
 
 class UserResource extends JsonResource
 {
@@ -26,8 +27,8 @@ class UserResource extends JsonResource
             'bootcamps' => BootcampResource::collection($this->bootcamps()->get()),
             'wishlist' => BootcampResource::collection($this->wishlist()->get()),
             'reviews' => ReviewResource::collection($this->reviews()->get()),
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            "created_at" => Jalalian::forge($this->created_at)->format('%A, %d %B %y'),
+            "updated_at" => Jalalian::forge($this->updated_at)->format('%A, %d %B %y')
         ];
     }
 }

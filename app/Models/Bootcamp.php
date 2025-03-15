@@ -60,7 +60,7 @@ class Bootcamp extends Model
      */
     public function teachers()
     {
-        return $this->belongsToMany(User::class, 'bootcamp_teachers')->withTimestamps();
+        return $this->belongsToMany(Teacher::class, 'bootcamp_teachers')->withTimestamps();
     }
 
     /**

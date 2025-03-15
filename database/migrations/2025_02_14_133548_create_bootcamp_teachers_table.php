@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('bootcamp_teachers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('bootcamp_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('teacher_id')->constrained()->onDelete('cascade');
 
             $table->timestamps();
             $table->softDeletes();

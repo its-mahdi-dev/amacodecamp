@@ -709,7 +709,7 @@
 
 @section('customScripts')
     <script>
-        axios.defaults.baseURL = "http://api.amacodecamp.test";
+        axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
         const bootcampsContainer = document.getElementById("bootcampsContainer");
         axios.get('/bootcamps')
             .then(function(response) {
