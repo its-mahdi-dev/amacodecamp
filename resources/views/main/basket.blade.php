@@ -112,7 +112,7 @@
 
     </script>
     <script>
-        axios.defaults.baseURL = "http://api.amacodecamp.test";
+        axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
         let price = 0;
         let should_pay = 0;
         emptyBasketHTML = `

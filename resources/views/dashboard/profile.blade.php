@@ -68,7 +68,7 @@
                                     </div>
                                     <!-- file-upload-wrap -->
                                     <p class="fs-14">
-                                        حداکثر حجم آپلود 300 کیلوبایت. فرمت های مجاز png,jpeg,jpg,webp,svg
+                                        حداکثر حجم آپلود 500 کیلوبایت. فرمت های مجاز png,jpeg,jpg,webp,svg
                                     </p>
                                 </div>
                             </div>
@@ -170,11 +170,11 @@
             console.log(file);
             if (file) {
                 if (file.size > MAX_FILE_SIZE) {
-                    errorWraapper.innerHTML = 'حداکثر حجم مجاز برای آپلود 500 کیلوبایت می‌باشد';
+                    customAlert('حداکثر حجم مجاز برای آپلود 500 کیلوبایت می‌باشد' , 'error');
                     return;
                 }
                 if (!ALLOWED_FILE_TYPES.includes(file.type)) {
-                    errorWraapper.innerHTML = 'فقط فرمت های مجاز را میتوانید آپلود کنید';
+                    customAlert('فقط فرمت های مجاز را میتوانید آپلود کنید' , 'error');
                     return;
                 }
             }
@@ -189,55 +189,16 @@
                     }
                 })
                 .then(function(response) {
-                    console.log(response);
+                    customAlert(response.data.message , 'success');
                 })
                 .catch(function(error) {
                     let errors = error.response.data.errors;
                     errors.forEach(err => {
-                        errorWraapper.innerHTML += `
-                        <span> ${err}</span> <br>
-                    `;
+                        customAlert(err , 'error');
                     });
                 })
         }
     </script>
 
 
-    {{-- payment api --}}
-
-    <script>
-    // let bootcampId = 1;
-    // axios.post('/student/payment/' + bootcampId , {} )
-    // .then(function(response){
-    //   console.log(response);
-    // })
-    // .catch(function(error){
-    //   console.log(error);
-    // })
-
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const authority = urlParams.get("Authority");
-    const status = urlParams.get("Status");
-    async function verifyPayment() {
-
-      if (!authority || !status) {
-          customAlert("Invalid payment response");
-          return;
-      }
-
-      axios.get(`/student/payment/verify?Authority=${authority}&Status=${status}`)
-      .then(function(response){
-        console.log(response);
-      })
-      .catch(function(error){
-        console.log(error);
-      })
-
-  }
-
-    // Call this function on the verification page
-    if(authority && status)
-      verifyPayment();
-  </script>
 @endsection

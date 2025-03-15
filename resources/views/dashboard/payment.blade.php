@@ -47,22 +47,24 @@
         const paymentDesctiption = document.querySelector("#paymentDesctiption");
         if (!authority || !status) {
             alert("Invalid payment response");
-            return;
         }
 
-        axios.get(`/student/payment/verify?Authority=${authority}&Status=${status}`)
+    axios.get(`/student/payment/verify?Authority=${authority}&Status=${status}`)
         .then(function(response){
+            console.log('success response');
             paymentIcon.innerHTML = '✅';
-            paymentStatus = 'پرداخت با موفقیت انجام شد';
+            paymentStatus.innerHTML = 'پرداخت با موفقیت انجام شد';
             paymentDesctiption.innerHTML = `کد رهگیری پرداخت: ${response.data.data}`;
         })
         .catch(function(error){
+            console.log('error response');
             paymentIcon.innerHTML = '❌';
             paymentStatus.innerHTML = 'مشکلی در پرداخت پیش آمد';
             error.response.data.errors.forEach(err => {
-                paymentDesctiption.innerHTML += err + " <br>"
+                paymentDesctiption.innerHTML += err + " <br>";
             });
-        })
+        });
+
 
     </script>
 @endsection

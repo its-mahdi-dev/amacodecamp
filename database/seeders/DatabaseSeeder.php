@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             BootcampSeasonSeeder::class,
             BootcampUserSeeder::class,
             BootcampTagSeeder::class,
+            BootcampTeacherSeeder::class,
             CampaignSeeder::class,
             CategorySeeder::class,
             CuponSeeder::class,
@@ -34,6 +35,7 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,
             StudentLicenseSeeder::class,
             TagSeeder::class,
+            TeacherSeeder::class,
             UserSeeder::class,
             WishlistSeeder::class,
         ]);

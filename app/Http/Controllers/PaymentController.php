@@ -7,12 +7,14 @@ use App\Http\Requests\PaymentSendRequest;
 use App\Http\Resources\CheckCuponResource;
 use App\Models\Basket;
 use App\Models\Bootcamp;
+use App\Models\BootcampUser;
 use App\Models\Cupon;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
 use function Laravel\Prompts\error;
+use function PHPUnit\Framework\returnSelf;
 
 class PaymentController extends Controller
 {
@@ -25,6 +27,7 @@ class PaymentController extends Controller
         foreach($slugs as $s){
             $bootcamp = Bootcamp::where("slug" , $s)->first();
             if($bootcamp == null) return Response::error(ResponseMessages::NOT_FOUND , 400);
+            if($bootcamp->capacity <= 0) return Response::error(ResponseMessages::BOOTCAMP_CAPACITY_FULL , 400);
             $total_price += $bootcamp->getPrice();
             array_push($bootcams_id , $bootcamp->id);
         }
@@ -60,7 +63,7 @@ class PaymentController extends Controller
 
         $response = zarinpal()
             ->merchantId(env('ZARINPAL_MERCHANT_ID'))
-            ->amount($total_price) // مبلغ تراکنش
+            ->amount(1000) // مبلغ تراکنش
             ->request()
             ->description("buy for id: {$user->id}") // توضیحات تراکنش
             ->callbackUrl(env('APP_URL', 'http://localhost:8000') . "/dashboard/payment") // آدرس برگشت پس از پرداخت
@@ -88,6 +91,7 @@ class PaymentController extends Controller
 
     public function verify(Request $request) 
     {
+
         $authority = $request->query('Authority');
         $status = $request->query('Status');
 
@@ -104,14 +108,14 @@ class PaymentController extends Controller
 
         $response = zarinpal()
             ->merchantId(env('ZARINPAL_MERCHANT_ID'))
-            ->amount($payment->amount)
+            ->amount(1000)
             ->verification()
             ->authority($authority)
             ->send();
 
         if (!$response->success()) {
             $payment->update(['status' => 'failed']);
-            return Response::error($response->error()->code() , 400 , $response->referenceId());
+            return Response::error($response->error()->message() , 400);
         }
 
         $payment->update([
@@ -119,6 +123,32 @@ class PaymentController extends Controller
             'cardPan' => $response->cardPan(),
             'status' => 'paid',
         ]);
+        foreach($payment->basket->bootcamps_id as $b){
+            BootcampUser::create([
+                "user_id" => $request->user()->id,
+                "bootcamp_id" => $b
+            ]);
+            $bootcamp = Bootcamp::find($b);
+            $bootcamp->update([
+                "capacity" => $bootcamp->capacity - 1
+            ]);
+            if($bootcamp->off != null){
+                if($bootcamp->off->amount != null){
+                    $bootcamp->off->update([
+                        "amount" =>$bootcamp->off->amount -1
+                    ]);
+                }
+            }
+        }
+
+        $cupon = $payment->basket->cupon;
+        if($cupon != null){
+            if($cupon->amount != null){
+                $cupon->update([
+                    "amount" => $cupon->amount -1
+                ]);
+            }
+        }
 
         return Response::success($response->referenceId());
     }

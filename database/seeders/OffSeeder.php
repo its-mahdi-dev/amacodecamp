@@ -12,11 +12,11 @@ class OffSeeder extends Seeder
     {
         Off::create([
             'bootcamp_id' => 1,
-            'percent' => 10,
-            'price' => 100,
+            'percent' => null,
+            'price' => 20,
             'start_time' => now(),
             'end_time' => now()->addWeek(),
-            'amount' => 50,
+            'amount' => null,
             'description' => 'Limited time discount.'
         ]);
 

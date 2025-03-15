@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use App\Models\Bootcamp;
 use App\Models\BootcampUser;
 use App\Models\Review;
+use App\Models\Teacher;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Laravel\Sanctum\PersonalAccessToken;
 use Morilog\Jalali\Jalalian;
@@ -68,17 +69,17 @@ class BootcampResource extends JsonResource
             'duration' => $this->duration,
             'lessons' => $this->lessons,
             'level' => $this->level,
-            'quizzes' => $this->quizzes,
+            'quizes' => $this->quizzes,
             'certification' => $this->certification,
             'intro_video' => $this->intro_video,
             'price' => $this->price,
             'price_off' => $this->getPrice(),
-            'off' => $this->off,
+            'off' => new OffResource($this->off),
             'capacity' => $this->capacity,
             'students_count' => number_format($this->students()->count()),
-            'teachers' => UserFilterResource::collection($this->teachers()->get()),
+            'teachers' => TeacherResource::collection($this->teachers()->get()),
             'reviews' => ReviewResource::collection($reviews),
-            "tags" => $this->tags,
+            "tags" => TagResource::collection($this->tags()->get()),
             'category' => $this->category->name,
             "rate" => $rate,
             "is_student" => $isStudent,
