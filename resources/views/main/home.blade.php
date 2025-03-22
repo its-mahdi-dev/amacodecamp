@@ -1125,7 +1125,7 @@
 
 @section('customScripts')
 <script>
-    axios.defaults.baseURL = "http://api.amacodecamp.test";
+    axios.defaults.baseURL = "{{env('API_URL', '')}}";
 
     const campaignName = document.getElementById("campaignName");
     const campaignPhone = document.getElementById("campaignPhone");

@@ -167,7 +167,7 @@ function addToBasket(slug) {
             <div class="toast-header">
                 <span class="rounded-circle d-inline-block me-2 ${color}" style="width: 10px; height: 10px;"></span>
                 <strong class="me-auto">${title}</strong>
-                <small class="text-body-secondary">Just now</small>
+                <small class="text-body-secondary">همین الان</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
@@ -200,3 +200,8 @@ function addToBasket(slug) {
         });
     }
     
+
+    function sleepFor(sleepDuration){
+        var now = new Date().getTime();
+        while(new Date().getTime() < now + sleepDuration){ /* Do nothing */ }
+    }

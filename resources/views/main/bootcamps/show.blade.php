@@ -199,7 +199,7 @@
 
 @section('customScripts')
     <script>
-        axios.defaults.baseURL = "http://api.amacodecamp.test";
+        axios.defaults.baseURL = "{{env('API_URL', '')}}";
         const sidebar = document.getElementById("sidebar");
         const bootcampHeader = document.getElementById("bootcampHeader");
         const bootcampBody = document.getElementById("bootcampBody");
@@ -384,18 +384,23 @@
                     `;
                 })
 
-                // TODO : REVERSE THIS
-                if (!d.is_student)
+                if (d.is_student)
                     document.getElementById('reviewSubmitContainer').classList.remove('d-none')
 
                 reviewSubmitter.addEventListener('click', () => {
-                    let rate = 0;
+                    let rate = 5;
+                    let is_checked = false;
                     let comment = document.getElementById("reviewMessage").value;
                     document.querySelectorAll('input[name=rate]').forEach(el => {
-                        if (el.checked) rate++;
-                        else return;
-                    })
+                        console.log(el , el.checked );
+                        if (!el.checked && !is_checked) rate--;
+                        else is_checked = true;
 
+                        // console.log(el.checked)
+                    })
+                    console.log("ddddddddd" , rate);
+                    customAlert(`${rate}`);
+                    /*
                     axios.put(`/student/review/${d.id}`, {
                             comment,
                             rate
@@ -415,7 +420,7 @@
                             document.getElementById("reviewMessage").value = '';
                         });
 
-
+                        */
                 })
 
 
