@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/assets/css/fancybox.css" />
   <link rel="stylesheet" href="/assets/css/tooltipster.bundle.css" />
   <link rel="stylesheet" href="/assets/css/animated-headline.css" />
+  <link rel="stylesheet" href="/assets/css/plyr.css">
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/style-rtl.css" />
   <!-- end inject -->
@@ -53,7 +54,7 @@
           <div class="row align-items-center">
             <div class="col-lg-2">
               <div class="logo-box">
-                <a href="index.html" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
+                <a href="{{route('home')}}" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
                 
                 <div class="user-btn-action d-flex align-items-center">
 
@@ -509,6 +510,7 @@
   <script src="/assets/js/emojionearea.min.js"></script>
   <script src="/assets/js/tooltipster.bundle.min.js"></script>
   <script src="/assets/js/animated-headline.js"></script>
+  <script src="/assets/js/plyr.js"></script>
   <script src="/assets/js/jquery.lazy.min.js"></script>
   <script src="/assets/js/main-rtl.js"></script>
   <script>

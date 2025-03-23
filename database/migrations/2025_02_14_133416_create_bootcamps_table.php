@@ -25,7 +25,7 @@ return new class extends Migration
             $table->unsignedInteger('lessons')->default(0);
             $table->unsignedInteger('quizzes')->default(0);
             $table->boolean('certification')->default(false);
-            $table->string('intro_video')->nullable();
+            $table->text('intro_video')->nullable();
             $table->integer('price')->default(0);
             $table->timestamps();
             $table->softDeletes();

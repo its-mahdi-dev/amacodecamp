@@ -17,10 +17,11 @@ class ResponseMessages
     const REGISTER_BOOTCAMP_NOT_FOUND = 'شما در این دوره ثبت نام نکرده اید';
     const LOCK_OTP_ACCOUNT = 'حساب شما به دلیل تلاش های ناموفق مسدود شده. چند دقیقه دیگه دوباره درخواست کد بکن.';
     const PAYMENT_NOT_FOUND = 'اطلاعات پرداخت یافت نشد.';
-    const PAYMENT_FAILED = 'پرداخت با موفقیت انجان نشد';
+    const PAYMENT_FAILED = 'پرداخت با موفقیت انجام نشد';
     const CUPON_NOT_VALID = "کد تخفیف صحیح نمی‌باشد.";
     const BOOTCAMP_NOT_SIGN = "شما دانشجوی این دوره نیستید";
     const CAMPAIGN_EXISTED = "شماره تلفن شما قبلا ثبت شده است";
+    const BOOTCAMP_CAPACITY_FULL = "ظرفیت بوت کمپ تکمیل می‌باشد";
 
 
     // General Messages

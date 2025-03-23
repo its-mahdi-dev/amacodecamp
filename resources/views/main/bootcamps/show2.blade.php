@@ -951,7 +951,7 @@
 
 @section('customScripts')
     <script>
-        axios.defaults.baseURL = "{{env('API_URL', '')}}";
+        axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
 
         const bootcampHeader = document.getElementById("bootcampHeader");
         const bootcampBody = document.getElementById("bootcampBody");

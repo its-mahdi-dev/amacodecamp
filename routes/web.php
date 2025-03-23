@@ -51,6 +51,10 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/bootcamps', function () {
         return view('dashboard.bootcamps');
     })->name('dashboard.bootcamps');
+
+    Route::get('/payment' , function(){
+        return view('dashboard.payment');
+    })->name('dashboard.payment');
 });
 
 
