@@ -9,6 +9,7 @@ class ResponseMessages
     const OTP_VALIDATION_SUCCESS = 'با موفقیت وارد شدید.';
     const CUPON_VALID = "کد تخفیف صحیح می‌باشد.";
     const CAMPAIGN_SUBMITED = "شماره شما با موفقیت ثبت شد";
+    const REVIEW_SUCCESS = "نظر شما با موفقیت ثبت شد";
 
     // Error Messages
     const WAIT_BEFORE_REQUEST = 'لطفاً قبل از درخواست مجدد، کمی صبر کنید.';
@@ -16,8 +17,11 @@ class ResponseMessages
     const REGISTER_BOOTCAMP_NOT_FOUND = 'شما در این دوره ثبت نام نکرده اید';
     const LOCK_OTP_ACCOUNT = 'حساب شما به دلیل تلاش های ناموفق مسدود شده. چند دقیقه دیگه دوباره درخواست کد بکن.';
     const PAYMENT_NOT_FOUND = 'اطلاعات پرداخت یافت نشد.';
-    const PAYMENT_FAILED = 'پرداخت با موفقیت انجان نشد';
+    const PAYMENT_FAILED = 'پرداخت با موفقیت انجام نشد';
     const CUPON_NOT_VALID = "کد تخفیف صحیح نمی‌باشد.";
+    const BOOTCAMP_NOT_SIGN = "شما دانشجوی این دوره نیستید";
+    const CAMPAIGN_EXISTED = "شماره تلفن شما قبلا ثبت شده است";
+    const BOOTCAMP_CAPACITY_FULL = "ظرفیت بوت کمپ تکمیل می‌باشد";
 
 
     // General Messages
@@ -44,6 +48,8 @@ class ResponseMessages
     const V_STUDENT_PROFILE_SIZE = 'حداکثر حجم تصویر باید 500 کیلوباید باشد';
     const V_STUDENT_PROFILE_TYPE= 'فرمت فایل تصویر صحیح نیست';
     const V_SLUGS_REQUIRED = "لطفا بوت‌‌کمپ های مورد نظر را انتخاب کنید.";
+    const V_RATE_INVALID = "تعداد ستاره های ثبت شده مجاز نیست";
+    const V_COMMENT_INVALID = "متن نظر ثبت شده مجاز نیست";
 
 
     public function ERR_MIN_PAY_CUPON($min){

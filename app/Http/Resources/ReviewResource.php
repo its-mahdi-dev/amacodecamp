@@ -2,6 +2,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Morilog\Jalali\Jalalian;
 
 class ReviewResource extends JsonResource
 {
@@ -14,12 +15,11 @@ class ReviewResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'user' => new UserFilterResource($this->whenLoaded('user')), // Assuming UserResource exists
-            'bootcamp' => new BootcampResource($this->whenLoaded('bootcamp')), // Assuming BootcampResource exists
-            'rating' => $this->rating,
+            'user' => new UserFilterResource($this->user), // Assuming UserResource exists
+            'rate' => $this->rating,
             'comment' => $this->comment,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            "created_at" => Jalalian::forge($this->created_at)->format('%A, %d %B %y'),
+            "updated_at" => Jalalian::forge($this->updated_at)->format('%A, %d %B %y')
         ];
     }
 }

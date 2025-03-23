@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="fa" dir="rtl">
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Aduca - Education HTML Template</title>
+  <title>آما - بوت کمپ های برنامه نویسی</title>
 
 
 
@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/assets/css/fancybox.css" />
   <link rel="stylesheet" href="/assets/css/tooltipster.bundle.css" />
   <link rel="stylesheet" href="/assets/css/animated-headline.css" />
+  <link rel="stylesheet" href="/assets/css/plyr.css">
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/style-rtl.css" />
   <!-- end inject -->
@@ -53,18 +54,21 @@
           <div class="row align-items-center">
             <div class="col-lg-2">
               <div class="logo-box">
-                <a href="index.html" class="logo"><img src="/assets/images/logo.png" alt="logo" /></a>
-                <div class="user-btn-action">
+                <a href="{{route('home')}}" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
+                
+                <div class="user-btn-action d-flex align-items-center">
+
+                  <a href="{{route('dashboard.home')}}" class="d-lg-none icon-element icon-element-sm shadow-sm me-2" data-toggle="tooltip"
+                    data-placement="top" title="ورود / ثبت نام">
+                    <i class="la la-user  "></i>
+                  </a>
                   <div class="search-menu-toggle icon-element icon-element-sm shadow-sm me-2" data-toggle="tooltip"
-                    data-placement="top" title="Search">
-                    <i class="la la-search"></i>
-                  </div>
-                  <div class="off-canvas-menu-toggle cat-menu-toggle icon-element icon-element-sm shadow-sm me-2"
-                    data-toggle="tooltip" data-placement="top" title="Category menu">
-                    <i class="la la-th-large"></i>
-                  </div>
+                  data-placement="top" title="جستجو">
+                  <i class="la la-search"></i>
+                </div>
+                  
                   <div class="off-canvas-menu-toggle main-menu-toggle icon-element icon-element-sm shadow-sm"
-                    data-toggle="tooltip" data-placement="top" title="Main menu">
+                    data-toggle="tooltip" data-placement="top" title="منوی اصلی">
                     <i class="la la-bars"></i>
                   </div>
                 </div>
@@ -74,166 +78,41 @@
             <div class="col-lg-10">
               <div class="menu-wrapper">
                 <!-- end menu-category -->
-                <form method="post">
+                <form action="/bootcamps" method="get">
                   <div class="form-group mb-0">
                     <input class="form-control form--control ps-3" type="text" name="search"
                       placeholder="چی میخوای یاد بگیری؟ " />
-                    <span class="la la-search search-icon"></span>
+
+                    <button class="btn search-icon">
+                    <span class="la la-search"></span>
+                    
+                    </button>
                   </div>
                 </form>
                 <nav class="main-menu">
                   <ul>
                     <li>
-                      <a href="#">منزل، بيت <i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li><a href="index.html">الصفحة الرئيسية واحد</a></li>
-                        <li><a href="home-2.html">المنزل الثاني</a></li>
-                        <li>
-                          <a href="home-3.html">الصفحة الرئيسية ثلاثة</a>
-                        </li>
-                        <li>
-                          <a href="home-4.html">الصفحة الرئيسية أربعة </a>
-                        </li>
-                      </ul>
+                      <a href="{{route('home')}}"><i class="la la-home fs-12"></i> خانه</a>
                     </li>
                     <li>
-                      <a href="#">
-                        الدورات<i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li><a href="course-grid.html">شبكة بالطبع</a></li>
-                        <li>
-                          <a href="course-list.html">
-                            قائمة الدورات<span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="course-left-sidebar.html">الشريط الجانبي الأيسر
-                            <span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="course-right-sidebar.html">
-                            الشريط الجانبي الأيمن<span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="course-details.html">تفاصيل الدورة</a>
-                        </li>
-                        <li>
-                          <a href="lesson-details.html">تفاصيل الدرس</a>
-                        </li>
-                        <li><a href="my-courses.html">دوراتي</a></li>
-                      </ul>
+                      <a href="{{route('bootcamps.index')}}"><i class="la la-code fs-12"></i> بوت کمپا</a>
                     </li>
                     <li>
-                      <a href="#">
-                        طالب علم<i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li>
-                          <a href="student-detail.html">تفاصيل الطالب</a>
-                        </li>
-                        <li><a href="student-quiz.html">تقدم للإختبار</a></li>
-                        <li>
-                          <a href="student-quiz-results.html">نتائج الاختبار</a>
-                        </li>
-                        <li>
-                          <a href="student-quiz-result-details.html">تفاصيل الاختبار</a>
-                        </li>
-                        <li>
-                          <a href="student-quiz-result-details-2.html">تفاصيل الاختبار 2</a>
-                        </li>
-                        <li>
-                          <a href="student-path.html">تفاصيل المسار
-                            <span class="ribbon ribbon-blue-bg">New</span></a>
-                        </li>
-                        <li>
-                          <a href="student-path-assessment.html">تقييم المهارات</a>
-                        </li>
-                        <li>
-                          <a href="student-path-assessment-result.html">نتيجة المهارة</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="mega-menu-has">
-                      <a href="#">الصفحات <i class="la la-angle-down fs-12"></i></a>
-                      <div class="dropdown-menu-item mega-menu">
-                        <ul class="row no-gutters">
-                          <li class="col-lg-3">
-                            <a href="dashboard.html">لوحة القيادة <span class="ribbon">Hot</span></a>
-                            <a href="about.html">حول</a>
-                            <a href="teachers.html">معلمون</a>
-                            <a href="teacher-detail.html">تفاصيل المعلم</a>
-                            <a href="categories.html">التصنيفات
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="terms-and-conditions.html">البنود و الظروف
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="privacy-policy.html">سياسة خاصة
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="invite.html">دعوة صديق
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                          </li>
-                          <li class="col-lg-3">
-                            <a href="careers.html">وظائف
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="career-details.html">تفاصيل المهنة
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="become-a-teacher.html">أصبح مدربا</a>
-                            <a href="faq.html">أسئلة وأجوبة</a>
-                            <a href="admission.html">قبول</a>
-                            <a href="gallery.html">صالة عرض</a>
-                            <a href="pricing-table.html">جداول التسعير</a>
-                            <a href="contact.html">اتصل</a>
-                          </li>
-                          <li class="col-lg-3">
-                            <a href="for-business.html">للعمل
-                              <span class="ribbon ribbon-blue-bg">New</span></a>
-                            <a href="sign-up.html">اشتراك</a>
-                            <a href="login.html">تسجيل الدخول</a>
-                            <a href="recover.html">استعادة</a>
-                            <a href="shopping-cart.html">عربة التسوق</a>
-                            <a href="checkout.html">الدفع</a>
-                            <a href="error.html">صفحة 404</a>
-                          </li>
-                          <li class="col-lg-3">
-                            <div class="menu-banner position-relative h-100">
-                              <div class="overlay rounded-rounded opacity-4"></div>
-                              <div class="menu-banner-content p-4 position-absolute bottom-0 left-0">
-                                <h4 class="fs-20 font-weight-bold pb-3 text-white">
-                                  30 يومًا مجانًا للمستخدمين الجدد
-                                </h4>
-                                <a href="sign-up.html" class="btn theme-btn theme-btn-sm theme-btn-white">ابدا بالتعلم
-                                  <i class="la la-arrow-right icon ms-1"></i></a>
-                              </div>
-                              <img src="/assets/images/menu-banner-img.jpg" alt="menu banner image"
-                                class="w-100 h-100 rounded-rounded" />
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
+                      <a href="{{route('blogs.index')}}"><i class="la la-pen fs-12"></i>  نوشته‌هامون</a>
                     </li>
                     <li>
-                      <a href="#">مقالات <i class="la la-angle-down fs-12"></i></a>
-                      <ul class="dropdown-menu-item">
-                        <li>
-                          <a href="blog-full-width.html">بلوق بالحجم الكامل
-                          </a>
-                        </li>
-                        <li>
-                          <a href="blog-no-sidebar.html">بلوق لا يوجد شريط جانبي</a>
-                        </li>
-                        <li>
-                          <a href="blog-left-sidebar.html">بلوق الشريط الجانبي الأيسر</a>
-                        </li>
-                        <li>
-                          <a href="blog-right-sidebar.html">بلوق الشريط الجانبي الأيمن</a>
-                        </li>
-                        <li><a href="blog-single.html">تفاصيل المدونة</a></li>
-                      </ul>
+                      <a href="{{route('basket')}}"><i class="la la-shopping-basket fs-12"></i>  سبدت</a>
+                    </li>
+                    <li>
+                      <a href="{{route('home')}}#about"><i class="la la-graduation-cap fs-12"></i>  درباره آدا </a>
                     </li>
                   </ul>
                   <!-- end ul -->
                 </nav>
                 <!-- end main-menu -->
                 <div class="nav-right-button">
-                  <a href="admission.html" class="btn theme-btn d-none d-lg-inline-block"><i
-                      class="la la-user-plus me-1"></i> قبول</a>
+                  <a href="{{route('dashboard.home')}}" class="btn theme-btn d-none d-lg-inline-block"><i
+                      class="la la-user-plus me-1"></i> ورود / ثبت نام</a>
                 </div>
                 <!-- end nav-right-button -->
               </div>
@@ -249,255 +128,38 @@
     <!-- end header-menu-content -->
     <div class="off-canvas-menu custom-scrollbar-styled main-off-canvas-menu">
       <div class="off-canvas-menu-close main-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
-        data-placement="left" title="Close menu">
+        data-placement="left" title="بستن منو">
         <i class="la la-times"></i>
       </div>
       <!-- end off-canvas-menu-close -->
       <ul class="generic-list-item off-canvas-menu-list pt-90px">
-        <li>
-          <a href="#">Home</a>
-          <ul class="sub-menu">
-            <li><a href="index.html">Home One</a></li>
-            <li><a href="home-2.html">Home Two</a></li>
-            <li><a href="home-3.html">Home Three</a></li>
-            <li>
-              <a href="home-4.html">Home four <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">courses</a>
-          <ul class="sub-menu">
-            <li><a href="course-grid.html">course grid</a></li>
-            <li>
-              <a href="course-list.html">course list <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="course-left-sidebar.html">left sidebar
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="course-right-sidebar.html">right sidebar
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li><a href="course-details.html">course details</a></li>
-            <li><a href="lesson-details.html">lesson details</a></li>
-            <li><a href="my-courses.html">My courses</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Student</a>
-          <ul class="sub-menu">
-            <li><a href="student-detail.html">student detail</a></li>
-            <li><a href="student-quiz.html">take quiz</a></li>
-            <li><a href="student-quiz-results.html">quiz results</a></li>
-            <li>
-              <a href="student-quiz-result-details.html">quiz details</a>
-            </li>
-            <li>
-              <a href="student-quiz-result-details-2.html">quiz details 2</a>
-            </li>
-            <li>
-              <a href="student-path.html">path details
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="student-path-assessment.html">Skill Assessment</a>
-            </li>
-            <li>
-              <a href="student-path-assessment-result.html">Skill result</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">pages</a>
-          <ul class="sub-menu">
-            <li>
-              <a href="dashboard.html">dashboard <span class="ribbon">Hot</span></a>
-            </li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="teachers.html">Teachers</a></li>
-            <li><a href="teacher-detail.html">Teacher detail</a></li>
-            <li>
-              <a href="careers.html">careers <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="career-details.html">career details
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="categories.html">categories <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="terms-and-conditions.html">Terms & conditions
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="privacy-policy.html">privacy policy
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li>
-              <a href="for-business.html">for business
-                <span class="ribbon ribbon-blue-bg">New</span></a>
-            </li>
-            <li><a href="become-a-teacher.html">become an instructor</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="admission.html">admission</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="pricing-table.html">pricing tables</a></li>
-            <li><a href="contact.html">contact</a></li>
-            <li><a href="sign-up.html">sign-up</a></li>
-            <li><a href="login.html">login</a></li>
-            <li><a href="recover.html">recover</a></li>
-            <li><a href="shopping-cart.html">cart</a></li>
-            <li><a href="checkout.html">checkout</a></li>
-            <li><a href="error.html">page 404</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">blog</a>
-          <ul class="sub-menu">
-            <li><a href="blog-full-width.html">blog full width </a></li>
-            <li><a href="blog-no-sidebar.html">blog no sidebar</a></li>
-            <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-            <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-            <li><a href="blog-single.html">blog detail</a></li>
-          </ul>
-        </li>
+          <li>
+            <a class="d-block" href="{{route('home')}}"><i class="me-2 la la-home fs-12"></i> خانه</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('bootcamps.index')}}"><i class="me-2 la la-code fs-12"></i> بوت کمپا</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('blogs.index')}}"><i class="me-2 la la-pen fs-12"></i>  نوشته‌هامون</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('basket')}}"><i class="me-2 la la-shopping-basket fs-12"></i>  سبدت</a>
+          </li>
+          <li>
+            <a class="d-block" href="{{route('home')}}#about"><i class="me-2 la la-graduation-cap fs-12"></i>  درباره آدا </a>
+          </li>
       </ul>
-    </div>
-    <!-- end off-canvas-menu -->
-    <div class="off-canvas-menu custom-scrollbar-styled category-off-canvas-menu">
-      <div class="off-canvas-menu-close cat-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
-        data-placement="left" title="Close menu">
-        <i class="la la-times"></i>
+      <div class="nav-right-button d-flex justify-content-center mt-5">
+        <a href="{{route('dashboard.home')}}" class="btn theme-btn d d-inline-block"><i
+            class="la la-user-plus me-1"></i> ورود / ثبت نام</a>
       </div>
-      <!-- end off-canvas-menu-close -->
-      <ul class="generic-list-item off-canvas-menu-list pt-90px">
-        <li>
-          <a href="course-grid.html">Development</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Development</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Mobile Apps</a></li>
-            <li><a href="#">Game Development</a></li>
-            <li><a href="#">Databases</a></li>
-            <li><a href="#">Programming Languages</a></li>
-            <li><a href="#">Software Testing</a></li>
-            <li><a href="#">Software Engineering</a></li>
-            <li><a href="#">E-Commerce</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">business</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Business</a></li>
-            <li><a href="#">Finance</a></li>
-            <li><a href="#">Entrepreneurship</a></li>
-            <li><a href="#">Strategy</a></li>
-            <li><a href="#">Real Estate</a></li>
-            <li><a href="#">Home Business</a></li>
-            <li><a href="#">Communications</a></li>
-            <li><a href="#">Industry</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">IT & Software</a>
-          <ul class="sub-menu">
-            <li><a href="#">All IT & Software</a></li>
-            <li><a href="#">IT Certification</a></li>
-            <li><a href="#">Hardware</a></li>
-            <li><a href="#">Network & Security</a></li>
-            <li><a href="#">Operating Systems</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Finance & Accounting</a>
-          <ul class="sub-menu">
-            <li><a href="#"> All Finance & Accounting</a></li>
-            <li><a href="#">Accounting & Bookkeeping</a></li>
-            <li><a href="#">Cryptocurrency & Blockchain</a></li>
-            <li><a href="#">Economics</a></li>
-            <li><a href="#">Investing & Trading</a></li>
-            <li><a href="#">Other Finance & Economics</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">design</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Design</a></li>
-            <li><a href="#">Graphic Design</a></li>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Design Tools</a></li>
-            <li><a href="#">3D & Animation</a></li>
-            <li><a href="#">User Experience</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Personal Development</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Personal Development</a></li>
-            <li><a href="#">Personal Transformation</a></li>
-            <li><a href="#">Productivity</a></li>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Personal Finance</a></li>
-            <li><a href="#">Career Development</a></li>
-            <li><a href="#">Parenting & Relationships</a></li>
-            <li><a href="#">Happiness</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Marketing</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Marketing</a></li>
-            <li><a href="#">Digital Marketing</a></li>
-            <li><a href="#">Search Engine Optimization</a></li>
-            <li><a href="#">Social Media Marketing</a></li>
-            <li><a href="#">Branding</a></li>
-            <li><a href="#">Video & Mobile Marketing</a></li>
-            <li><a href="#">Affiliate Marketing</a></li>
-            <li><a href="#">Growth Hacking</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Health & Fitness</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Health & Fitness</a></li>
-            <li><a href="#">Fitness</a></li>
-            <li><a href="#">Sports</a></li>
-            <li><a href="#">Dieting</a></li>
-            <li><a href="#">Self Defense</a></li>
-            <li><a href="#">Meditation</a></li>
-            <li><a href="#">Mental Health</a></li>
-            <li><a href="#">Yoga</a></li>
-            <li><a href="#">Dance</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="course-grid.html">Photography</a>
-          <ul class="sub-menu">
-            <li><a href="#">All Photography</a></li>
-            <li><a href="#">Digital Photography</a></li>
-            <li><a href="#">Photography Fundamentals</a></li>
-            <li><a href="#">Commercial Photography</a></li>
-            <li><a href="#">Video Design</a></li>
-            <li><a href="#">Photography Tools</a></li>
-            <li><a href="#">Other</a></li>
-          </ul>
-        </li>
-      </ul>
+
     </div>
-    <!-- end off-canvas-menu -->
     <div class="mobile-search-form">
       <div class="d-flex align-items-center">
         <form method="post" class="flex-grow-1 me-3">
           <div class="form-group mb-0">
-            <input class="form-control form--control ps-3" type="text" name="search" placeholder="ابحث عن أي شيء" />
+            <input class="form-control form--control ps-3" type="text" name="search" placeholder="چی میخوای یاد بگیری؟؟" />
             <span class="la la-search search-icon"></span>
           </div>
         </form>
@@ -848,8 +510,13 @@
   <script src="/assets/js/emojionearea.min.js"></script>
   <script src="/assets/js/tooltipster.bundle.min.js"></script>
   <script src="/assets/js/animated-headline.js"></script>
+  <script src="/assets/js/plyr.js"></script>
   <script src="/assets/js/jquery.lazy.min.js"></script>
   <script src="/assets/js/main-rtl.js"></script>
+  <script>
+    const API_URL = "{{ env('API_URL', 'http://localhost:8000') }}";
+  </script>
+  <script src="/assets/js/app.js"></script>
 
 @hasSection ('customScripts')
   @yield('customScripts')

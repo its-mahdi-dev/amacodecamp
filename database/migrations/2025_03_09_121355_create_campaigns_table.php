@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
             $table->string("phone")->nullable();
-            $table->string("email")->nullable();
+            $table->string("name")->nullable();
+            $table->string("ip_address")->nullable();
+            $table->text('user_agent')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

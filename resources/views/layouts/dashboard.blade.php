@@ -249,41 +249,13 @@
     <script src="/assets/js/jquery.MultiFile.min.js"></script>
     <script src="/assets/js/jquery-te-1.4.0.min.js"></script>
     <script src="/assets/js/main-rtl.js"></script>
+    <script>
+      const API_URL = "{{ env('API_URL', 'http://localhost:8000') }}";
+    </script>
+    <script src="/assets/js/app.js"></script>
 
     <script>
-      localStorage.setItem("auth_token" , "8|zbsoLKdz7h9GtgItR6BM4N6vdYeP09xnI2MHuZ6jb4a86ff9")
-        axios.defaults.baseURL = "{{ env('API_URL', 'http://localhost:8000') }}";
 
-        // Automatically attach the Bearer token from localStorage (or another storage method)
-        axios.interceptors.request.use(
-            function(config) {
-                const token = localStorage.getItem("auth_token"); // Get token from storage
-                if (token) {
-                    config.headers.Authorization = `Bearer ${token}`;
-                }
-                return config;
-            },
-            function(error) {
-                return Promise.reject(error);
-            }
-        );
-
-        // Handle 401 responses globally and redirect to /login
-        axios.interceptors.response.use(
-            function(response) {
-                return response; // Return response as-is if no error
-            },
-            function(error) {
-                if (error.response && error.response.status === 401) {
-                    // Clear stored token
-                    localStorage.removeItem("auth_token");
-
-                    // Redirect to login page
-                    window.location.href = "/login";
-                }
-                return Promise.reject(error);
-            }
-        );
 
 
         function loadWishlist(userData){

@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <!-- end section-heading -->
-                    <form method="post" class="w-50 mx-auto">
+                    <form method="get" action="/bootcamps" class="w-50 mx-auto">
                         <div class="form-group mb-0">
                             <input class="form-control form--control ps-3 shadow-sm border-0" type="text" name="search"
                                 placeholder="چی میخوای یادبگیری؟؟" />
@@ -59,7 +59,7 @@
                                     <label class="label-text">اسمت</label>
                                     <div class="form-group">
                                         <input class="form-control form--control" type="text" name="name"
-                                            placeholder="مثلا امیر امیری" />
+                                            placeholder="مثلا امیر امیری" id="campaignName"/>
                                         <span class="la la-user input-icon"></span>
                                     </div>
                                 </div>
@@ -67,14 +67,14 @@
                                 <div class="input-box">
                                     <label class="label-text">شمارت</label>
                                     <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="phone"
-                                            placeholder="مثلا 09123456789" />
+                                        <input class="form-control form--control dir-ltr text-start" type="text" name="phone"
+                                            placeholder="مثلا 09123456789" id="campaignPhone" />
                                         <span class="la la-phone input-icon"></span>
                                     </div>
                                 </div>
                                 <!-- end input-box -->
                                 <div class="btn-box pt-2">
-                                    <button class="btn theme-btn" type="submit">
+                                    <button class="btn theme-btn" type="button" id="campaignSubmit">
                                         زنگ بزنید بهم :)
                                         <i class="la la-arrow-right icon ms-1"></i>
                                     </button>
@@ -276,58 +276,8 @@
                     </h2>
                     <span class="section-divider"></span>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                            <div class="card-image">
-                                <a href="course-details.html" class="d-block">
-                                    <img class="card-img-top lazy" src="/assets/images/img-loading.png"
-                                        data-src="/assets/images/img8.jpg" alt="Card image cap" />
-                                </a>
-                                <div class="course-badge-labels">
-                                    <div class="course-badge">الأكثر مبيعا</div>
-                                    <div class="course-badge blue">-39%</div>
-                                </div>
-                            </div>
-                            <!-- end card-image -->
-                            <div class="card-body">
-                                <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
-                                    جميع المستويات
-                                </h6>
-                                <h5 class="card-title">
-                                    <a href="course-details.html">دورة محلل ذكاء الأعمال 2021</a>
-                                </h5>
-                                <p class="card-text">
-                                    <a href="teacher-detail.html">خوسيه بورتيلا</a>
-                                </p>
-                                <div class="rating-wrap d-flex align-items-center py-2">
-                                    <div class="review-stars">
-                                        <span class="rating-number">4.4</span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star-o"></span>
-                                    </div>
-                                    <span class="rating-total ps-1">(20,230)</span>
-                                </div>
-                                <!-- end rating-wrap -->
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-price text-black font-weight-bold">
-                                        12.99
-                                        <span class="before-price font-weight-medium">129.99</span>
-                                    </p>
-                                    <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
-                                        title="Add to Wishlist">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end card-body -->
-                        </div>
-                        <!-- end card -->
-                    </div>
-                    <!-- end col-lg-4 -->
+                <div class="row" id="bootcampsContainer">
+                    
                 </div>
                 <div class="more-btn-box mt-4 text-center">
                     <a href="course-grid.html" class="btn theme-btn">
@@ -610,7 +560,7 @@
     <!-- ================================
            START CLIENT-LOGO AREA
     ================================= -->
-    <section class="client-logo-area section--padding">
+    <section class="client-logo-area section--padding" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -1120,4 +1070,154 @@
     <!--======================================
             END SUBSCRIBER AREA
     ======================================-->
+@endsection
+
+
+@section('customScripts')
+<script>
+    axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
+
+    const campaignName = document.getElementById("campaignName");
+    const campaignPhone = document.getElementById("campaignPhone");
+    const campaignSubmit = document.getElementById("campaignSubmit");
+
+    campaignSubmit.addEventListener('click', ()=>{
+        let error = null;
+        if(!/^09\d{9}$/.test(campaignPhone.value.trim()))
+            error = "شماره ای که وارد کردی درست نیست"
+        if(!/^(?=.{6,})[^\d\s]+ [^\d\s]+.*$/.test(campaignName.value.trim()))
+            error = "نام و نام خانوادگی رو درست وارد کن";
+
+
+        if(error)
+        {
+            customAlert(error);
+            return;
+        }
+        axios.post('/campains/submit', {
+            name : campaignName.value.trim(),
+            phone : campaignPhone.value.trim(),
+        })
+        .then(function(response) {
+            let d = response.data;
+            customAlert(d.message, 'success');
+
+        })
+        .catch(function(error) {
+            
+            let e = error.response.data.errors;
+            e.forEach(err => {
+            customAlert(err, 'error')
+             })
+         })
+      .finally(()=>{
+            campaignName.value = '';
+            campaignPhone.value = '';
+        });
+    });
+
+/*
+    axios.get('/bootcamps/')
+        .then(function(response) {
+            let d = response.data.data;
+            bootcampHeader.innerHTML = `
+                    <div class="section-heading placeholder-glow d-block">
+                        <h2 class="section__title">
+                            ${d.title}
+                        </h2>
+                        <p class="section__desc pt-2 lh-30" >
+                            ${d.overview}
+                        </p>
+                    </div>
+                    <!-- end section-heading -->
+                    <div class="d-flex flex-wrap align-items-center pt-3 placeholder-glow">
+                        <h6 class="ribbon ribbon-lg me-2 bg-3 text-white">
+                            الأكثر مبيعا
+                        </h6>
+                        <div class="rating-wrap d-flex flex-wrap align-items-center">
+                            <div class="review-stars">
+                                <span class="rating-number">4.4</span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star"></span>
+                                <span class="la la-star-o"></span>
+                            </div>
+                            <span class="rating-total ps-1">(20,230 التقييمات)</span>
+                            <span class="student-total ps-2">${d.students_count}</span>
+                        </div>
+                    </div>
+                    <!-- end d-flex -->
+            `;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+        */
+
+
+        const bootcampsContainer = document.getElementById("bootcampsContainer");
+        axios.get('/bootcamps')
+            .then(function(response) {
+                let d = response.data.data;
+                d.forEach(bootcamp => {
+                    const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
+                    const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
+                    console.log(url);
+                    bootcampsContainer.innerHTML += `
+                    <div class="col-lg-4 responsive-column-half">
+                            <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                                <div class="card-image">
+                                    <a href="course-details.html" class="d-block">
+                                        <img class="card-img-top lazy" src="/assets/images/img-loading.png"
+                                            data-src="/assets/images/img8.jpg" alt="Card image cap" />
+                                    </a>
+                                </div>
+                                <!-- end card-image -->
+                                <div class="card-body">
+                                    <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
+                                        جميع المستويات
+                                    </h6>
+                                    <h5 class="card-title">
+                                        <a href="${url}">${bootcamp.title}</a>
+                                    </h5>
+                                    <p class="card-text">
+                                        <a href="teacher-detail.html">خوسيه بورتيلا</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex align-items-center py-2">
+                                        <div class="review-stars">
+                                            <span class="rating-number">4.4</span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star-o"></span>
+                                        </div>
+                                        <span class="rating-total ps-1">(20,230)</span>
+                                    </div>
+                                    <!-- end rating-wrap -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-price text-black font-weight-bold">
+                                            12.99
+                                            <span class="before-price font-weight-medium">129.99</span>
+                                        </p>
+                                        <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
+                                            title="Add to Wishlist">
+                                            <i class="la la-heart-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    `;
+                });
+
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+</script>
 @endsection

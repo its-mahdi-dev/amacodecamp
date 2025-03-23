@@ -12,6 +12,8 @@ class Campaign extends Model
 
     protected $fillable = [
         'phone',
-        'email',
+        'name',
+        'ip_address',
+        'user_agent'
     ];
 }

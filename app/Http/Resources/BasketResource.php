@@ -2,6 +2,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Morilog\Jalali\Jalalian;
 
 class BasketResource extends JsonResource
 {
@@ -15,10 +16,9 @@ class BasketResource extends JsonResource
     {
         return [
             'user_id' => $this->user_id,
-            'bootcamp' => new BootcampResource($this->whenLoaded('bootcamp')), // Assuming BootcampResource exists
             'quantity' => $this->quantity,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            "created_at" => Jalalian::forge($this->created_at)->format('%A, %d %B %y'),
+            "updated_at" => Jalalian::forge($this->updated_at)->format('%A, %d %B %y')
         ];
     }
 }

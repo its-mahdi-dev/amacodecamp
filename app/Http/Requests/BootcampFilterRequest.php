@@ -27,7 +27,8 @@ class BootcampFilterRequest extends BaseFormRequest
             'tag' => 'nullable|string',
             'price_min' => 'nullable|numeric|min:0', // for filtering by minimum price
             'price_max' => 'nullable|numeric|min:0', // for filtering by maximum price
-            'per_page' => 'nullable|integer|min:1', // for pagination, default can be set in the controller
+            'per_page' => 'nullable|integer|min:1', // for pagination, default can be set in the controller,
+            'slugs' => 'nullable|string'
         ];
     }
 

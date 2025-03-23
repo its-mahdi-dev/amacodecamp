@@ -84,7 +84,7 @@
 
 @section('customScripts')
     <script>
-        axios.defaults.baseURL = "http://api.amacodecamp.test";
+        axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
 
 
 
@@ -171,11 +171,18 @@
                     otp_code:otp
                 })
                 .then(response => {
+                    // Successful Login
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const redirectUrl = urlParams.get('redirect_url');
+
+                if (redirectUrl) window.location.href = redirectUrl;
+    
                     const d = response.data.data;
                     const token = d.token;
                     localStorage.setItem("auth_token", token);
                     if(d.is_new) location.assign("https://google.com");
-                    location.assign("{{ env('DASHBOARD_URL') }}");
+                    // location.assign("{{ env('DASHBOARD_URL') }}");
+                    location.assign("/dashboard");
                 })
                 .catch(error => {
                     // it should change to error.response.data.errors

@@ -16,13 +16,14 @@ class BootcampController extends Controller
      */
     public function index(BootcampFilterRequest $request)
     {
+
         $query = Bootcamp::query();
 
         // Apply search filter
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where('title', 'like', '%' . $search . '%')->orWhereHas('tags', function($query) use ($search) {
-                $query->where('name', $search);
+                $query->where('name' , 'like','%'. $search . '%');
             });;
         }
 
@@ -41,6 +42,13 @@ class BootcampController extends Controller
                 $query->where('name', $tagName);
             });
         }
+        
+        if($request->filled('slugs')){
+            
+            $slugs = explode(",", $request->slugs);
+            $query->whereIn('slug' , $slugs);
+        }
+        
 
         // Paginate the results
         $bootcamps = $query->paginate($request->input('per_page', 10));

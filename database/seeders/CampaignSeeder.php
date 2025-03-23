@@ -11,12 +11,12 @@ class CampaignSeeder extends Seeder
     {
         Campaign::create([
             'phone' => '123-456-7890',
-            'email' => 'example1@example.com'
+            'name' => 'example1@example.com'
         ]);
 
         Campaign::create([
             'phone' => '987-654-3210',
-            'email' => 'example2@example.com'
+            'name' => 'example2@example.com'
         ]);
         
         // Add 5-10 more records similarly
