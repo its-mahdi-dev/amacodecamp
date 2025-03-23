@@ -171,6 +171,12 @@
                     otp_code:otp
                 })
                 .then(response => {
+                    // Successful Login
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const redirectUrl = urlParams.get('redirect_url');
+
+                if (redirectUrl) window.location.href = redirectUrl;
+    
                     const d = response.data.data;
                     const token = d.token;
                     localStorage.setItem("auth_token", token);

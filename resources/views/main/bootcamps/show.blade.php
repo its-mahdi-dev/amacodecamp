@@ -194,6 +194,9 @@
     <!--======================================
                               END COURSE DETAILS AREA
                         ======================================-->
+
+
+    <div id="modalsContainer"></div>
 @endsection
 
 
@@ -207,6 +210,7 @@
         const reviews = document.getElementById("reviewsContent");
         const reviewSubmitter = document.getElementById("reviewSubmitter");
         const teachers = document.getElementById("teachersContent");
+        const modalsContainer = document.getElementById("modalsContainer");
         axios.get('/bootcamps/{{ $slug }}')
             .then(function(response) {
                 let d = response.data.data;
@@ -384,18 +388,23 @@
                     `;
                 })
 
-                // TODO : REVERSE THIS
-                if (!d.is_student)
+                if (d.is_student)
                     document.getElementById('reviewSubmitContainer').classList.remove('d-none')
 
                 reviewSubmitter.addEventListener('click', () => {
-                    let rate = 0;
+                    let rate = 5;
+                    let is_checked = false;
                     let comment = document.getElementById("reviewMessage").value;
                     document.querySelectorAll('input[name=rate]').forEach(el => {
-                        if (el.checked) rate++;
-                        else return;
-                    })
+                        console.log(el , el.checked );
+                        if (!el.checked && !is_checked) rate--;
+                        else is_checked = true;
 
+                        // console.log(el.checked)
+                    })
+                    console.log("ddddddddd" , rate);
+                    customAlert(`${rate}`);
+                    /*
                     axios.put(`/student/review/${d.id}`, {
                             comment,
                             rate
@@ -415,9 +424,54 @@
                             document.getElementById("reviewMessage").value = '';
                         });
 
-
+                        */
                 })
 
+
+                // Add Modals
+                modalsContainer.innerHTML += `
+                    <!-- Modal -->
+                    <div
+                    class="modal fade modal-container"
+                    id="previewModal"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="previewModalTitle"
+                    aria-hidden="true"
+                    >
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header align-items-start border-bottom-gray">
+                            <div class="pe-2">
+                            <p class="pb-2 font-weight-semi-bold">ویدیو معرفی</p>
+                            <h5
+                                class="modal-title fs-19 font-weight-semi-bold lh-24"
+                                id="previewModalTitle"
+                            >
+                                ${d.title}
+                            </h5>
+                            </div>
+                            <button
+                            type="button"
+                            class="btn-close close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            >
+                            <span aria-hidden="true" class="la la-times"></span>
+                            </button>
+                        </div>
+                        <!-- end modal-header -->
+                        <div class="modal-body">
+                            ${d.intro_video}
+                        </div>
+                        <!-- end modal-body -->
+                        </div>
+                        <!-- end modal-content -->
+                    </div>
+                    <!-- end modal-dialog -->
+                    </div>
+                    <!-- end modal -->
+                `;
 
             })
             .catch(function(error) {
@@ -565,53 +619,8 @@
                                     ${buyingButtons}
                                 </div>
                                 <p class="fs-14 text-center pb-4">
-                                    ضمان استرداد الأموال لمدة 30 يومًا
+                                    ضمانت بازگشت وجه درصورت عدم رضایت
                                 </p>
-                                <div class="preview-course-incentives">
-                                    <h3 class="card-title fs-18 pb-2">تشمل هذه الدورة</h3>
-                                    <ul class="generic-list-item pb-3">
-                                        <li>
-                                            <i class="la la-play-circle-o me-2 text-color"></i>2.5
-                                            ساعات الفيديو عند الطلب
-                                        </li>
-                                        <li>
-                                            <i class="la la-file me-2 text-color"></i>34 مقالات
-                                        </li>
-                                        <li>
-                                            <i class="la la-file-text me-2 text-color"></i>12
-                                            الموارد القابلة للتنزيل
-                                        </li>
-                                        <li>
-                                            <i class="la la-code me-2 text-color"></i>51 تمارين
-                                            الترميز
-                                        </li>
-                                        <li>
-                                            <i class="la la-key me-2 text-color"></i>وصول كامل مدى
-                                            الحياة
-                                        </li>
-                                        <li>
-                                            <i class="la la-television me-2 text-color"></i>الوصول
-                                            على الهاتف المحمول والتلفزيون
-                                        </li>
-                                        <li>
-                                            <i class="la la-certificate me-2 text-color"></i>شهادة
-                                            إتمام
-                                        </li>
-                                    </ul>
-                                    <div class="section-block"></div>
-                                    <div class="buy-for-team-container pt-4">
-                                        <h3 class="fs-18 font-weight-semi-bold pb-2">
-                                            تدريب 5 أشخاص أو أكثر؟
-                                        </h3>
-                                        <p class="lh-24 pb-3">
-                                            احصل على وصول فريقك إلى أكثر من 3000 دورة تدريبية من
-                                            أفضل دورات Aduca في أي وقت وفي أي مكان.
-                                        </p>
-                                        <a href="for-business.html"
-                                            class="btn theme-btn theme-btn-sm theme-btn-transparent lh-30 w-100">جرب
-                                            Aduca للأعمال</a>
-                                    </div>
-                                </div>
                                 <!-- end preview-course-incentives -->
                             </div>
                             <!-- end preview-course-content -->
@@ -624,40 +633,39 @@
                             <div class="divider"><span></span></div>
                             <ul class="generic-list-item generic-list-item-flash">
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-clock me-2 text-color"></i>مدة</span>
-                                    2.5 ساعات
+                                    <span><i class="la la-clock me-2 text-color"></i>مدت دوره</span>
+                                    ${data.duration}
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-play-circle-o me-2 text-color"></i>محاضرات</span>
-                                    17
+                                    <span><i class="la la-play-circle-o me-2 text-color"></i>جلسات</span>
+                                    ${data.lessons}
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-file-text-o me-2 text-color"></i>موارد</span>
-                                    12
+                                    <span><i class="la la-file-text-o me-2 text-color"></i>آزمونک</span>
+                                    ${data.quizes}
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-bolt me-2 text-color"></i>الإختبارات</span>
-                                    26
+                                    <span><i class="la la-bolt me-2 text-color"></i>سطح</span>
+                                    ${data.level}
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-eye me-2 text-color"></i>معاينة
-                                        الدروس</span>
-                                    4
+                                    <span><i class="la la-eye me-2 text-color"></i>پشتیبان</span>
+                                    دارد
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-language me-2 text-color"></i>لغة</span>
+                                    <span><i class="la la-language me-2 text-color"></i>زبان</span>
                                     فارسی
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-lightbulb me-2 text-color"></i>مستوى
-                                        المهارة</span>كل المستويات
+                                    <span><i class="la la-lightbulb me-2 text-color"></i>دسته بندی</span>
+                                    ${data.category}
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-users me-2 text-color"></i>الطلاب</span>
-                                    30,506
+                                    <span><i class="la la-users me-2 text-color"></i>دانشجو</span>
+                                    ${100-data.capacity}
                                 </li>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <span><i class="la la-certificate me-2 text-color"></i>شهادة</span>نعم
+                                    <span><i class="la la-certificate me-2 text-color"></i>مدرک</span>${data.certification ? 'دارد' : 'ندارد'}
                                 </li>
                             </ul>
                         </div>
@@ -699,6 +707,8 @@
                         </div>
                     </div>
                     <!-- end card -->
+
+                    
             `;
         }
     </script>

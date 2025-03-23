@@ -12,9 +12,27 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+ /**
+ * @OA\Put(
+ *     path="/users/{id}",
+ *     summary="Updates a user",
+ *     @OA\Parameter(
+ *         description="Parameter with mutliple examples",
+ *         in="path",
+ *         name="id",
+ *         required=true,
+ *         @OA\Schema(type="string"),
+ *         @OA\Examples(example="int", value="1", summary="An int value."),
+ *         @OA\Examples(example="uuid", value="0006faf6-7a61-426c-9034-579f2cfcfa83", summary="An UUID value."),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="OK"
+ *     )
+ * )
+ */
 
-
-Route::prefix('/api')->group(function () {
+Route::domain(env("API_DOMAIN"))->group(function () {
     Route::get('/user', function (Request $request) {
         // Check if the user is authenticated
         $user = $request->user();

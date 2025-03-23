@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <!-- end section-heading -->
-                    <form method="post" class="w-50 mx-auto">
+                    <form method="get" action="/bootcamps" class="w-50 mx-auto">
                         <div class="form-group mb-0">
                             <input class="form-control form--control ps-3 shadow-sm border-0" type="text" name="search"
                                 placeholder="چی میخوای یادبگیری؟؟" />
@@ -276,58 +276,8 @@
                     </h2>
                     <span class="section-divider"></span>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                            <div class="card-image">
-                                <a href="course-details.html" class="d-block">
-                                    <img class="card-img-top lazy" src="/assets/images/img-loading.png"
-                                        data-src="/assets/images/img8.jpg" alt="Card image cap" />
-                                </a>
-                                <div class="course-badge-labels">
-                                    <div class="course-badge">الأكثر مبيعا</div>
-                                    <div class="course-badge blue">-39%</div>
-                                </div>
-                            </div>
-                            <!-- end card-image -->
-                            <div class="card-body">
-                                <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
-                                    جميع المستويات
-                                </h6>
-                                <h5 class="card-title">
-                                    <a href="course-details.html">دورة محلل ذكاء الأعمال 2021</a>
-                                </h5>
-                                <p class="card-text">
-                                    <a href="teacher-detail.html">خوسيه بورتيلا</a>
-                                </p>
-                                <div class="rating-wrap d-flex align-items-center py-2">
-                                    <div class="review-stars">
-                                        <span class="rating-number">4.4</span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star"></span>
-                                        <span class="la la-star-o"></span>
-                                    </div>
-                                    <span class="rating-total ps-1">(20,230)</span>
-                                </div>
-                                <!-- end rating-wrap -->
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-price text-black font-weight-bold">
-                                        12.99
-                                        <span class="before-price font-weight-medium">129.99</span>
-                                    </p>
-                                    <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
-                                        title="Add to Wishlist">
-                                        <i class="la la-heart-o"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end card-body -->
-                        </div>
-                        <!-- end card -->
-                    </div>
-                    <!-- end col-lg-4 -->
+                <div class="row" id="bootcampsContainer">
+                    
                 </div>
                 <div class="more-btn-box mt-4 text-center">
                     <a href="course-grid.html" class="btn theme-btn">
@@ -1205,5 +1155,69 @@
             console.log(error);
         })
         */
+
+
+        const bootcampsContainer = document.getElementById("bootcampsContainer");
+        axios.get('/bootcamps')
+            .then(function(response) {
+                let d = response.data.data;
+                d.forEach(bootcamp => {
+                    const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
+                    const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
+                    console.log(url);
+                    bootcampsContainer.innerHTML += `
+                    <div class="col-lg-4 responsive-column-half">
+                            <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                                <div class="card-image">
+                                    <a href="course-details.html" class="d-block">
+                                        <img class="card-img-top lazy" src="/assets/images/img-loading.png"
+                                            data-src="/assets/images/img8.jpg" alt="Card image cap" />
+                                    </a>
+                                </div>
+                                <!-- end card-image -->
+                                <div class="card-body">
+                                    <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
+                                        جميع المستويات
+                                    </h6>
+                                    <h5 class="card-title">
+                                        <a href="${url}">${bootcamp.title}</a>
+                                    </h5>
+                                    <p class="card-text">
+                                        <a href="teacher-detail.html">خوسيه بورتيلا</a>
+                                    </p>
+                                    <div class="rating-wrap d-flex align-items-center py-2">
+                                        <div class="review-stars">
+                                            <span class="rating-number">4.4</span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star"></span>
+                                            <span class="la la-star-o"></span>
+                                        </div>
+                                        <span class="rating-total ps-1">(20,230)</span>
+                                    </div>
+                                    <!-- end rating-wrap -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-price text-black font-weight-bold">
+                                            12.99
+                                            <span class="before-price font-weight-medium">129.99</span>
+                                        </p>
+                                        <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
+                                            title="Add to Wishlist">
+                                            <i class="la la-heart-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <!-- end card -->
+                        </div>
+                    `;
+                });
+
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
 </script>
 @endsection

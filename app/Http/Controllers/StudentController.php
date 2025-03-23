@@ -103,7 +103,8 @@ class StudentController extends Controller
         Review::create([
             "bootcamp_id" => $id,
             "comment" => $request->comment,
-            "rate" => $request->rate
+            "rate" => $request->rate,
+            "user_id" => $request->user()->id
         ]);
 
 

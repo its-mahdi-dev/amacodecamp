@@ -50,12 +50,12 @@ class BootcampResource extends JsonResource
     }
 
         $reviews = $this->reviews()->get();
-        $rate = 0;
+        $rate = 5;
         if (count($reviews) > 0) {
             foreach ($reviews as $r) {
                 $rate += $r->rating;
             }
-            $rate = $rate / count($reviews);
+            $rate = $rate / (count($reviews)+1);
         }
         $result = [
             'id' => $this->id,
