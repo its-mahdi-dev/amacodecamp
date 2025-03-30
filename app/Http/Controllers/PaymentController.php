@@ -157,7 +157,7 @@ class PaymentController extends Controller
     public function checkCupon($code)
     {
         
-        $cupon = Cupon::where('code' , $code)->first();
+        $cupon = Cupon::whereRaw('BINARY `code` = ?', [$code])->first();
         $response = $this->checkCuponLogic($cupon);
         if($response){
             return Response::success(new CheckCuponResource($response), ResponseMessages::CUPON_VALID);
