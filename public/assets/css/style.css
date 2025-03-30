@@ -6604,7 +6604,7 @@ input[type=tel] {
 }
 .logo-inline img{
   /* width: 500px; */
-  height: 25px;
+  height: 60px;
 }
 @media (max-width: 1199px) {
   .logo-box {

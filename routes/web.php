@@ -33,6 +33,10 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
         return view('main.bootcamps.show2', compact('slug'));
     })->name('bootcamps.show2');
 
+    Route::get('/aboutus', function ($slug) {
+        return "aboutus";
+    })->name('aboutus');
+
     Route::get('/login', function () {
         return view('auth.login');
     })->name('login');

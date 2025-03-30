@@ -13,7 +13,7 @@
 
 
   <!-- Favicon -->
-  <link rel="icon" sizes="16x16" href="/assets/images/favicon.png" />
+  <link rel="icon" sizes="16x16" href="/assets/images/logo.webp" />
 
   <!-- inject:css -->
   <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css" />
@@ -54,7 +54,7 @@
           <div class="row align-items-center">
             <div class="col-lg-2">
               <div class="logo-box">
-                <a href="{{route('home')}}" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
+                <a href="{{route('home')}}" class="logo logo-inline"><img src="/assets/images/persian-blue2.webp" alt="logo" /></a>
                 
                 <div class="user-btn-action d-flex align-items-center">
 
@@ -104,7 +104,7 @@
                       <a href="{{route('basket')}}"><i class="la la-shopping-basket fs-12"></i>  سبدت</a>
                     </li>
                     <li>
-                      <a href="{{route('home')}}#about"><i class="la la-graduation-cap fs-12"></i>  درباره آدا </a>
+                      <a href="{{route('aboutus')}}"><i class="la la-graduation-cap fs-12"></i>  درباره آما </a>
                     </li>
                   </ul>
                   <!-- end ul -->
@@ -193,29 +193,27 @@
         <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
             <a href="index.html">
-              {{-- <img src="/assets/images/logo.png" alt="footer logo" class="footer__logo" /> --}}
+              <img src="/assets/images/persian-blue2.webp" alt="footer logo" class="footer__logo" />
               {{-- <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=584524&Code=IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=584524&Code=IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe' alt='' style='cursor:pointer' code='IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe'></a> --}}
             </a>
             <ul class="generic-list-item pt-4">
-              <li><a href="tel:+1631237884">+163 123 7884</a></li>
               <li>
-                <a href="mailto:support@wbsite.com">support@website.com</a>
+                <a href="mailto:support@wbsite.com">info@amacodecamp.ir</a>
               </li>
-              <li>Melbourne, Australia, 105 South Park Avenue</li>
             </ul>
-            <h3 class="fs-20 font-weight-semi-bold pt-4 pb-2">نحن على</h3>
+            <h3 class="fs-20 font-weight-semi-bold pt-4 pb-2">با ما در ارتباط باشید</h3>
             <ul class="social-icons social-icons-styled">
-              <li class="me-1 ms-0">
+              {{-- <li class="me-1 ms-0">
                 <a href="#" class="facebook-bg"><i class="la la-facebook"></i></a>
+              </li> --}}
+              <li class="me-1 ms-0">
+                <a href="https://wa.me/+989938383698" class="facebook-bg"><i class="la la-whatsapp"></i></a>
               </li>
               <li class="me-1 ms-0">
-                <a href="#" class="twitter-bg"><i class="la la-twitter"></i></a>
+                <a href="https://instagram.com/@amacodecamp" class="instagram-bg"><i class="la la-instagram"></i></a>
               </li>
               <li class="me-1 ms-0">
-                <a href="#" class="instagram-bg"><i class="la la-instagram"></i></a>
-              </li>
-              <li class="me-1 ms-0">
-                <a href="#" class="linkedin-bg"><i class="la la-linkedin"></i></a>
+                <a href="https://t.me/amacodecamp" class="linkedin-bg"><i class="la la-telegram"></i></a>
               </li>
             </ul>
           </div>
@@ -224,15 +222,14 @@
         <!-- end col-lg-3 -->
         <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
-            <h3 class="fs-20 font-weight-semi-bold pb-2">شركة</h3>
+            <h3 class="fs-20 font-weight-semi-bold pb-2">صفحات</h3>
             <div class="divider border-bottom-0"><span></span></div>
             <ul class="generic-list-item">
-              <li><a href="#">معلومات عنا</a></li>
-              <li><a href="#">اتصل بنا</a></li>
-              <li><a href="#">يصبح مدرسا</a></li>
-              <li><a href="#">الدعم</a></li>
-              <li><a href="#">أسئلة وأجوبة</a></li>
-              <li><a href="#">مدونة او مذكرة</a></li>
+              <li><a href="{{route('home')}}">صفحه اصلی</a></li>
+              <li><a href="{{route('bootcamps.index')}}">بوت‌کمپ ها</a></li>
+              <li><a href="{{route('aboutus')}}">درباره ما</a></li>
+              <li><a href="{{route('blogs.index')}}">بلاگ ها</a></li>
+              <li><a href="{{route('basket')}}">سبد خرید</a></li>
             </ul>
           </div>
           <!-- end footer-item -->
@@ -240,15 +237,15 @@
         <!-- end col-lg-3 -->
         <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
-            <h3 class="fs-20 font-weight-semi-bold pb-2">الدورات</h3>
+            <h3 class="fs-20 font-weight-semi-bold pb-2">بوت‌کمپ ها</h3>
             <div class="divider border-bottom-0"><span></span></div>
-            <ul class="generic-list-item">
-              <li><a href="#">تطوير الشبكة</a></li>
-              <li><a href="#">القرصنة</a></li>
-              <li><a href="#">تعلم PHP</a></li>
-              <li><a href="#">الانكليزية المحكية</a></li>
-              <li><a href="#">سيارة ذاتية القيادة</a></li>
-              <li><a href="#">جامعي القمامة</a></li>
+            <ul class="generic-list-item" id="bootcamps-footer">
+              <li><a href="#">بک اند با گو لنگ</a></li>
+              <li><a href="#">فرانت اند</a></li>
+              <li><a href="#">سی پلاس پلاس</a></li>
+              <li><a href="#">جاوا</a></li>
+              <li><a href="#">جاوا اسکریپت</a></li>
+              <li><a href="#">پایتون</a></li>
             </ul>
           </div>
           <!-- end footer-item -->
@@ -256,16 +253,13 @@
         <!-- end col-lg-3 -->
         <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
-            <h3 class="fs-20 font-weight-semi-bold pb-2">تحميل التطبيق</h3>
+            <h3 class="fs-20 font-weight-semi-bold pb-2">مارا دنبال کنید</h3>
             <div class="divider border-bottom-0"><span></span></div>
             <div class="mobile-app">
               <p class="pb-3 lh-24">
-                قم بتنزيل تطبيق الهاتف المحمول الخاص بنا وتعلم أثناء التنقل.
+                برای اطلاع از آخرین اخبار مارا در شبکه های اجتماعی دنبال کنید
               </p>
-              <a href="#" class="d-block mb-2 hover-s"><img src="/assets/images/appstore.png" alt="App store"
-                  class="img-fluid" /></a>
-              <a href="#" class="d-block hover-s"><img src="/assets/images/googleplay.png" alt="Google play store"
-                  class="img-fluid" /></a>
+              
             </div>
           </div>
           <!-- end footer-item -->
@@ -281,22 +275,22 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <p class="copy-desc">
-              &copy; 2021 Aduca. All Rights Reserved. by
-              <a href="https://themeforest.net/user/techydevs/portfolio">TechyDevs</a>
+              &copy; 2025 طراحی و توسعه توسط تیم
+              <a href="{{route('aboutus')}}">آماکدکمپ</a>
             </p>
           </div>
           <!-- end col-lg-6 -->
           <div class="col-lg-6">
             <div class="d-flex flex-wrap align-items-center justify-content-end">
               <ul class="generic-list-item d-flex flex-wrap align-items-center fs-14">
-                <li class="me-3">
-                  <a href="terms-and-conditions.html">البنود و الظروف</a>
+                {{-- <li class="me-3">
+                  <a href="terms-and-conditions.html">شرایط و ضوابط</a>
                 </li>
                 <li class="me-3">
                   <a href="privacy-policy.html">سياسة الخصوصية</a>
-                </li>
+                </li> --}}
               </ul>
-              <div class="select-container select-container-sm">
+              {{-- <div class="select-container select-container-sm">
                 <select class="select-container-select">
                   <option value="1">English</option>
                   <option value="2">Deutsch</option>
@@ -317,7 +311,7 @@
                   <option value="17">中文(繁體)</option>
                   <option value="17">Hindi</option>
                 </select>
-              </div>
+              </div> --}}
             </div>
           </div>
           <!-- end col-lg-6 -->

@@ -96,16 +96,10 @@
                             </h2>
                             <span class="section-divider"></span>
                             <p class="section__desc">
-                                التعليم هو عملية اكتساب مجموعة المعارف والمهارات التي يتوقع أن
-                                يمتلكها الناس في مجتمعك. من التعليم تطوير عملية التفكير النقدي
-                                بالإضافة إلى التعلم. النص الوهمي البسيط لصناعة الطباعة
-                                والتنضيد هو النص الوهمي القياسي للصناعة منذ القرن الخامس عشر
+                                اگه می‌خوای وارد دنیای برنامه‌نویسی بشی اما نمی‌دونی از کجا شروع کنی، اصلاً غصه نخور! ما اینجاییم تا قدم به قدم کنارت باشیم و با هم دست به کار شیم و اولین خط کدت رو بنویسی.
                             </p>
                         </div>
-                        <!-- end section-heading -->
-                        <div class="btn-box pt-35px">
-                            <a href="sign-up.html" class="btn theme-btn"><i class="la la-user me-1"></i>البدء</a>
-                        </div>
+                        
                     </div>
                     <!-- end register-content -->
                 </div>
@@ -120,146 +114,7 @@
         END REGISTER AREA
     ======================================-->
 
-    <!--======================================
-            START GET STARTED AREA
-    ======================================-->
-    <section class="get-started-area position-relative">
-        <div class="container">
-            <div class="section-heading text-center">
-                <h2 class="section__title">اینجا مختو میزنیم</h2>
-                <span class="section-divider"></span>
 
-            </div>
-            <!-- end section-heading -->
-            <div class="row pt-60px">
-                <div class="col-lg-4 responsive-column-half">
-                    <div class="card card-item text-center shadow-none rounded-0 bg-transparent">
-                        <div class="card-body p-0">
-                            <svg width="90" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px"
-                                viewBox="0 0 64 64" xml:space="preserve">
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path style="fill: #f0bc5e"
-                                                d="M62,55H34V42c0-1.105,0.895-2,2-2h24c1.105,0,2,0.895,2,2V55z" />
-                                        </g>
-                                    </g>
-                                    <g>
-                                        <path style="fill: #f0bc5e"
-                                            d="M22,1C13.729,1,7,7.729,7,16v8h1c0-2.209,1.791-4,4-4v-1c0-0.552,0.448-1,1-1h18    c0.552,0,1,0.448,1,1v1c2.209,0,4,1.791,4,4h1v-8C37,7.729,30.271,1,22,1z" />
-                                    </g>
-                                    <g>
-                                        <circle cx="17" cy="22" r="1" />
-                                        <circle cx="27" cy="22" r="1" />
-                                        <path
-                                            d="M26,28h-2c0,1.103-0.897,2-2,2s-2-0.897-2-2h-2c0,2.206,1.794,4,4,4S26,30.206,26,28z" />
-                                        <path
-                                            d="M60,39H36c-0.562,0-1.082,0.165-1.533,0.435L28,37.279v-2.072c2.21-1.445,3.864-3.663,4.589-6.267    C35.066,28.645,37,26.555,37,24c0-2.414-1.721-4.434-4-4.899V19c0-1.103-0.897-2-2-2H13c-1.103,0-2,0.897-2,2v0.101    C8.721,19.566,7,21.586,7,24c0,2.555,1.934,4.645,4.411,4.94c0.724,2.605,2.379,4.822,4.589,6.267v2.072L5.786,40.684    C2.924,41.638,1,44.307,1,47.325V57h32.184c0.414,1.161,1.514,2,2.816,2h6v2h-2v2h16v-2h-2v-2h6c1.654,0,3-1.346,3-3V42    C63,40.346,61.654,39,60,39z M35,24c0,1.317-0.859,2.427-2.042,2.829C32.979,26.554,33,26.28,33,26v-4.816    C34.161,21.598,35,22.698,35,24z M33,55H23v-9.586l4.182,4.182l5.421-8.674l0.549,0.183C33.062,41.389,33,41.686,33,42v6V55z     M30.652,40.271l-3.833,6.133L23.414,43l3.856-3.856L30.652,40.271z M9,24c0-1.302,0.839-2.402,2-2.816V26    c0,0.28,0.021,0.554,0.042,0.829C9.859,26.427,9,25.317,9,24z M13,26v-7h18v7c0,4.962-4.037,9-9,9S13,30.962,13,26z M22,37    c1.412,0,2.758-0.277,4-0.764v1.35l-4,4l-4-4v-1.35C19.242,36.723,20.588,37,22,37z M16.73,39.144L20.586,43l-3.404,3.404    l-3.833-6.133L16.73,39.144z M6.419,42.581l4.978-1.659l5.421,8.675L21,45.414V55H11v-7H9v3H3v-3.675    C3,45.169,4.374,43.263,6.419,42.581z M3,53h6v2H3V53z M52,61h-8v-2h8V61z M61,56c0,0.551-0.448,1-1,1H36c-0.552,0-1-0.449-1-1v-8    v-6c0-0.551,0.448-1,1-1h24c0.552,0,1,0.449,1,1V56z" />
-                                        <polygon points="51.4,44.8 54.333,47 51.4,49.2 52.6,50.8 57.667,47 52.6,43.2   " />
-                                        <polygon points="43.4,43.2 38.333,47 43.4,50.8 44.6,49.2 41.667,47 44.6,44.8   " />
-                                        <rect x="43.538" y="46"
-                                            transform="matrix(0.3881 -0.9216 0.9216 0.3881 -13.9442 72.9984)" width="8.925"
-                                            height="2.001" />
-                                    </g>
-                                </g>
-                            </svg>
-                            <h5 class="card-title pt-4 pb-2">التعلم المخصص</h5>
-                            <p class="card-text">
-                                النخبة بشكل كبير ، ومتنوع في التركيب والسلع ، والسيرة الذاتية
-                                الدقيقة في الجرة الميتوس. بحيث لا أرض
-                            </p>
-                        </div>
-                        <!-- end card-body -->
-                    </div>
-                    <!-- end card -->
-                </div>
-                <!-- end col-lg-4 -->
-                <div class="col-lg-4 responsive-column-half">
-                    <div class="card card-item text-center shadow-none rounded-0 bg-transparent">
-                        <div class="card-body p-0">
-                            <svg width="90" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px"
-                                viewBox="0 0 64 64" xml:space="preserve">
-                                <g>
-                                    <path d="M1,1v56h21.101v-2H3V11h58v44H41.899v2H63V1H1z M3,9V3h58v6H3z" />
-                                    <path style="fill: #f0bc5e"
-                                        d="M32,63.054l-0.316-0.105C20.509,59.224,13,48.807,13,37.026V25h1c6.233,0,12.412-2.06,17.4-5.8   l0.6-0.45l0.6,0.45C37.588,22.94,43.767,25,50,25h1v12.026c0,11.78-7.509,22.197-18.684,25.922L32,63.054z" />
-                                    <rect x="5" y="5" width="2" height="2" />
-                                    <rect x="9" y="5" width="2" height="2" />
-                                    <rect x="13" y="5" width="2" height="2" />
-                                    <path
-                                        d="M47,28.873l-0.881-0.105c-4.796-0.576-9.496-2.227-13.591-4.774L32,23.664l-0.528,0.329   c-4.095,2.547-8.794,4.198-13.591,4.774L17,28.873v8.154c0,9.583,5.742,18.078,14.627,21.643L32,58.819l0.373-0.149   C41.258,55.104,47,46.609,47,37.026V28.873z M45,37.026c0,8.626-5.089,16.289-13,19.633c-7.911-3.345-13-11.007-13-19.633v-6.391   c4.574-0.669,9.039-2.256,13-4.622c3.961,2.366,8.426,3.953,13,4.622V37.026z" />
-                                    <path
-                                        d="M27,35v3.184c-1.161,0.414-2,1.514-2,2.816v8c0,1.654,1.346,3,3,3h8c1.654,0,3-1.346,3-3v-8c0-1.302-0.839-2.402-2-2.816   V35c0-2.757-2.243-5-5-5S27,32.243,27,35z M37,49c0,0.551-0.449,1-1,1h-8c-0.551,0-1-0.449-1-1v-8c0-0.551,0.449-1,1-1h8   c0.551,0,1,0.449,1,1V49z M35,35v3h-6v-3c0-1.654,1.346-3,3-3S35,33.346,35,35z" />
-                                    <path
-                                        d="M32,41c-1.654,0-3,1.346-3,3c0,1.302,0.839,2.402,2,2.816V49h2v-2.184c1.161-0.414,2-1.514,2-2.816   C35,42.346,33.654,41,32,41z M32,45c-0.551,0-1-0.449-1-1s0.449-1,1-1s1,0.449,1,1S32.551,45,32,45z" />
-                                    <rect x="5" y="13" width="28" height="2" />
-                                    <rect x="5" y="17" width="20" height="2" />
-                                    <rect x="5" y="21" width="12" height="2" />
-                                </g>
-                            </svg>
-                            <h5 class="card-title pt-4 pb-2">محتوى موثوق</h5>
-                            <p class="card-text">
-                                النخبة بشكل كبير ، ومتنوع في التركيب والسلع ، والسيرة الذاتية
-                                الدقيقة في الجرة الميتوس. بحيث لا أرض
-                            </p>
-                        </div>
-                        <!-- end card-body -->
-                    </div>
-                    <!-- end card -->
-                </div>
-                <!-- end col-lg-4 -->
-                <div class="col-lg-4 responsive-column-half">
-                    <div class="card card-item text-center shadow-none rounded-0 bg-transparent">
-                        <div class="card-body p-0">
-                            <svg width="90" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="m39 5c-6.065 0-11 4.935-11 11s4.935 11 11 11 11-4.935 11-11-4.935-11-11-11zm-4 15v-8l8 4z"
-                                    fill="#f0bc5e"></path>
-                                <path d="m36 38h-6v8h4v-4h2z" fill="#f0bc5e"></path>
-                                <path d="m34 10.382v11.236l11.236-5.618zm2 3.236 4.764 2.382-4.764 2.382z"></path>
-                                <path
-                                    d="m58 1h-38c-2.757 0-5 2.243-5 5v19.509l-10.917 5.953c-.976.501-1.364 1.703-.865 2.681l.485.952c-.44.529-.703 1.191-.703 1.905v5.285c-1.228.669-2 2.442-2 3.715 0 1.654 1.346 3 3 3s3-1.346 3-3c0-1.273-.772-3.046-2-3.715v-5.285c0-.071.012-.14.026-.208.083.04.166.082.256.111.199.065.404.097.608.097.315 0 .632-.077.933-.231l.577-.315 1.844 3.703.773-.185c.022-.005.111-.027.251-.062.449 1.593 1.439 2.938 2.753 3.846-4.102 1.599-7.021 5.583-7.021 10.244v9h19v-5.333l.1.133c1.503 2.004 3.896 3.2 6.4 3.2s4.897-1.196 6.4-3.2l3.355-4.474c.48-.64.745-1.434.745-2.234v-.368c0-1.428-.817-2.656-2-3.281v-4.443h18c2.757 0 5-2.243 5-5v-32c0-2.757-2.243-5-5-5zm-41 5c0-1.654 1.346-3 3-3h38c1.654 0 3 1.346 3 3v23h-39.668l-.056-.113.641-.349c.976-.501 1.364-1.703.865-2.681l-.902-1.77c-.242-.476-.655-.827-1.162-.991-.507-.163-1.046-.118-1.541.135l-2.177 1.187zm-13 41c-.551 0-1-.448-1-1 0-.82.68-1.956.997-2 .323.044 1.003 1.18 1.003 2 0 .552-.449 1-1 1zm1.902-11.996-.883-1.774 15.08-8.233.901 1.769zm3.255.492 10.362-5.65 1.24 2.489c-.984.832-3.065 2.512-4.885 3.467-1.8.946-4.309 1.689-5.555 2.027zm3.041 3.874c1.38-.421 3.165-1.04 4.605-1.797 1.416-.744 2.923-1.844 4.057-2.739.728.888 1.14 2.002 1.14 3.166 0 2.757-2.243 5-5 5-2.27 0-4.203-1.514-4.802-3.63zm27.802 11.722c0 .37-.123.738-.345 1.035l-3.355 4.474c-1.127 1.502-2.922 2.399-4.8 2.399s-3.673-.897-4.8-2.399l-3.9-5.2-1.6 1.199 1.8 2.4v6h-15v-7c0-4.963 4.038-9 9-9h1.179c3.319 0 6.437 1.623 8.339 4.342l3.961 5.658h1.989l4.483-5.379c.329-.394.812-.621 1.325-.621.951 0 1.724.773 1.724 1.724zm-2-4.062c-1.003.075-1.936.53-2.585 1.31l-3.883 4.66-3.375-4.805c-.049-.07-.107-.13-.157-.198v-12.997h10zm20-6.03h-18v-4h19v-2h-19v-2h-14v12.86c-1.346-1.128-2.919-1.95-4.612-2.414 1.591-1.284 2.612-3.247 2.612-5.446 0-1.632-.578-3.194-1.599-4.437.149-.13.247-.216.267-.234l.567-.508-.907-1.821h38.672v7c0 1.654-1.346 3-3 3z">
-                                </path>
-                                <path d="m30 41h6v2h-6z"></path>
-                                <path d="m30 45h4v2h-4z"></path>
-                                <path d="m30 37h6v2h-6z"></path>
-                                <path d="m19 13h2v2h-2z"></path>
-                                <path d="m57 25h2v2h-2z"></path>
-                                <path d="m57 21h2v2h-2z"></path>
-                                <path d="m57 17h2v2h-2z"></path>
-                                <path d="m21 7h8v-2h-8c-1.103 0-2 .897-2 2v4h2z"></path>
-                            </svg>
-                            <h5 class="card-title pt-4 pb-2">تمكين المعلمين</h5>
-                            <p class="card-text">
-                                النخبة بشكل كبير ، ومتنوع في التركيب والسلع ، والسيرة الذاتية
-                                الدقيقة في الجرة الميتوس. بحيث لا أرض
-                            </p>
-                        </div>
-                        <!-- end card-body -->
-                    </div>
-                    <!-- end card -->
-                </div>
-                <!-- end col-lg-4 -->
-            </div>
-            <!-- end row -->
-            <div class="btn-box d-flex flex-wrap align-items-center justify-content-center pt-3 text-start">
-                <div class="me-4">
-                    <p class="pb-2">هل انت معلم؟</p>
-                    <a href="become-a-teacher.html" class="btn theme-btn theme-btn-sm lh-24"><i
-                            class="la la-user me-1"></i>ابدأ
-                        التدريس</a>
-                </div>
-                <div>
-                    <p class="pb-2">أنت طالب؟</p>
-                    <a href="admission.html" class="btn theme-btn theme-btn-sm lh-24"><i
-                            class="la la-file-text-o me-1"></i>ابدا
-                        بالتعلم</a>
-                </div>
-            </div>
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end get-started-area -->
     <!-- ================================
          START GET STARTED AREA
     ================================= -->
@@ -280,7 +135,7 @@
                     
                 </div>
                 <div class="more-btn-box mt-4 text-center">
-                    <a href="course-grid.html" class="btn theme-btn">
+                    <a href="{{route('bootcamps.index')}}" class="btn theme-btn">
                         همه بوت کمپا
                         <i class="la la-arrow-right icon ms-1"></i></a>
                 </div>
@@ -352,11 +207,10 @@
                                 </g>
                             </svg>
                             <h5 class="card-title pt-4 pb-2 fs-18">
-                                تعلم المهارات الأساسية
+                                یادگیری مدرن
                             </h5>
                             <p class="card-text">
-                                هذا مجرد نص بسيط تم إنشاؤه لهذا القالب الفريد والرائع ، يمكنك
-                                استبداله بأي نص.
+                                با دوره‌های حرفه‌ای و متدهای نو یادگیری رو شروع کن. تمرین‌ها و پروژه‌ها در راهتن!!
                             </p>
                         </div>
                         <!-- end card-body -->
@@ -443,11 +297,10 @@
                                 </g>
                             </svg>
                             <h5 class="card-title pt-4 pb-2 fs-18">
-                                احصل على الشهادات والدرجات
+                                ارائه مدرک
                             </h5>
                             <p class="card-text">
-                                هذا مجرد نص بسيط تم إنشاؤه لهذا القالب الفريد والرائع ، يمكنك
-                                استبداله بأي نص.
+                                جدا از نامه‌ی معتبر و گواهی ارزشمند پایان بوت‌کمپ، تا شاغل شدن کنارت هستیم و دستت رو می‌گیریم
                             </p>
                         </div>
                         <!-- end card-body -->
@@ -502,11 +355,10 @@
                                 </g>
                             </svg>
                             <h5 class="card-title pt-4 pb-2 fs-18">
-                                استعد للوظيفة التالية
+                                حمایت از استعداد ها
                             </h5>
                             <p class="card-text">
-                                هذا مجرد نص بسيط تم إنشاؤه لهذا القالب الفريد والرائع ، يمكنك
-                                استبداله بأي نص.
+                                ما همیشه هوای آدمای پرانگیزه و با استعداد رو داریم و می‌تونن کلی پاداش کسب کنن و استخدام شن
                             </p>
                         </div>
                         <!-- end card-body -->
@@ -535,11 +387,10 @@
                                 <path d="m21 7h8v-2h-8c-1.103 0-2 .897-2 2v4h2z" />
                             </svg>
                             <h5 class="card-title pt-4 pb-2 fs-18">
-                                ماجستير في مجالات مختلفة
+                                دسترسی همیشگی
                             </h5>
                             <p class="card-text">
-                                هذا مجرد نص بسيط تم إنشاؤه لهذا القالب الفريد والرائع ، يمكنك
-                                استبداله بأي نص.
+                                همه بوت کمپ ها ضبط میشه و هر موقع بخوای میتونی بهشون دسترسی داشته باشی
                             </p>
                         </div>
                         <!-- end card-body -->
@@ -567,18 +418,15 @@
                     <div class="client-logo-content pb-4">
                         <div class="section-heading">
                             <h2 class="section__title mb-3">
-                                موثوق بها من قبل الشركات من جميع الأحجام
+                                به دنیای برنامه‌نویسی خوش اومدی!
                             </h2>
                             <p class="section__desc">
-                                Sed adipiscing النخبة بشكل كبير ، ومتنوع في التركيب والسلع ،
-                                والسيرة الذاتية الدقيقة في الجرة الميتوس. لا أرض لليابان أطفال
-                                أو سهام أو سحر. في حرية الجرة ، يجلس venenatis amet ornare non
-                                ، suscipit nec risus. ومع ذلك ، فإن سعر التصوير ليس مضحكا
+                                ما اینجا برات بستری رو آماده کردیم تا تو دنیای کدنویسی پا بذاری و مسیر مورد علاقه‌ت رو پیدا کنی. از مهارت‌های پایه گرفته تا تکنیک‌های پیشرفته، همه چی هست تا ذهنت رو به خلاقیت بیشتر برسونه. اگه هنوز نمی‌دونی از کجا شروع کنی یا شک داری، اصلاً نگران نباش؛ ما کنارتیم تا بهترین راه رو برات روشن کنیم. پس آماده‌ای برای یه ماجراجویی تازه و پرهیجان تو دنیای صفر و یک؟
                             </p>
                         </div>
                         <!-- end section-heading -->
                         <div class="client-logo-btn pt-4">
-                            <a href="about.html" class="btn theme-btn">يتعلم أكثر <i
+                            <a href="{{route('bootcamps.index')}}" class="btn theme-btn">بزن بریم<i
                                     class="la la-arrow-right icon ms-1"></i></a>
                         </div>
                     </div>
@@ -587,54 +435,48 @@
                 <div class="col-lg-6 ms-auto">
                     <div class="client-logo-2">
                         <p class="fs-18 d-flex align-items-center">
-                            <span class="fs-40 text-black me-2 font-weight-bold">3,000+</span>
-                            عملاء إحضار للأعمال
+                            <span class="fs-40 text-black me-2 font-weight-bold">+500</span>
+                            دانشجوی موفق
                         </p>
                         <div class="row pt-3">
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img.png" alt="brand image" /></a>
+                                        src="/assets/images/svg/programming-logos/go.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img2.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/laravel.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img3.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/python.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img4.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/git.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img5.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/docker.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img6.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/linux.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img7.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/flutter.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img8.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/java.svg" alt="brand image" /></a>
                             </div>
                             <div class="col-lg-4 responsive-column-half">
                                 <a href="#" class="client-logo-item client--logo-item"><img
-                                        src="/assets/images/sponsor-img9.png" alt="brand image" /></a>
+                                        src="assets/images/svg/programming-logos/sql.svg" alt="brand image" /></a>
                             </div>
                         </div>
                     </div>
-                    <!-- end client-logo -->
-                    <p class="pt-4 text-start">
-                        يحاول
-                        <a href="for-business.html" class="text-color hover-underline">إحضار للأعمال</a>
-                        لبناء المهارات المهنية المطلوبة.
-                    </p>
                 </div>
                 <!-- end col-lg-6 -->
             </div>
@@ -667,8 +509,8 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="counter__title counter text-color-2">7520</h4>
-                        <p class="counter__meta">مدربين خبراء</p>
+                        <h4 class="counter__title counter text-color-2">15</h4>
+                        <p class="counter__meta">مدرس خبره</p>
                     </div>
                     <!-- end counter-item -->
                 </div>
@@ -717,8 +559,8 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="counter__title counter text-color-3">54,252</h4>
-                        <p class="counter__meta">أتباع أجانب</p>
+                        <h4 class="counter__title counter text-color-3">1200</h4>
+                        <p class="counter__meta">کاربران سایت</p>
                     </div>
                     <!-- end counter-item -->
                 </div>
@@ -780,8 +622,8 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="counter__title counter text-color-4">97,220</h4>
-                        <p class="counter__meta">التحق الطلاب</p>
+                        <h4 class="counter__title counter text-color-4">689</h4>
+                        <p class="counter__meta">دانشجوی موفق</p>
                     </div>
                     <!-- end counter-item -->
                 </div>
@@ -825,8 +667,8 @@
                                 </g>
                             </svg>
                         </div>
-                        <h4 class="counter__title counter text-color-5">20</h4>
-                        <p class="counter__meta">سنوات من الخبرة</p>
+                        <h4 class="counter__title counter text-color-5">4</h4>
+                        <p class="counter__meta">سال تجربه</p>
                     </div>
                     <!-- end counter-item -->
                 </div>
@@ -848,7 +690,7 @@
     <section class="testimonial-area section--padding">
         <div class="container">
             <div class="section-heading text-center">
-                <h2 class="section__title theme-font-2">ملاحظات مجتمع الطلاب</h2>
+                <h2 class="section__title theme-font-2">نظرات داشنجوها</h2>
             </div>
             <!-- end section-heading -->
             <div class="testimonial-carousel-3 owl-action-styled owl--action-styled mt-35px">
@@ -857,15 +699,14 @@
                         <div class="avatar-md mb-4">
                             <img src="/assets/images/small-avatar-1.jpg" alt="Testimonial avatar" class="rounded-full" />
                         </div>
-                        <h3 class="card-title pb-2">دورات رائعة!</h3>
+                        <h3 class="card-title pb-2">تجربه دلچسب</h3>
                         <p class="card-text pb-4">
-                            أنا وأولادي نحب Aduca! الدورات رائعة والمدربون ممتعون للغاية
-                            ومطلعون. أتمنى فقط أن نجدها عاجلاً.
+                            از ترکیب ویدئوهای ضبط‌شده، تمرین‌های عملی و پروژه‌های واقعی واقعاً لذت بردم. محتوای هر جلسه کامل و مفید بود. با هیجان ادامه میدم!
                         </p>
                         <div class="section-block"></div>
-                        <h3 class="card-title fs-18 pt-4">كيفن مارتن</h3>
+                        <h3 class="card-title fs-18 pt-4">محسن نامداری</h3>
                         <div class="d-flex align-items-center">
-                            <span class="lh-18 pe-2">طالب علم</span>
+                            {{-- <span class="lh-18 pe-2">طالب علم</span> --}}
                             <div class="review-stars">
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
@@ -883,15 +724,14 @@
                         <div class="avatar-md mb-4">
                             <img src="/assets/images/small-avatar-2.jpg" alt="Testimonial avatar" class="rounded-full" />
                         </div>
-                        <h3 class="card-title pb-2">دعم العملاء!</h3>
+                        <h3 class="card-title pb-2">عالی بود!</h3>
                         <p class="card-text pb-4">
-                            أنا وأولادي نحب Aduca! الدورات رائعة والمدربون ممتعون للغاية
-                            ومطلعون. أتمنى فقط أن نجدها عاجلاً.
+                            محتوای دوره‌ها از سطوح مقدماتی تا پیشرفته رو پوشش میده و تدریسشون روون و کامل بود. پشتیبانی هم عالی عمل کرد و هرجا گیر کردم، کمکم کردن.
                         </p>
                         <div class="section-block"></div>
-                        <h3 class="card-title fs-18 pt-4">كيفن مارتن</h3>
+                        <h3 class="card-title fs-18 pt-4">علی امامی</h3>
                         <div class="d-flex align-items-center">
-                            <span class="lh-18 pe-2">طالب علم</span>
+                            <span class="lh-18 pe-2"></span>
                             <div class="review-stars">
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
@@ -909,21 +749,20 @@
                         <div class="avatar-md mb-4">
                             <img src="/assets/images/small-avatar-3.jpg" alt="Testimonial avatar" class="rounded-full" />
                         </div>
-                        <h3 class="card-title pb-2">دورات رائعة!</h3>
+                        <h3 class="card-title pb-2">پشتیبانی بی‌نظیر</h3>
                         <p class="card-text pb-4">
-                            أنا وأولادي نحب Aduca! الدورات رائعة والمدربون ممتعون للغاية
-                            ومطلعون. أتمنى فقط أن نجدها عاجلاً.
+                            هر زمان به مشکل برخوردم، تیم آموزشی سریع و دقیق پاسخم رو دادن. انگار یه مربی خصوصی داشتم که همیشه آماده راهنمایی بود.
                         </p>
                         <div class="section-block"></div>
-                        <h3 class="card-title fs-18 pt-4">كيفن مارتن</h3>
+                        <h3 class="card-title fs-18 pt-4">دنیا جهان آرایی</h3>
                         <div class="d-flex align-items-center">
-                            <span class="lh-18 pe-2">طالب علم</span>
+                            {{-- <span class="lh-18 pe-2">طالب علم</span> --}}
                             <div class="review-stars">
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
-                                <span class="la la-star"></span>
+                                <span class="la la-star-o"></span>
                             </div>
                         </div>
                     </div>
@@ -935,15 +774,14 @@
                         <div class="avatar-md mb-4">
                             <img src="/assets/images/small-avatar-4.jpg" alt="Testimonial avatar" class="rounded-full" />
                         </div>
-                        <h3 class="card-title pb-2">دورات رائعة!</h3>
+                        <h3 class="card-title pb-2">کیفیت مطلوب</h3>
                         <p class="card-text pb-4">
-                            أنا وأولادي نحب Aduca! الدورات رائعة والمدربون ممتعون للغاية
-                            ومطلعون. أتمنى فقط أن نجدها عاجلاً.
+                            همه چیز با نظم عالی ارائه میشه و درس‌ها از صفر تا صد رو پوشش میدن. بخش پرسش‌وپاسخ خیلی بهم کمک کرد تا ابهامام برطرف بشه
                         </p>
                         <div class="section-block"></div>
-                        <h3 class="card-title fs-18 pt-4">كيفن مارتن</h3>
+                        <h3 class="card-title fs-18 pt-4">بیتا رضایی</h3>
                         <div class="d-flex align-items-center">
-                            <span class="lh-18 pe-2">طالب علم</span>
+                            {{-- <span class="lh-18 pe-2">طالب علم</span> --}}
                             <div class="review-stars">
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
@@ -961,21 +799,20 @@
                         <div class="avatar-md mb-4">
                             <img src="/assets/images/small-avatar-5.jpg" alt="Testimonial avatar" class="rounded-full" />
                         </div>
-                        <h3 class="card-title pb-2">دورات رائعة!</h3>
+                        <h3 class="card-title pb-2">فرصت کاری</h3>
                         <p class="card-text pb-4">
-                            أنا وأولادي نحب Aduca! الدورات رائعة والمدربون ممتعون للغاية
-                            ومطلعون. أتمنى فقط أن نجدها عاجلاً.
+                            نزدیکای آخر دوره، چند جا بهم پیشنهاد کار دادن و معرفی‌نامه سایت هم کلی اعتبار برام ایجاد کرد. حس می‌کنم یه قدم بزرگ تو مسیر شغلیم برداشتم.
                         </p>
                         <div class="section-block"></div>
-                        <h3 class="card-title fs-18 pt-4">كيفن مارتن</h3>
+                        <h3 class="card-title fs-18 pt-4">سمین خدایی</h3>
                         <div class="d-flex align-items-center">
-                            <span class="lh-18 pe-2">طالب علم</span>
+                            {{-- <span class="lh-18 pe-2">طالب علم</span> --}}
                             <div class="review-stars">
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
-                                <span class="la la-star"></span>
+                                <span class="la la-star-o"></span>
                             </div>
                         </div>
                     </div>
@@ -987,15 +824,14 @@
                         <div class="avatar-md mb-4">
                             <img src="/assets/images/small-avatar-6.jpg" alt="Testimonial avatar" class="rounded-full" />
                         </div>
-                        <h3 class="card-title pb-2">دعم العملاء!</h3>
+                        <h3 class="card-title pb-2">هزینه منصفانه</h3>
                         <p class="card-text pb-4">
-                            أنا وأولادي نحب Aduca! الدورات رائعة والمدربون ممتعون للغاية
-                            ومطلعون. أتمنى فقط أن نجدها عاجلاً.
+                            با توجه به تعداد جلسات و کاربردی بودن درس‌ها، واقعاً پرداخت شهریه ارزشش رو داشت. هر روز یه مهارت جدید یاد می‌گیرم و به هدفم نزدیک‌تر میشم.
                         </p>
                         <div class="section-block"></div>
-                        <h3 class="card-title fs-18 pt-4">كيفن مارتن</h3>
+                        <h3 class="card-title fs-18 pt-4">سینا خدابخشی</h3>
                         <div class="d-flex align-items-center">
-                            <span class="lh-18 pe-2">طالب علم</span>
+                            {{-- <span class="lh-18 pe-2">طالب علم</span> --}}
                             <div class="review-stars">
                                 <span class="la la-star"></span>
                                 <span class="la la-star"></span>
@@ -1019,57 +855,6 @@
     =================================-->
 
     <div class="section-block"></div>
-
-
-    <!--======================================
-            START SUBSCRIBER AREA
-    ======================================-->
-    <section class="subscriber-area pt-80px pb-60px bg-gray position-relative overflow-hidden">
-        <span class="stroke-shape stroke-shape-1"></span>
-        <span class="stroke-shape stroke-shape-2"></span>
-        <span class="stroke-shape stroke-shape-3"></span>
-        <span class="stroke-shape stroke-shape-4"></span>
-        <span class="stroke-shape stroke-shape-5"></span>
-        <span class="stroke-shape stroke-shape-6"></span>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="section-heading pb-4 text-start">
-                        <h2 class="section__title mb-1">سجل للحصول على اخر اخبارنا</h2>
-                        <p class="section__desc">
-                            ابق على اطلاع على الكتاب الإلكتروني المجاني الجديد
-                        </p>
-                    </div>
-                    <!-- end section-heading -->
-                </div>
-                <!-- end col-lg-5 -->
-                <div class="col-lg-5 ms-auto">
-                    <form method="post" class="subscriber-form">
-                        <div class="input-group">
-                            <input type="email" name="email" class="form-control form--control ps-3"
-                                placeholder="أدخل عنوان البريد الالكتروني" />
-                            <div class="input-group-append">
-                                <button class="btn theme-btn" type="button">
-                                    الإشتراك <i class="la la-arrow-right icon ms-1"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <p class="fs-14 mt-1 text-start">
-                            <i class="la la-lock me-1"></i>معلوماتك فى امان معنا! إلغاء
-                            الاشتراك في أي وقت.
-                        </p>
-                    </form>
-                </div>
-                <!-- end col-lg-6 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end subscriber-area -->
-    <!--======================================
-            END SUBSCRIBER AREA
-    ======================================-->
 @endsection
 
 
@@ -1155,8 +940,6 @@
             console.log(error);
         })
         */
-
-
         const bootcampsContainer = document.getElementById("bootcampsContainer");
         axios.get('/bootcamps')
             .then(function(response) {
@@ -1164,48 +947,52 @@
                 d.forEach(bootcamp => {
                     const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
                     const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
-                    console.log(url);
+                    let pricebox = `<p class="card-price text-black font-weight-bold">
+                                            ${bootcamp.price} تومن
+                                        </p>`;
+
+                    if (bootcamp.price != bootcamp.price_off){
+                        pricebox = `
+                            <p class="card-price text-black font-weight-bold">
+                                            ${bootcamp.price_off} تومن
+                                            <span class="before-price font-weight-medium">${bootcamp.price} تومن</span>
+                                        </p>
+                        `;
+                    }
                     bootcampsContainer.innerHTML += `
                     <div class="col-lg-4 responsive-column-half">
-                            <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                            <div class="card card-item" data-tooltip-content="#tooltip_content_1">
                                 <div class="card-image">
-                                    <a href="course-details.html" class="d-block">
+                                    <a href="${url}" class="d-block">
                                         <img class="card-img-top lazy" src="/assets/images/img-loading.png"
-                                            data-src="/assets/images/img8.jpg" alt="Card image cap" />
+                                            data-src="${bootcamp.cover_url}" alt="Card image cap" />
                                     </a>
                                 </div>
                                 <!-- end card-image -->
                                 <div class="card-body">
                                     <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
-                                        جميع المستويات
+                                        ${bootcamp.category}
                                     </h6>
                                     <h5 class="card-title">
                                         <a href="${url}">${bootcamp.title}</a>
                                     </h5>
                                     <p class="card-text">
-                                        <a href="teacher-detail.html">خوسيه بورتيلا</a>
+                                        <a href="teacher-detail.html">${bootcamp.teachers[0].full_name}</a>
                                     </p>
                                     <div class="rating-wrap d-flex align-items-center py-2">
                                         <div class="review-stars">
-                                            <span class="rating-number">4.4</span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star-o"></span>
+                                            <span class="rating-number">${bootcamp.rate}</span>
+                                            <span class="la la-star${bootcamp.rate > 0 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 1 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 2 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 3 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 4 ? '' : '-o'}"></span>
                                         </div>
-                                        <span class="rating-total ps-1">(20,230)</span>
+                                        <span class="rating-total ps-1">(${bootcamp.reviews.length})</span>
                                     </div>
                                     <!-- end rating-wrap -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <p class="card-price text-black font-weight-bold">
-                                            12.99
-                                            <span class="before-price font-weight-medium">129.99</span>
-                                        </p>
-                                        <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
-                                            title="Add to Wishlist">
-                                            <i class="la la-heart-o"></i>
-                                        </div>
+                                        ${pricebox}
                                     </div>
                                 </div>
                                 <!-- end card-body -->

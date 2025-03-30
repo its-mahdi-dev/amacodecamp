@@ -160,6 +160,7 @@ class PaymentController extends Controller
         $cupon = Cupon::where('code' , $code)->first();
         $response = $this->checkCuponLogic($cupon);
         if($response){
+            $response["description"] = $cupon->description;
             return Response::success(new CheckCuponResource($response), ResponseMessages::CUPON_VALID);
         }else{
             return Response::error(ResponseMessages::CUPON_NOT_VALID);
