@@ -33,89 +33,46 @@
     ======================================-->
     <section class="course-area section--padding">
         <div class="container">
+
+            <div class="filter-bar mb-4">
+                <div class="filter-bar-inner d-flex flex-wrap align-items-center justify-content-between">
+                    <p class="fs-14">
+                        <span class="text-black" id="searchResultsCounter">0</span> نتیجه واست پیدا کردم 
+                    </p>
+                </div>
+                <!-- end filter-bar-inner -->
+            </div>
             <!-- end filter-bar -->
             <div class="row">
-                
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="card card-item">
+                            <div class="card-body">
+                                <h3 class="card-title fs-18 pb-2">جستجو کنید</h3>
+                                <div class="divider"><span></span></div>
+                                <form method="get">
+                                    <div class="form-group mb-0">
+                                        <input class="form-control form--control ps-3" type="text" name="search"
+                                            placeholder="جستجو کن" value="{{request()->search}}" />
+                                        <button class="btn search-icon">
+                                            <span class="la la-search"></span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end sidebar -->
+                </div>
                 <!-- end col-lg-4 -->
                 <div class="mb-5">
                     <div class="row" id="bootcampsContainer">
-                        {{-- <div class="col-lg-6 responsive-column-half">
-                            <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                                <div class="card-image">
-                                    <a href="course-details.html" class="d-block">
-                                        <img class="card-img-top lazy" src="/assets/images/img-loading.png"
-                                            data-src="/assets/images/img8.jpg" alt="Card image cap" />
-                                    </a>
-                                    <div class="course-badge-labels">
-                                        <div class="course-badge">الأكثر مبيعا</div>
-                                        <div class="course-badge blue">-39%</div>
-                                    </div>
-                                </div>
-                                <!-- end card-image -->
-                                <div class="card-body">
-                                    <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
-                                        جميع المستويات
-                                    </h6>
-                                    <h5 class="card-title">
-                                        <a href="course-details.html">دورة محلل ذكاء الأعمال 2021</a>
-                                    </h5>
-                                    <p class="card-text">
-                                        <a href="teacher-detail.html">خوسيه بورتيلا</a>
-                                    </p>
-                                    <div class="rating-wrap d-flex align-items-center py-2">
-                                        <div class="review-stars">
-                                            <span class="rating-number">4.4</span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star-o"></span>
-                                        </div>
-                                        <span class="rating-total ps-1">(20,230)</span>
-                                    </div>
-                                    <!-- end rating-wrap -->
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="card-price text-black font-weight-bold">
-                                            12.99
-                                            <span class="before-price font-weight-medium">129.99</span>
-                                        </p>
-                                        <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
-                                            title="Add to Wishlist">
-                                            <i class="la la-heart-o"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end card-body -->
-                            </div>
-                            <!-- end card -->
-                        </div> --}}
-                        <!-- end col-lg-6 -->
+
+                        {{-- Loading Bootcamps --}}
                     </div>
                     <!-- end row -->
-                    {{-- <div class="text-center pt-3">
-                        <nav aria-label="Page navigation example" class="pagination-box">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <p class="fs-14 pt-2">عرض 1-10 من 56 نتيجة</p>
-                    </div> --}}
+
                 </div>
                 <!-- end col-lg-8 -->
 
@@ -135,21 +92,25 @@
     <script>
         axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
         const bootcampsContainer = document.getElementById("bootcampsContainer");
-        axios.get('/bootcamps')
+        
+        axios.get('/bootcamps?search={{request()->search}}')
             .then(function(response) {
                 let d = response.data.data;
+                //update results counter
+                document.getElementById("searchResultsCounter").innerText = d.length;
+
                 d.forEach(bootcamp => {
                     const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
                     const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
                     let pricebox = `<p class="card-price text-black font-weight-bold">
-                                            ${bootcamp.price} تومن
+                                            ${bootcamp.price.toLocaleString('en-US')} تومن
                                         </p>`;
 
                     if (bootcamp.price != bootcamp.price_off){
                         pricebox = `
                             <p class="card-price text-black font-weight-bold">
-                                            ${bootcamp.price_off} تومن
-                                            <span class="before-price font-weight-medium">${bootcamp.price} تومن</span>
+                                            ${bootcamp.price_off.toLocaleString('en-US')} تومن
+                                            <span class="before-price font-weight-medium">${bootcamp.price.toLocaleString('en-US')} تومن</span>
                                         </p>
                         `;
                     }
@@ -167,11 +128,12 @@
                                     <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
                                         ${bootcamp.category}
                                     </h6>
-                                    <h5 class="card-title">
+                                    <h5 class="card-title text-truncate">
                                         <a href="${url}">${bootcamp.title}</a>
                                     </h5>
                                     <p class="card-text">
-                                        <a href="teacher-detail.html">${bootcamp.teachers[0].full_name}</a>
+
+                                        <a href="teacher-detail.html">${bootcamp.intro.substring(30)}...</a>
                                     </p>
                                     <div class="rating-wrap d-flex align-items-center py-2">
                                         <div class="review-stars">

@@ -25,8 +25,10 @@
                         <div class="form-group mb-0">
                             <input class="form-control form--control ps-3 shadow-sm border-0" type="text" name="search"
                                 placeholder="چی میخوای یادبگیری؟؟" />
-                            <span class="la la-search search-icon"></span>
-                        </div>
+                            <button class="btn search-icon">
+                                <span class="la la-search"></span>
+                            </button>
+                            </div>
                     </form>
                 </div>
                 <!-- end hero-content -->
@@ -697,7 +699,7 @@
                 <div class="card card-item border border-gray shadow-none">
                     <div class="card-body">
                         <div class="avatar-md mb-4">
-                            <img src="/assets/images/small-avatar-1.jpg" alt="Testimonial avatar" class="rounded-full" />
+                            <img src="/assets/images/user.webp" alt="Testimonial avatar" class="rounded-full" />
                         </div>
                         <h3 class="card-title pb-2">تجربه دلچسب</h3>
                         <p class="card-text pb-4">
@@ -722,7 +724,7 @@
                 <div class="card card-item border border-gray shadow-none">
                     <div class="card-body">
                         <div class="avatar-md mb-4">
-                            <img src="/assets/images/small-avatar-2.jpg" alt="Testimonial avatar" class="rounded-full" />
+                            <img src="/assets/images/user.webp" alt="Testimonial avatar" class="rounded-full" />
                         </div>
                         <h3 class="card-title pb-2">عالی بود!</h3>
                         <p class="card-text pb-4">
@@ -747,7 +749,7 @@
                 <div class="card card-item border border-gray shadow-none">
                     <div class="card-body">
                         <div class="avatar-md mb-4">
-                            <img src="/assets/images/small-avatar-3.jpg" alt="Testimonial avatar" class="rounded-full" />
+                            <img src="/assets/images/user.webp" alt="Testimonial avatar" class="rounded-full" />
                         </div>
                         <h3 class="card-title pb-2">پشتیبانی بی‌نظیر</h3>
                         <p class="card-text pb-4">
@@ -772,7 +774,7 @@
                 <div class="card card-item border border-gray shadow-none">
                     <div class="card-body">
                         <div class="avatar-md mb-4">
-                            <img src="/assets/images/small-avatar-4.jpg" alt="Testimonial avatar" class="rounded-full" />
+                            <img src="/assets/images/user.webp" alt="Testimonial avatar" class="rounded-full" />
                         </div>
                         <h3 class="card-title pb-2">کیفیت مطلوب</h3>
                         <p class="card-text pb-4">
@@ -797,7 +799,7 @@
                 <div class="card card-item border border-gray shadow-none">
                     <div class="card-body">
                         <div class="avatar-md mb-4">
-                            <img src="/assets/images/small-avatar-5.jpg" alt="Testimonial avatar" class="rounded-full" />
+                            <img src="/assets/images/user.webp" alt="Testimonial avatar" class="rounded-full" />
                         </div>
                         <h3 class="card-title pb-2">فرصت کاری</h3>
                         <p class="card-text pb-4">
@@ -822,7 +824,7 @@
                 <div class="card card-item border border-gray shadow-none">
                     <div class="card-body">
                         <div class="avatar-md mb-4">
-                            <img src="/assets/images/small-avatar-6.jpg" alt="Testimonial avatar" class="rounded-full" />
+                            <img src="/assets/images/user.webp" alt="Testimonial avatar" class="rounded-full" />
                         </div>
                         <h3 class="card-title pb-2">هزینه منصفانه</h3>
                         <p class="card-text pb-4">
@@ -942,20 +944,21 @@
         */
         const bootcampsContainer = document.getElementById("bootcampsContainer");
         axios.get('/bootcamps')
-            .then(function(response) {
+        .then(function(response) {
                 let d = response.data.data;
+
                 d.forEach(bootcamp => {
                     const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
                     const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
                     let pricebox = `<p class="card-price text-black font-weight-bold">
-                                            ${bootcamp.price} تومن
+                                            ${bootcamp.price.toLocaleString('en-US')} تومن
                                         </p>`;
 
                     if (bootcamp.price != bootcamp.price_off){
                         pricebox = `
                             <p class="card-price text-black font-weight-bold">
-                                            ${bootcamp.price_off} تومن
-                                            <span class="before-price font-weight-medium">${bootcamp.price} تومن</span>
+                                            ${bootcamp.price_off.toLocaleString('en-US')} تومن
+                                            <span class="before-price font-weight-medium">${bootcamp.price.toLocaleString('en-US')} تومن</span>
                                         </p>
                         `;
                     }
@@ -973,11 +976,12 @@
                                     <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
                                         ${bootcamp.category}
                                     </h6>
-                                    <h5 class="card-title">
+                                    <h5 class="card-title text-truncate">
                                         <a href="${url}">${bootcamp.title}</a>
                                     </h5>
                                     <p class="card-text">
-                                        <a href="teacher-detail.html">${bootcamp.teachers[0].full_name}</a>
+
+                                        <a href="teacher-detail.html">${bootcamp.intro.substring(30)}...</a>
                                     </p>
                                     <div class="rating-wrap d-flex align-items-center py-2">
                                         <div class="review-stars">
