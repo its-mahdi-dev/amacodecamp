@@ -10,14 +10,13 @@
             <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
                 <div class="section-heading">
                     <h2 class="section__title text-white">
-                        بالطبع الشريط الجانبي الأيمن
+                        بوت‌کمپ های مارو دنبال کن
                     </h2>
                 </div>
                 <ul
                     class="generic-list-item generic-list-item-white generic-list-item-arrow d-flex flex-wrap align-items-center">
-                    <li><a href="index.html">منزل، بيت</a></li>
-                    <li>الدورات</li>
-                    <li>بالطبع الشريط الجانبي الأيمن</li>
+                    <li><a href="index.html">خانه</a></li>
+                    <li>بوت کمپ ها</li>
                 </ul>
             </div>
             <!-- end breadcrumb-content -->
@@ -34,6 +33,7 @@
     ======================================-->
     <section class="course-area section--padding">
         <div class="container">
+
             <div class="filter-bar mb-4">
                 <div class="filter-bar-inner d-flex flex-wrap align-items-center justify-content-between">
                     <p class="fs-14">
@@ -66,8 +66,9 @@
                     <!-- end sidebar -->
                 </div>
                 <!-- end col-lg-4 -->
-                <div class="col-lg-8 mb-5">
+                <div class="mb-5">
                     <div class="row" id="bootcampsContainer">
+
                         {{-- Loading Bootcamps --}}
                     </div>
                     <!-- end row -->
@@ -101,14 +102,25 @@
                 d.forEach(bootcamp => {
                     const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
                     const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
-                    console.log(url);
+                    let pricebox = `<p class="card-price text-black font-weight-bold">
+                                            ${bootcamp.price.toLocaleString('en-US')} تومن
+                                        </p>`;
+
+                    if (bootcamp.price != bootcamp.price_off){
+                        pricebox = `
+                            <p class="card-price text-black font-weight-bold">
+                                            ${bootcamp.price_off.toLocaleString('en-US')} تومن
+                                            <span class="before-price font-weight-medium">${bootcamp.price.toLocaleString('en-US')} تومن</span>
+                                        </p>
+                        `;
+                    }
                     bootcampsContainer.innerHTML += `
-                    <div class="col-lg-6 responsive-column-half">
-                            <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                    <div class="col-lg-4 responsive-column-half">
+                            <div class="card card-item" data-tooltip-content="#tooltip_content_1">
                                 <div class="card-image">
                                     <a href="${url}" class="d-block">
                                         <img class="card-img-top lazy" src="/assets/images/img-loading.png"
-                                            data-src="/assets/images/img8.jpg" alt="Card image cap" />
+                                            data-src="${bootcamp.cover_url}" alt="Card image cap" />
                                     </a>
                                 </div>
                                 <!-- end card-image -->
@@ -120,25 +132,23 @@
                                         <a href="${url}">${bootcamp.title}</a>
                                     </h5>
                                     <p class="card-text">
+
                                         <a href="teacher-detail.html">${bootcamp.intro.substring(30)}...</a>
                                     </p>
                                     <div class="rating-wrap d-flex align-items-center py-2">
                                         <div class="review-stars">
                                             <span class="rating-number">${bootcamp.rate}</span>
-                                            <span class="la la-star${bootcamp.rate < 1 ? '-o': ''}"></span>
-                                            <span class="la la-star${bootcamp.rate < 2 ? '-o': ''}"></span>
-                                            <span class="la la-star${bootcamp.rate < 3 ? '-o': ''}"></span>
-                                            <span class="la la-star${bootcamp.rate < 4 ? '-o': ''}"></span> 
-                                            <span class="la la-star${bootcamp.rate < 5 ? '-o': ''}"></span>
+                                            <span class="la la-star${bootcamp.rate > 0 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 1 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 2 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 3 ? '' : '-o'}"></span>
+                                            <span class="la la-star${bootcamp.rate > 4 ? '' : '-o'}"></span>
                                         </div>
-                                        <span class="rating-total ps-1">(${bootcamp.students_count})</span>
+                                        <span class="rating-total ps-1">(${bootcamp.reviews.length})</span>
                                     </div>
                                     <!-- end rating-wrap -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <p class="card-price text-black font-weight-bold">
-                                            ${bootcamp.price_off.toLocaleString('en-US')}
-                                            <span class="before-price font-weight-medium">${bootcamp.price.toLocaleString('en-US')}</span>
-                                        </p>
+                                        ${pricebox}
                                     </div>
                                 </div>
                                 <!-- end card-body -->

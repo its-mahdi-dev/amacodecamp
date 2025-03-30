@@ -16,7 +16,8 @@ class CheckCuponResource extends JsonResource
     {
         return [
             "type" => $this->resource["type"],
-            "value" => $this->resource["value"]
+            "value" => $this->resource["value"],
+            "description" => $this->description
         ];
     }
 }

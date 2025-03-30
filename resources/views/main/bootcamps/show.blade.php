@@ -85,12 +85,13 @@
                                                 <h3 class="fs-24 font-weight-semi-bold">سرفصل ها </h3>
                                                 <div class="curriculum-duration fs-15">
                                                     <span class="curriculum-total__text me-2"><strong
-                                                            class="text-black font-weight-semi-bold">مجموع:</strong>17
-                                                        محاضرة
+                                                            class="text-black font-weight-semi-bold">مجموع:</strong>
+                                                           <span id="totalEpisodesContent"> 17 </span>
+                                                        قسمت
                                                     </span>
                                                     <span class="curriculum-total__hours">
                                                         <strong class="text-black font-weight-semi-bold">مدت زمان: </strong>
-                                                        <span></span>
+                                                        <span id="totalDurationContent">123</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -210,6 +211,8 @@
         const reviews = document.getElementById("reviewsContent");
         const reviewSubmitter = document.getElementById("reviewSubmitter");
         const teachers = document.getElementById("teachersContent");
+        const totalDuration = document.getElementById("totalDurationContent");
+        const totalEpisodes = document.getElementById("totalEpisodesContent");
         const modalsContainer = document.getElementById("modalsContainer");
         axios.get('/bootcamps/{{ $slug }}')
             .then(function(response) {
@@ -276,7 +279,7 @@
                     </div>
                 `;
 
-
+                let episode_count = 0;
                 d.seasons.forEach((season, index) => {
                     let seasonEpisodes = '';
                     season.episodes.forEach(episode => {
@@ -290,6 +293,7 @@
 
 
                         }
+                        episode_count++;
                         seasonEpisodes += `<li>
                                         <div class="d-flex align-items-center justify-content-between">
                                             <span>  
@@ -313,7 +317,7 @@
                                 <i class="la la-plus"></i>
                                 <i class="la la-minus"></i>
                                 ${season.title}
-                                <span class="fs-15 text-gray font-weight-medium">6 محاضرات</span>
+                                <span class="fs-15 text-gray font-weight-medium">${season.episodes.length} قسمت</span>
                             </button>
                         </div>
                         <div id="collapse${index}" class="collapse" aria-labelledby="heading${index}"
@@ -330,6 +334,12 @@
                     `;
                 });
 
+                if (d.seasons.length == 0){
+                    curriculum.innerHTML = "سرفصلای این بوت کمپ در حال آماده سازیه"
+                }
+
+                totalDuration.innerHTML = d.duration;
+                totalEpisodes = episode_count;
 
                 d.reviews.forEach(review => {
                     reviews.innerHTML += `

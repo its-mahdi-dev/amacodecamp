@@ -13,7 +13,7 @@
 
 
   <!-- Favicon -->
-  <link rel="icon" sizes="16x16" href="/assets/images/favicon.png" />
+  <link rel="icon" sizes="16x16" href="/assets/images/logo.webp" />
 
   <!-- inject:css -->
   <link rel="stylesheet" href="/assets/css/bootstrap-rtl.min.css" />
@@ -54,7 +54,7 @@
           <div class="row align-items-center">
             <div class="col-lg-2">
               <div class="logo-box">
-                <a href="{{route('home')}}" class="logo logo-inline"><img src="/assets/images/logo-inline.png" alt="logo" /></a>
+                <a href="{{route('home')}}" class="logo logo-inline"><img src="/assets/images/persian-blue2.webp" alt="logo" /></a>
                 
                 <div class="user-btn-action d-flex align-items-center">
 
@@ -103,7 +103,7 @@
                       <a href="{{route('basket')}}"><i class="la la-shopping-basket fs-12"></i>  سبدت</a>
                     </li>
                     <li>
-                      <a href="{{route('home')}}#about"><i class="la la-graduation-cap fs-12"></i>  درباره آدا </a>
+                      <a href="{{route('aboutus')}}"><i class="la la-graduation-cap fs-12"></i>  درباره آما </a>
                     </li>
                   </ul>
                   <!-- end ul -->
@@ -191,32 +191,38 @@
 <section class="footer-area pt-100px">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 responsive-column-half">
+        <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
             <a href="index.html">
-              {{-- <img src="/assets/images/logo.png" alt="footer logo" class="footer__logo" /> --}}
+              <img src="/assets/images/persian-blue2.webp" alt="footer logo" class="footer__logo" />
               {{-- <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=584524&Code=IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=584524&Code=IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe' alt='' style='cursor:pointer' code='IHgLaIfLgYR2PurM2l0YvtKOzsK25TCe'></a> --}}
             </a>
             <ul class="generic-list-item pt-4">
               <li>
-                <a href="mailto:info@amacodecamp.ir">info@amacodecamp.ir</a>
+                <a href="mailto:support@wbsite.com">info@amacodecamp.ir</a>
               </li>
               <li>با ما در ارتباط باشید</li>
             </ul>
             <h3 class="fs-20 font-weight-semi-bold pt-4 pb-2">سوشال هامون</h3>
             <ul class="social-icons social-icons-styled">
+              {{-- <li class="me-1 ms-0">
+                <a href="#" class="facebook-bg"><i class="la la-facebook"></i></a>
+              </li> --}}
               <li class="me-1 ms-0">
-                <a href="#" class="telegram-bg"><i class="la la-telegram"></i></a>
+                <a href="https://wa.me/+989938383698" class="facebook-bg"><i class="la la-whatsapp"></i></a>
               </li>
               <li class="me-1 ms-0">
-                <a href="#" class="instagram-bg"><i class="la la-instagram"></i></a>
+                <a href="https://instagram.com/@amacodecamp" class="instagram-bg"><i class="la la-instagram"></i></a>
+              </li>
+              <li class="me-1 ms-0">
+                <a href="https://t.me/amacodecamp" class="linkedin-bg"><i class="la la-telegram"></i></a>
               </li>
             </ul>
           </div>
           <!-- end footer-item -->
         </div>
         <!-- end col-lg-4 -->
-        <div class="col-lg-4 responsive-column-half">
+        <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
             <h3 class="fs-20 font-weight-semi-bold pb-2">صفحات</h3>
             <div class="divider border-bottom-0"><span></span></div>
@@ -241,17 +247,34 @@
           <!-- end footer-item -->
         </div>
 
-        <!-- end col-lg-4 -->
-        <div class="col-lg-4 responsive-column-half">
+       
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column-half">
           <div class="footer-item">
+            <h3 class="fs-20 font-weight-semi-bold pb-2">بوت‌کمپ ها</h3>
+            <div class="divider border-bottom-0"><span></span></div>
+            <ul class="generic-list-item" id="bootcamps-footer">
+              <li><a href="#">بک اند با گو لنگ</a></li>
+              <li><a href="#">فرانت اند</a></li>
+              <li><a href="#">سی پلاس پلاس</a></li>
+              <li><a href="#">جاوا</a></li>
+              <li><a href="#">جاوا اسکریپت</a></li>
+              <li><a href="#">پایتون</a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column-half">
+          <div class="footer-item">
+              
             <h3 class="fs-20 font-weight-semi-bold pb-2">درباره آما</h3>
             <div class="divider border-bottom-0"><span></span></div>
             <div class="mobile-app">
               <p class="pb-3 lh-24">
                 آموزشگاه مجازی آما تشکیل شده از برنامه نویسان و مدرسان برترین دانشگاه های کشوره و با هدف ترویج کیفیت بسیار بالای آموزشی و تربیت برنامه نویس های مجرب کار خودشو شروع کرده
               </p>
-              <a href="#" class="d-block mb-2 hover-s"><img src="/assets/images/appstore.png" alt="App store"
-                  class="img-fluid" /></a>
+            
             </div>
           </div>
           <!-- end footer-item -->
@@ -267,12 +290,12 @@
         <div class="row align-items-center">
           <div class="">
             <p class="copy-desc">
+
               &copy; تمامی حقوق این سایت متعلق به
               <a href=".">آما کدکمپ</a>
               می‌باشد
             </p>
           </div>
-
           <!-- end col-lg-6 -->
         </div>
         <!-- end row -->
@@ -291,163 +314,6 @@
     <i class="la la-arrow-up" title="Go top"></i>
   </div>
   <!-- end scroll top -->
-
-  <div class="tooltip_templates">
-    <div id="tooltip_content_1">
-      <div class="card card-item">
-        <div class="card-body">
-          <p class="card-text pb-2">
-            By <a href="teacher-detail.html">خوسيه بورتيلا</a>
-          </p>
-          <h5 class="card-title pb-1">
-            <a href="course-details.html">دورة محلل ذكاء الأعمال 2021</a>
-          </h5>
-          <div class="d-flex align-items-center pb-1">
-            <h6 class="ribbon fs-14 me-2">الأكثر مبيعا</h6>
-            <p class="text-success fs-14 font-weight-medium">
-              Updated<span class="font-weight-bold ps-1">November 2020</span>
-            </p>
-          </div>
-          <ul
-            class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
-            <li>23 total hours</li>
-            <li>جميع المستويات</li>
-          </ul>
-          <p class="card-text pt-1 fs-14 lh-22">
-            The skills you need to become a BI Analyst - Statistics, Database
-            theory, SQL, Tableau – Everything is included
-          </p>
-          <ul class="generic-list-item fs-14 py-3">
-            <li>
-              <i class="la la-check me-1 text-black"></i> Become an expert in
-              Statistics, SQL, Tableau, and problem solving
-            </li>
-            <li>
-              <i class="la la-check me-1 text-black"></i> Boost your resume
-              with in-demand skills
-            </li>
-            <li>
-              <i class="la la-check me-1 text-black"></i> Gather, organize,
-              analyze and visualize data
-            </li>
-          </ul>
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#" class="btn theme-btn flex-grow-1 me-3"><i class="la la-shopping-cart me-1 fs-18"></i> Add to
-              Cart</a>
-            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist">
-              <i class="la la-heart-o"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end card -->
-    </div>
-  </div>
-  <!-- end tooltip_templates -->
-  <div class="tooltip_templates">
-    <div id="tooltip_content_2">
-      <div class="card card-item">
-        <div class="card-body">
-          <p class="card-text pb-2">
-            By <a href="teacher-detail.html">خوسيه بورتيلا</a>
-          </p>
-          <h5 class="card-title pb-1">
-            <a href="course-details.html">تدريب فوتوشوب النهائي: من المبتدئين إلى المحترفين</a>
-          </h5>
-          <div class="d-flex align-items-center pb-1">
-            <h6 class="ribbon fs-14 me-2">الأكثر مبيعا</h6>
-            <p class="text-success fs-14 font-weight-medium">
-              Updated<span class="font-weight-bold ps-1">November 2020</span>
-            </p>
-          </div>
-          <ul
-            class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
-            <li>23 total hours</li>
-            <li>جميع المستويات</li>
-          </ul>
-          <p class="card-text pt-1 fs-14 lh-22">
-            The skills you need to become a BI Analyst - Statistics, Database
-            theory, SQL, Tableau – Everything is included
-          </p>
-          <ul class="generic-list-item fs-14 py-3">
-            <li>
-              <i class="la la-check me-1 text-black"></i> Become an expert in
-              Statistics, SQL, Tableau, and problem solving
-            </li>
-            <li>
-              <i class="la la-check me-1 text-black"></i> Boost your resume
-              with in-demand skills
-            </li>
-            <li>
-              <i class="la la-check me-1 text-black"></i> Gather, organize,
-              analyze and visualize data
-            </li>
-          </ul>
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#" class="btn theme-btn flex-grow-1 me-3"><i class="la la-shopping-cart me-1 fs-18"></i> Add to
-              Cart</a>
-            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist">
-              <i class="la la-heart-o"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end card -->
-    </div>
-  </div>
-  <!-- end tooltip_templates -->
-  <div class="tooltip_templates">
-    <div id="tooltip_content_3">
-      <div class="card card-item">
-        <div class="card-body">
-          <p class="card-text pb-2">
-            By <a href="teacher-detail.html">خوسيه بورتيلا</a>
-          </p>
-          <h5 class="card-title pb-1">
-            <a href="course-details.html">دورة الأعمال الكاملة لموقع الويب</a>
-          </h5>
-          <div class="d-flex align-items-center pb-1">
-            <h6 class="ribbon fs-14 me-2">الأكثر مبيعا</h6>
-            <p class="text-success fs-14 font-weight-medium">
-              Updated<span class="font-weight-bold ps-1">November 2020</span>
-            </p>
-          </div>
-          <ul
-            class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
-            <li>23 total hours</li>
-            <li>جميع المستويات</li>
-          </ul>
-          <p class="card-text pt-1 fs-14 lh-22">
-            The skills you need to become a BI Analyst - Statistics, Database
-            theory, SQL, Tableau – Everything is included
-          </p>
-          <ul class="generic-list-item fs-14 py-3">
-            <li>
-              <i class="la la-check me-1 text-black"></i> Become an expert in
-              Statistics, SQL, Tableau, and problem solving
-            </li>
-            <li>
-              <i class="la la-check me-1 text-black"></i> Boost your resume
-              with in-demand skills
-            </li>
-            <li>
-              <i class="la la-check me-1 text-black"></i> Gather, organize,
-              analyze and visualize data
-            </li>
-          </ul>
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#" class="btn theme-btn flex-grow-1 me-3"><i class="la la-shopping-cart me-1 fs-18"></i> Add to
-              Cart</a>
-            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist">
-              <i class="la la-heart-o"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end card -->
-    </div>
-  </div>
-  <!-- end tooltip_templates -->
 
   <!-- template js files -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
