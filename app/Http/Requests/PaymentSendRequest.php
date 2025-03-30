@@ -24,7 +24,7 @@ class PaymentSendRequest extends FormRequest
     {
         return [
             "slugs" => "required",
-            "cupon" => "string"
+            "cupon" => "string|nullable"
         ];
     }
 

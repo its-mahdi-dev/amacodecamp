@@ -25,8 +25,10 @@
                         <div class="form-group mb-0">
                             <input class="form-control form--control ps-3 shadow-sm border-0" type="text" name="search"
                                 placeholder="چی میخوای یادبگیری؟؟" />
-                            <span class="la la-search search-icon"></span>
-                        </div>
+                            <button class="btn search-icon">
+                                <span class="la la-search"></span>
+                            </button>
+                            </div>
                     </form>
                 </div>
                 <!-- end hero-content -->
@@ -280,7 +282,7 @@
                     
                 </div>
                 <div class="more-btn-box mt-4 text-center">
-                    <a href="course-grid.html" class="btn theme-btn">
+                    <a href="{{route('bootcamps.index')}}" class="btn theme-btn">
                         همه بوت کمپا
                         <i class="la la-arrow-right icon ms-1"></i></a>
                 </div>
@@ -1021,55 +1023,6 @@
     <div class="section-block"></div>
 
 
-    <!--======================================
-            START SUBSCRIBER AREA
-    ======================================-->
-    <section class="subscriber-area pt-80px pb-60px bg-gray position-relative overflow-hidden">
-        <span class="stroke-shape stroke-shape-1"></span>
-        <span class="stroke-shape stroke-shape-2"></span>
-        <span class="stroke-shape stroke-shape-3"></span>
-        <span class="stroke-shape stroke-shape-4"></span>
-        <span class="stroke-shape stroke-shape-5"></span>
-        <span class="stroke-shape stroke-shape-6"></span>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="section-heading pb-4 text-start">
-                        <h2 class="section__title mb-1">سجل للحصول على اخر اخبارنا</h2>
-                        <p class="section__desc">
-                            ابق على اطلاع على الكتاب الإلكتروني المجاني الجديد
-                        </p>
-                    </div>
-                    <!-- end section-heading -->
-                </div>
-                <!-- end col-lg-5 -->
-                <div class="col-lg-5 ms-auto">
-                    <form method="post" class="subscriber-form">
-                        <div class="input-group">
-                            <input type="email" name="email" class="form-control form--control ps-3"
-                                placeholder="أدخل عنوان البريد الالكتروني" />
-                            <div class="input-group-append">
-                                <button class="btn theme-btn" type="button">
-                                    الإشتراك <i class="la la-arrow-right icon ms-1"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <p class="fs-14 mt-1 text-start">
-                            <i class="la la-lock me-1"></i>معلوماتك فى امان معنا! إلغاء
-                            الاشتراك في أي وقت.
-                        </p>
-                    </form>
-                </div>
-                <!-- end col-lg-6 -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end subscriber-area -->
-    <!--======================================
-            END SUBSCRIBER AREA
-    ======================================-->
 @endsection
 
 
@@ -1159,8 +1112,9 @@
 
         const bootcampsContainer = document.getElementById("bootcampsContainer");
         axios.get('/bootcamps')
-            .then(function(response) {
+        .then(function(response) {
                 let d = response.data.data;
+
                 d.forEach(bootcamp => {
                     const bootcampShowUrl = "{{ route('bootcamps.show', ['slug' => 'BOOTCAMP_SLUG']) }}";
                     const url = bootcampShowUrl.replace('BOOTCAMP_SLUG', bootcamp.slug);
@@ -1169,7 +1123,7 @@
                     <div class="col-lg-4 responsive-column-half">
                             <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
                                 <div class="card-image">
-                                    <a href="course-details.html" class="d-block">
+                                    <a href="${url}" class="d-block">
                                         <img class="card-img-top lazy" src="/assets/images/img-loading.png"
                                             data-src="/assets/images/img8.jpg" alt="Card image cap" />
                                     </a>
@@ -1177,35 +1131,31 @@
                                 <!-- end card-image -->
                                 <div class="card-body">
                                     <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">
-                                        جميع المستويات
+                                        ${bootcamp.category}
                                     </h6>
-                                    <h5 class="card-title">
+                                    <h5 class="card-title text-truncate">
                                         <a href="${url}">${bootcamp.title}</a>
                                     </h5>
                                     <p class="card-text">
-                                        <a href="teacher-detail.html">خوسيه بورتيلا</a>
+                                        <a href="teacher-detail.html">${bootcamp.intro.substring(30)}...</a>
                                     </p>
                                     <div class="rating-wrap d-flex align-items-center py-2">
                                         <div class="review-stars">
-                                            <span class="rating-number">4.4</span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star"></span>
-                                            <span class="la la-star-o"></span>
+                                            <span class="rating-number">${bootcamp.rate}</span>
+                                            <span class="la la-star${bootcamp.rate < 1 ? '-o': ''}"></span>
+                                            <span class="la la-star${bootcamp.rate < 2 ? '-o': ''}"></span>
+                                            <span class="la la-star${bootcamp.rate < 3 ? '-o': ''}"></span>
+                                            <span class="la la-star${bootcamp.rate < 4 ? '-o': ''}"></span> 
+                                            <span class="la la-star${bootcamp.rate < 5 ? '-o': ''}"></span>
                                         </div>
-                                        <span class="rating-total ps-1">(20,230)</span>
+                                        <span class="rating-total ps-1">(${bootcamp.students_count})</span>
                                     </div>
                                     <!-- end rating-wrap -->
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="card-price text-black font-weight-bold">
-                                            12.99
-                                            <span class="before-price font-weight-medium">129.99</span>
+                                            ${bootcamp.price_off.toLocaleString('en-US')}
+                                            <span class="before-price font-weight-medium">${bootcamp.price.toLocaleString('en-US')}</span>
                                         </p>
-                                        <div class="icon-element icon-element-sm shadow-sm cursor-pointer"
-                                            title="Add to Wishlist">
-                                            <i class="la la-heart-o"></i>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- end card-body -->

@@ -111,7 +111,20 @@ function addToBasket(slug) {
                   localStorage.removeItem("auth_token");
 
                 //   Redirect to login page
-                  window.location.href = "/login";
+                let responseURL = error.response.request.responseURL;
+                let errorData = null;
+                try{
+                    errorData = JSON.parse(error.response.config.data);
+                }catch(e)
+                {
+                    console.log(e);
+                }
+                const cupon = errorData ? errorData.cupon : null;
+                
+                let redirectTo = "/login"
+                redirectTo += responseURL.includes("/payment/send")  ? "?makePayment=" +window.location.href.split("/").slice(-1)[0]  : '';
+                redirectTo += cupon ? "&cupon="+cupon : '';
+                  window.location.href = redirectTo;
               }
               return Promise.reject(error);
           }

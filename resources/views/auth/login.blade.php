@@ -84,7 +84,7 @@
 
 @section('customScripts')
     <script>
-        axios.defaults.baseURL = "{{env('API_URL' , 'localhost/api')}}";
+        axios.defaults.baseURL = "{{ env('API_URL', 'localhost/api') }}";
 
 
 
@@ -140,10 +140,10 @@
                 })
                 .catch(error => {
                     // it should change to error.response.data.errors
-                    error.response.data.data.forEach(err => {
+                    error.response.data.errors.forEach(err => {
                         errorText.innerHTML += `${err}<br>`;
                     });
-                    
+
                 })
                 .finally(() => {
                     phoneInput.disabled = false
@@ -168,28 +168,55 @@
             errorText.innerHTML = '';
             axios.post('/login/validate', {
                     phone,
-                    otp_code:otp
+                    otp_code: otp
                 })
                 .then(response => {
                     // Successful Login
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const redirectUrl = urlParams.get('redirect_url');
-
-                if (redirectUrl) window.location.href = redirectUrl;
-    
                     const d = response.data.data;
                     const token = d.token;
                     localStorage.setItem("auth_token", token);
-                    if(d.is_new) location.assign("https://google.com");
-                    // location.assign("{{ env('DASHBOARD_URL') }}");
-                    location.assign("/dashboard");
+
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const redirectUrl = urlParams.get('redirect_url');
+                    const makePayment = urlParams.get('makePayment'); //slug || basket
+                    const cupon = urlParams.get('cupon');
+
+                    if (redirectUrl) window.location.href = redirectUrl;
+
+                    if (makePayment) {
+                        let slugs = makePayment == "basket" ? basket.getItems().join(",") : makePayment;
+                        axios.post('/student/payment/send',{
+                            // TODO: add cupon
+                            cupon: cupon ?? null,
+                            slugs
+                        }).then(function(response) {
+                            let d = response.data.data;
+                            window.location.assign(d);
+                            customAlert('درحال انتقال به درگاه')
+                        })
+                        .catch(function(error) {
+                            console.log(error)
+                            let errors = error.response.data.errors;
+                            
+                            errors.forEach(err => {
+                                customAlert(err, 'error');
+                            });
+                        })
+                    }else{
+                        if (d.is_new) location.assign("{{ route('dashboard.profile') }}");
+                         location.assign("{{ route('dashboard.home') }}");
+                    }
+
+                    
+                  
                 })
                 .catch(error => {
+                    console.log(error)
                     // it should change to error.response.data.errors
-                    error.response.data.data.forEach(err => {
+                    error.response.data.errors.forEach(err => {
                         errorText.innerHTML += `${err}<br>`;
                     });
-                    
+
                 })
                 .finally(() => {
                     otpInput.disabled = false
@@ -215,7 +242,7 @@
                     const reloadSpan = document.getElementById("reloadSpan");
                     reloadSpan.classList.add("text-info");
                     reloadSpan.classList.add("cursor-pointer");
-                    reloadSpan.addEventListener("click" , ()=>{
+                    reloadSpan.addEventListener("click", () => {
                         location.reload();
                     });
                 } else {

@@ -154,13 +154,13 @@
                         <td>
                             <a href="${url}" class="text-black font-weight-semi-bold">${bootcamp.title}</a>
                             <p class="fs-14 text-gray lh-20">
-                                ${bootcamp.overview}
+                                ${bootcamp.intro.substring(0,40)}...
                             </p>
                         </td>
                         <td>
                             <ul class="generic-list-item font-weight-semi-bold">
-                                <li class="text-black lh-18">${bootcamp.price_off}</li>
-                                <li class="before-price lh-18">${bootcamp.price}</li>
+                                <li class="text-black lh-18">${bootcamp.price_off.toLocaleString("en-US")} تومان</li>
+                                <li class="before-price lh-18">${bootcamp.price.toLocaleString("en-US")} تومان</li>
                             </ul>
                         </td>
                         <td>
@@ -192,7 +192,7 @@
             `;
                 axios.post('/student/payment/send',{
                     // TODO: add cupon
-                    // cupon: validCuponCode,
+                    cupon: validCuponCode ?? null,
                     slugs: keepSlugs.join(',')
                 })
                 .then(function(response) {
@@ -214,8 +214,8 @@
             })
             function updatePayment()
             {
-                document.getElementById("shouldPay").innerHTML = ( should_pay*(100-should_pay_percent)/100 ) - should_pay_price;
-                document.getElementById("price").innerHTML = price;
+                document.getElementById("shouldPay").innerText = (( should_pay*(100-should_pay_percent)/100 ) - should_pay_price).toLocaleString('en-US') + " تومان";
+                document.getElementById("price").innerHTML = price.toLocaleString('en-US') + " تومان";
             }
 
 
