@@ -19,9 +19,8 @@ class OffResource extends JsonResource
             "price" => $this->price,
             "start_time" => $this->start_time,
             "end_time" => $this->end_time,
-            "start_time" => $this->start_time,
             "amount" => $this->amount,
-            "description" => $this->start_time,
+            "description" => $this->description,
         ];
     }
 }

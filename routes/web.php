@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 // die(env('DASHBOARD_DOMAIN','localhost'));
 
 
-Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
+// Route::domain(env('MAIN_DOMAINx', '/'))->group(function () {
     Route::get('/', function () {
         return view('main.home');
     })->name('home');
@@ -33,10 +33,14 @@ Route::domain(env('MAIN_DOMAIN', 'localhost'))->group(function () {
         return view('main.bootcamps.show2', compact('slug'));
     })->name('bootcamps.show2');
 
+    Route::get('/aboutus', function ($slug) {
+        return "aboutus";
+    })->name('aboutus');
+
     Route::get('/login', function () {
         return view('auth.login');
     })->name('login');
-});
+// });
 
 
 Route::prefix('/dashboard')->group(function () {

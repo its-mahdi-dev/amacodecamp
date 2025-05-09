@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Route;
  * )
  */
 
-Route::domain(env("API_DOMAIN"))->group(function () {
+Route::prefix('/api')->group(function () {
     Route::get('/user', function (Request $request) {
         // Check if the user is authenticated
         $user = $request->user();
