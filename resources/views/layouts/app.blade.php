@@ -81,7 +81,7 @@
                 <form action="/bootcamps" method="get">
                   <div class="form-group mb-0">
                     <input class="form-control form--control ps-3" type="text" name="search"
-                      placeholder="چی میخوای یاد بگیری؟ " />
+                      placeholder="چی میخوای یاد بگیری؟ " value="{{request()->search}}" />
 
                     <button class="btn search-icon">
                         <span class="la la-search"></span>
@@ -158,7 +158,7 @@
       <div class="d-flex align-items-center">
         <form method="get" action="/bootcamps" class="flex-grow-1 me-3">
           <div class="form-group mb-0">
-            <input class="form-control form--control ps-3" type="text" name="search" placeholder="چی میخوای یاد بگیری؟؟" />
+            <input class="form-control form--control ps-3" type="text" name="search" placeholder="چی میخوای یاد بگیری؟؟"  value="{{request()->search}}"/>
             <button class="btn search-icon">
                 <span class="la la-search"></span>
             </button>

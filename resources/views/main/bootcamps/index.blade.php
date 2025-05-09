@@ -44,27 +44,7 @@
             </div>
             <!-- end filter-bar -->
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="sidebar">
-                        <div class="card card-item">
-                            <div class="card-body">
-                                <h3 class="card-title fs-18 pb-2">جستجو کنید</h3>
-                                <div class="divider"><span></span></div>
-                                <form method="get">
-                                    <div class="form-group mb-0">
-                                        <input class="form-control form--control ps-3" type="text" name="search"
-                                            placeholder="جستجو کن" value="{{request()->search}}" />
-                                        <button class="btn search-icon">
-                                            <span class="la la-search"></span>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-                    <!-- end sidebar -->
-                </div>
+
                 <!-- end col-lg-4 -->
                 <div class="mb-5">
                     <div class="row" id="bootcampsContainer">
