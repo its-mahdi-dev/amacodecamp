@@ -26,7 +26,7 @@ class User extends Authenticatable
      */
     public function getAvatarUrlAttribute()
     {
-        return asset($this->avatar);
+        return '/storage/app/public/'.$this->avatar;
     }
 
     /**

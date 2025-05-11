@@ -50,7 +50,7 @@ class StudentController extends Controller
 
             // Define file path in storage
             $fileName = 'avatars/' . time() . '.jpg';
-            $storagePath = storage_path('app/' . $fileName);
+            $storagePath = storage_path('app/public/' . $fileName);
 
             // Make sure the directory exists
             if (!file_exists(dirname($storagePath))) {
