@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body data-bs-theme="dark">
   <!-- start cssload-loader -->
   <div class="preloader">
     <div class="loader">
@@ -102,7 +102,7 @@
                       <a href="{{route('basket')}}"><i class="la la-shopping-basket fs-12"></i>  سبدت</a>
                     </li>
                     <li>
-                      <a href="{{route('aboutus')}}"><i class="la la-graduation-cap fs-12"></i>  درباره آما </a>
+                      <a href="{{route('home')}}#about"><i class="la la-graduation-cap fs-12"></i>  درباره آما </a>
                     </li>
                   </ul>
                   <!-- end ul -->
@@ -144,7 +144,7 @@
             <a class="d-block" href="{{route('basket')}}"><i class="me-2 la la-shopping-basket fs-12"></i>  سبدت</a>
           </li>
           <li>
-            <a class="d-block" href="{{route('home')}}#about"><i class="me-2 la la-graduation-cap fs-12"></i>  درباره آدا </a>
+            <a class="d-block" href="{{route('home')}}#about"><i class="me-2 la la-graduation-cap fs-12"></i>  درباره آما </a>
           </li>
       </ul>
       <div class="nav-right-button d-flex justify-content-center mt-5">
@@ -214,7 +214,7 @@
                 <a href="https://instagram.com/@amacodecamp" class="instagram-bg"><i class="la la-instagram"></i></a>
               </li>
               <li class="me-1 ms-0">
-                <a href="https://t.me/amacodecamp" class="linkedin-bg"><i class="la la-telegram"></i></a>
+                <a href="https://t.me/amacodecamp_support" class="linkedin-bg"><i class="la la-telegram"></i></a>
               </li>
             </ul>
           </div>
@@ -253,12 +253,11 @@
             <h3 class="fs-20 font-weight-semi-bold pb-2">بوت‌کمپ ها</h3>
             <div class="divider border-bottom-0"><span></span></div>
             <ul class="generic-list-item" id="bootcamps-footer">
-              <li><a href="#">بک اند با گو لنگ</a></li>
-              <li><a href="#">فرانت اند</a></li>
-              <li><a href="#">سی پلاس پلاس</a></li>
-              <li><a href="#">جاوا</a></li>
-              <li><a href="#">جاوا اسکریپت</a></li>
-              <li><a href="#">پایتون</a></li>
+              <li><a href="{{route('bootcamps.show' , '1')}}">مبانی با سی</a></li>
+              <li><a href="{{route('bootcamps.show' , '2')}}">مبانی با پایتون</a></li>
+              <li><a href="{{route('bootcamps.show' , '3')}}">بک اند با گو لنگ</a></li>
+              <li><a href="{{route('bootcamps.show' , '4')}}">سی پلاس پلاس</a></li>
+              <li><a href="{{route('bootcamps.show' , '5')}}">فرانت اند</a></li>
             </ul>
           </div>
           <!-- end footer-item -->

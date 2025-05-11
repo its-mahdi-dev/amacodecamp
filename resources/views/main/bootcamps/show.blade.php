@@ -4,9 +4,7 @@
                                 START BREADCRUMB AREA
                             ================================= -->
     <section class="breadcrumb-area pt-50px pb-50px bg-white pattern-bg">
-        <div id="buyNow" class="position-fixed bottom-0 mb-4 d-block d-lg-none">
-
-        </div>
+        
         <div class="container">
             <div class="col-lg-8 me-auto">
                 <div class="breadcrumb-content text-start">
@@ -34,6 +32,9 @@
                               START COURSE DETAILS AREA
                         ======================================-->
     <section class="course-details-area pb-20px">
+        <div id="buyNowBtn" class="position-fixed bottom-0 mb-4 d-block d-md-none text-center">
+
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 pb-5">
@@ -583,8 +584,8 @@
                     </button>
                 `;
 
-                document.getElementById("buyNow").innerHTML = `
-                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this, '${data.slug}')">
+                document.getElementById("buyNowBtn").innerHTML = `
+                    <button type="button" class="btn theme-btn col-10 mx-auto theme-btn mb-2" onclick="buyNow(this, '${data.slug}')">
                         <i class="la la-shopping-bag me-1"></i>
                         <span>همین الان می‌خرم</span>
                     </button>
@@ -601,8 +602,8 @@
                     </button>
                 `;
 
-                document.getElementById("buyNow").innerHTML = `
-                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this, '${data.slug}')">
+                document.getElementById("buyNowBtn").innerHTML = `
+                    <button type="button" class="btn theme-btn col-10 mx-auto theme-btn mb-2" onclick="buyNow(this, '${data.slug}')">
                         <i class="la la-shopping-bag me-1"></i>
                         <span>همین الان می‌خرم</span>
                     </button>
