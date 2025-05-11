@@ -146,8 +146,8 @@
                     <tr>
                         <th scope="row">
                             <div class="media media-card">
-                                <a href="course-details.html" class="media-img me-0">
-                                    <img src="images/small-img.jpg" alt="Cart image" />
+                                <a href="/bootcamps/${bootcamp.slug}" class="media-img me-0">
+                                    <img src="${bootcamp.thumbnail_url}" alt="Cart image" />
                                 </a>
                             </div>
                         </th>
