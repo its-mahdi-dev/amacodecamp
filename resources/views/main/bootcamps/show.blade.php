@@ -4,6 +4,9 @@
                                 START BREADCRUMB AREA
                             ================================= -->
     <section class="breadcrumb-area pt-50px pb-50px bg-white pattern-bg">
+        <div id="buyNow" class="position-fixed bottom-0 mb-4 d-block d-lg-none">
+
+        </div>
         <div class="container">
             <div class="col-lg-8 me-auto">
                 <div class="breadcrumb-content text-start">
@@ -579,6 +582,13 @@
                         <span>همین الان می‌خرم</span>
                     </button>
                 `;
+
+                document.getElementById("buyNow").innerHTML = `
+                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this, '${data.slug}')">
+                        <i class="la la-shopping-bag me-1"></i>
+                        <span>همین الان می‌خرم</span>
+                    </button>
+                `;
             }else{//not student, not in basket
                 buyingButtons = `
                     <button type="button" class="btn theme-btn w-100 mb-2" onclick="addToBasketF(this, '${data.slug}')">
@@ -590,6 +600,15 @@
                         <span>همین الان می‌خرم</span>
                     </button>
                 `;
+
+                document.getElementById("buyNow").innerHTML = `
+                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2" onclick="buyNow(this, '${data.slug}')">
+                        <i class="la la-shopping-bag me-1"></i>
+                        <span>همین الان می‌خرم</span>
+                    </button>
+                `;
+
+                
             }
 
             let tagsHTML = '';

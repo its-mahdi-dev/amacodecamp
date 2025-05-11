@@ -42,7 +42,7 @@ Route::domain(env('MAIN_DOMAIN', '/'))->group(function () {
     })->name('login');
 });
 
-Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->group(function () {
+// Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->group(function () {
     Route::prefix('/dashboard')->group(function () {
         Route::get('/', function () {
             return view('dashboard.home');
@@ -65,4 +65,4 @@ Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->group(function () {
     Route::get('/testi', function () {
         return "ysa";
     })->middleware(['auth:sanctum']);
-});
+// });

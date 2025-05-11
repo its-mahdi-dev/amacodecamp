@@ -967,7 +967,7 @@
                             <div class="card card-item" data-tooltip-content="#tooltip_content_1">
                                 <div class="card-image">
                                     <a href="${url}" class="d-block">
-                                        <img class="card-img-top lazy" src="/assets/images/img-loading.png"
+                                        <img class="card-img-top lazy" src="${bootcamp.cover_url}"
                                             data-src="${bootcamp.cover_url}" alt="Card image cap" />
                                     </a>
                                 </div>
