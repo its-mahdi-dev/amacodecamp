@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
@@ -28,37 +29,42 @@ class StudentController extends Controller
         // Handle the avatar upload
         if ($request->hasFile('avatar') && $request->avatar != null) {
             // Delete the old avatar if it exists
-            if ($user->avatar && file_exists(public_path($user->avatar))) {
-                unlink(public_path($user->avatar));
+            if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+                Storage::disk('public')->delete($user->avatar);
             }
 
+            // Create image from uploaded file
             $image = imagecreatefromstring(file_get_contents($request->file('avatar')->getRealPath()));
-    
-            // Resize the image to 150*150
+
+            // Resize the image to 150x150
             $newWidth = 150;
             $newHeight = 150;
             $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
-            
+
             // Preserve transparency for PNG images
             imagealphablending($resizedImage, false);
             imagesavealpha($resizedImage, true);
-            
+
             list($width, $height) = getimagesize($request->file('avatar')->getRealPath());
             imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-            
-            // Define the storage path
+
+            // Define file path in storage
             $fileName = 'avatars/' . time() . '.jpg';
-            $filePath = public_path('uploads/'.$fileName);
-            
-            // Compress and save the image at 90% quality
-            imagejpeg($resizedImage, $filePath, 90);
-            
-            // Free up memory
+            $storagePath = storage_path('app/' . $fileName);
+
+            // Make sure the directory exists
+            if (!file_exists(dirname($storagePath))) {
+                mkdir(dirname($storagePath), 0755, true);
+            }
+
+            // Save the resized image
+            imagejpeg($resizedImage, $storagePath, 90);
+
+            // Free memory
             imagedestroy($image);
             imagedestroy($resizedImage);
 
-            // Store the new avatar
-            // $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            // Update user avatar path
             $user->avatar = $fileName;
         }
 
@@ -78,26 +84,26 @@ class StudentController extends Controller
     {
         $bootcamp = Bootcamp::findOrFail($bootcamp_id);
         $wish = Wishlist::where('user_id', $request->user()->id)->where('bootcamp_id', $bootcamp_id)->first();
-        if ($wish != null){
+        if ($wish != null) {
             $wish->forceDelete();
-            return Response::success('' , ResponseMessages::WISHLIST_DELETED);
-        }else {
+            return Response::success('', ResponseMessages::WISHLIST_DELETED);
+        } else {
             Wishlist::create([
                 "bootcamp_id" => $bootcamp_id,
                 "user_id" => $request->user()->id
             ]);
-            
-            return Response::success('' , ResponseMessages::WISHLIST_ADDED);
-        }
 
+            return Response::success('', ResponseMessages::WISHLIST_ADDED);
+        }
     }
 
 
-    public function submit_review($id , ReviewRequest $request){
-        
-        $isSign = BootcampUser::where('user_id' , $request->user()->id)->where('bootcamp_id' , $id)->first();
+    public function submit_review($id, ReviewRequest $request)
+    {
 
-        if($isSign == null){
+        $isSign = BootcampUser::where('user_id', $request->user()->id)->where('bootcamp_id', $id)->first();
+
+        if ($isSign == null) {
             return REsponse::error(ResponseMessages::BOOTCAMP_NOT_SIGN);
         }
         Review::create([
@@ -108,6 +114,6 @@ class StudentController extends Controller
         ]);
 
 
-        return Response::success("" , ResponseMessages::REVIEW_SUCCESS);
+        return Response::success("", ResponseMessages::REVIEW_SUCCESS);
     }
 }
