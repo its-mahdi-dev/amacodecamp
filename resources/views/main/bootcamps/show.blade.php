@@ -32,7 +32,7 @@
                               START COURSE DETAILS AREA
                         ======================================-->
     <section class="course-details-area pb-20px">
-        <div id="buyNowBtn" class="position-fixed bottom-0 mb-4 d-block d-md-none text-center w-100">
+        <div id="buyNowBtn" class="position-fixed bottom-0 d-block d-md-none text-center w-100 bg-dark p-3">
 
         </div>
         <div class="container">
@@ -585,7 +585,7 @@
                 `;
 
                 document.getElementById("buyNowBtn").innerHTML = `
-                    <button type="button" class="btn theme-btn col-10 mx-auto theme-btn mb-2" onclick="buyNow(this, '${data.slug}')">
+                    <button type="button" class="btn theme-btn col-11  mx-auto theme-btn " onclick="buyNow(this, '${data.slug}')">
                         <i class="la la-shopping-bag me-1"></i>
                         <span>همین الان می‌خرم</span>
                     </button>
@@ -603,7 +603,7 @@
                 `;
 
                 document.getElementById("buyNowBtn").innerHTML = `
-                    <button type="button" class="btn theme-btn col-10 mx-auto theme-btn mb-2" onclick="buyNow(this, '${data.slug}')">
+                    <button type="button" class="btn theme-btn col-11  mx-auto theme-btn " onclick="buyNow(this, '${data.slug}')">
                         <i class="la la-shopping-bag me-1"></i>
                         <span>همین الان می‌خرم</span>
                     </button>
