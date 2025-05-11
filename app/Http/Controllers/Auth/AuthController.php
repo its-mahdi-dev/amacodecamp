@@ -101,7 +101,7 @@ class AuthController extends Controller
             [
                 'first_name' => '',
                 'last_name' => '',
-                'avatar' => '/assets/images/user.png',
+                'avatar' => '/assets/images/user.webp',
                 'email' => null,
                 'role' => 'student'
             ]
