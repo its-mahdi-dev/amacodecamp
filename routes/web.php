@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 // die(env('DASHBOARD_DOMAIN','localhost'));
 
 
-// Route::domain(env('MAIN_DOMAINx', '/'))->group(function () {
+Route::domain(env('MAIN_DOMAIN', '/'))->group(function () {
     Route::get('/', function () {
         return view('main.home');
     })->name('home');
@@ -40,28 +40,29 @@ use Illuminate\Support\Facades\Route;
     Route::get('/login', function () {
         return view('auth.login');
     })->name('login');
-// });
-
-
-Route::prefix('/dashboard')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.home');
-    })->name('dashboard.home');
-
-    Route::get('/profile', function () {
-        return view('dashboard.profile');
-    })->name('dashboard.profile');
-
-    Route::get('/bootcamps', function () {
-        return view('dashboard.bootcamps');
-    })->name('dashboard.bootcamps');
-
-    Route::get('/payment' , function(){
-        return view('dashboard.payment');
-    })->name('dashboard.payment');
 });
 
+Route::domain(env('DASHBOARD_DOMAIN', 'localhost'))->group(function () {
+    Route::prefix('/dashboard')->group(function () {
+        Route::get('/', function () {
+            return view('dashboard.home');
+        })->name('dashboard.home');
 
-Route::get('/testi' , function(){
-    return "ysa";
-})->middleware(['auth:sanctum']);
+        Route::get('/profile', function () {
+            return view('dashboard.profile');
+        })->name('dashboard.profile');
+
+        Route::get('/bootcamps', function () {
+            return view('dashboard.bootcamps');
+        })->name('dashboard.bootcamps');
+
+        Route::get('/payment', function () {
+            return view('dashboard.payment');
+        })->name('dashboard.payment');
+    });
+
+
+    Route::get('/testi', function () {
+        return "ysa";
+    })->middleware(['auth:sanctum']);
+});
