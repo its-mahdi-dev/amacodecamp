@@ -36,7 +36,7 @@ class Bootcamp extends Model
      */
     public function getThumbnailUrlAttribute()
     {
-        return $this->thumbnail ? asset("images/bootcamps/thumbnails/{$this->thumbnail}") : asset("assets/images/img-loading.png");
+        return $this->thumbnail ? asset("assets/images/bootcamps/thumbnails/{$this->thumbnail}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -44,7 +44,7 @@ class Bootcamp extends Model
      */
     public function getCoverUrlAttribute()
     {
-        return $this->cover ? asset("images/bootcamps/covers/{$this->cover}") : asset("assets/images/img-loading.png");
+        return $this->cover ? asset("assets/images/bootcamps/covers/{$this->cover}") : asset("assets/images/img-loading.png");
     }
 
     /**
@@ -103,7 +103,7 @@ class Bootcamp extends Model
                 }
             } else if ($off->amount != null) {
                 if ($off->amount > 0) {
-                    if ($off->percent != null) return $this->price * (100 - $off->percent);
+                    if ($off->percent != null) return $this->price * (100 - $off->percent) / 100;
                     else return $this->price - $off->price;
                 }
             }

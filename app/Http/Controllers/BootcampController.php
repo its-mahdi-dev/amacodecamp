@@ -36,8 +36,8 @@ class BootcampController extends Controller
             $query->where('price', '<=', $request->price_max);
         }
 
-        if($request->filled('tag')){
-            $tagName = $request->tag;
+        if($request->filled('tags')){
+            $tagName = $request->tags;
             $query->whereHas('tags', function($query) use ($tagName) {
                 $query->where('name', $tagName);
             });

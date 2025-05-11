@@ -54,7 +54,11 @@
             console.log('success response');
             paymentIcon.innerHTML = '✅';
             paymentStatus.innerHTML = 'پرداخت با موفقیت انجام شد';
-            paymentDesctiption.innerHTML = `کد رهگیری پرداخت: ${response.data.data}`;
+            paymentDesctiption.innerHTML = `کد رهگیری پرداخت: ${response.data.data}
+            
+                <p class="mt-3"> برای دریافت لایسنس دوره و گذرواژه ورود به کلاس، به اکانت <a href="https://t.me/amacodecamp_support">@amacodecamp_support </a> در تلگرام و یا شماره 
+                <a href="https://wa.me/+989938383698">0993 8383 698</a> در واتساپ پیام دهید </p>
+                `;
         })
         .catch(function(error){
             console.log('error response');

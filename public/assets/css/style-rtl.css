@@ -425,3 +425,11 @@
 .client-logo-2 img{
   width: 110px;
 }
+
+.card-item .card-text a{
+  white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}

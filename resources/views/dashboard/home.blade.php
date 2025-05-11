@@ -412,7 +412,7 @@ END BREADCRUMB AREA
       `;
     });
 
-    document. ("#wishlistBody").innerHTML = "";
+    document.querySelector("#wishlistBody").innerHTML = "";
     data.wishlist.forEach(bootcamp => {
       let isWish = false;
       data.wishlist.forEach(b=>{

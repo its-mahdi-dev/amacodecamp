@@ -9,115 +9,269 @@ class BootcampSeeder extends Seeder
 {
     public function run()
     {
-        // Fetch a category to assign to the bootcamp (you can modify this to create a new category if needed)
-        $category = Category::first(); // Use the first category or default to category ID 1
 
         Bootcamp::create([
-            'slug' => 'laravel-for-beginners',
-            'title' => 'Laravel for Beginners',
-            'category_id' => $category ? $category->id : 1, // Default to category 1 if no categories exist
-            'thumbnail' => 'storage/thumbnails/laravel-beginner.jpg',
-            'cover' => 'storage/covers/laravel-beginner-cover.jpg',
-            'intro' => 'Learn the basics of Laravel, a powerful PHP framework for web development.',
+            'slug' => 'c-basic-programming',
+            'title' => 'مبانی برنامه نویسی با سی (C)',
+            'category_id' => 1, 
+            'thumbnail' => 'c-basic-programming.webp',
+            'cover' => 'c-basic-programming.webp',
+            'intro' => 'شروعی قدرتمند برای ورود به دنیای برنامه‌نویسی با یکی از پایه‌ای‌ترین و پرکاربردترین زبان‌ها: C.',
             'body' => '
-                <div class="bootcamp-description">
-                    <h2>About This Bootcamp</h2>
-                    <p>This bootcamp is designed for individuals who want to learn <strong>Laravel</strong>, one of the most popular PHP frameworks used for modern web development. Whether you\'re a beginner or an experienced developer, this bootcamp will guide you through the essential concepts of Laravel.</p>
+               <div class="course-overview-card bg-white p-4 rounded shadow-sm" dir="rtl">
 
-                    <h3>What You Will Learn</h3>
-                    <ul>
-                        <li><strong>Introduction to Laravel</strong>: Understand the Laravel framework and its architecture.</li>
-                        <li><strong>Routing</strong>: Learn how to define and manage routes in Laravel.</li>
-                        <li><strong>Controllers</strong>: Create and manage controllers to handle HTTP requests.</li>
-                        <li><strong>Models and Eloquent ORM</strong>: Work with Laravel’s Eloquent ORM to interact with databases.</li>
-                        <li><strong>Blade Templating</strong>: Build dynamic user interfaces with the Blade templating engine.</li>
-                        <li><strong>Authentication and Authorization</strong>: Implement user authentication and roles within your app.</li>
-                        <li><strong>Testing and Debugging</strong>: Learn how to write tests and debug your Laravel applications effectively.</li>
+                <p class="fs-15 pb-2">
+                    🚀 اگه همیشه می‌خواستی برنامه‌نویسی رو شروع کنی اما نمی‌دونستی از کجا، این بوت‌کمپ دقیقاً برای تو طراحی شده! ما با زبان C شروع می‌کنیم، چون پایه‌ای‌ترین مفاهیم رو شفاف و عمیق آموزش می‌ده — چیزی که آینده‌ت رو در هر زبان دیگه‌ای تضمین می‌کنه.
+                </p>
+
+                <div class="bg-gray p-4 rounded mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">🔍 چه چیزهایی این بوت‌کمپ رو متفاوت می‌کنه؟</h3>
+                    <ul class="generic-list-item overview-list-item">
+                    <li><i class="la la-check me-1 text-black"></i> آموزش از پایه با مثال‌های واقعی و کاربردی</li>
+                    <li><i class="la la-check me-1 text-black"></i> تمرین‌های عملی و پروژه‌هایی که واقعاً به کارت میان</li>
+                    <li><i class="la la-check me-1 text-black"></i> پشتیبانی مستقیم از منتورها برای رفع اشکال</li>
+                    <li><i class="la la-check me-1 text-black"></i> محتوای به‌روز و استاندارد مطابق نیاز بازار کار</li>
                     </ul>
+                </div>
 
-                    <h3>Bootcamp Structure</h3>
-                    <p>This bootcamp consists of the following modules:</p>
-                    <ol>
-                        <li><strong>Module 1</strong>: Laravel Basics – Learn the fundamentals of Laravel.</li>
-                        <li><strong>Module 2</strong>: Advanced Laravel – Dive deeper into more complex Laravel features.</li>
-                        <li><strong>Module 3</strong>: Real-World Projects – Build real applications using Laravel.</li>
-                    </ol>
+                <div class="alert alert-info mt-4 rounded-3 text-center">
+                    📌 یادگیری C یعنی ساختن مغز برنامه‌نویسیت! <br>
+                    حتی اگه بخوای بعدش بری سمت وب، هوش مصنوعی یا امنیت، اینجا پایه‌ت شکل می‌گیره.
+                </div>
 
-                    <h3>What You Need</h3>
-                    <p>This bootcamp is suitable for anyone with basic programming knowledge. For the best experience, you should have a basic understanding of HTML, CSS, and JavaScript.</p>
-
-                    <h3>Prerequisites</h3>
-                    <ul>
-                        <li>Basic understanding of PHP</li>
-                        <li>Familiarity with databases and SQL</li>
-                        <li>A passion for learning and improving your skills</li>
+                <div class="course-overview-card mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">🔥 چرا الان باید ثبت‌نام کنی؟</h3>
+                    <ul class="generic-list-item generic-list-item-bullet fs-15">
+                    <li>ظرفیت محدود و پر شدن سریع دوره‌ها</li>
+                    <li>دسترسی مادام‌العمر به منابع بوت‌کمپ</li>
+                    <li>تجربه‌ای تیمی، تعاملی و سرگرم‌کننده</li>
                     </ul>
+                </div>
 
-                    <h3>Enroll Now</h3>
-                    <p>Ready to take your skills to the next level? <strong>Enroll today</strong> and start your journey to becoming a Laravel expert!</p>
                 </div>
             ',
             'level' => 'beginner',
-            'duration' => '4 weeks',
+            'duration' => '5 هفته',
             'start_time' => now(),
             'end_time' => now()->addMonth(),
-            'capacity' => 30,
-            'lessons' => 10,
-            'quizzes' => 3,
+            'capacity' => 50,
+            'lessons' => 5,
+            'quizzes' => 15,
             'certification' => true,
             'intro_video' => 'storage/videos/intro-laravel.mp4',
-            'price' => 100,
+            'price' => 2300000,
+        ]);
+
+
+        Bootcamp::create([
+            'slug' => 'python-basic-programming',
+            'title' => 'مبانی برنامه نویسی با پایتون',
+            'category_id' => 1, 
+            'thumbnail' => 'python-basic-programming.webp',
+            'cover' => 'python-basic-programming.webp',
+            'intro' => 'شروع برنامه‌نویسی با یکی از ساده‌ترین و قدرتمندترین زبان‌های دنیا — پایتون',
+            'body' => '
+               <div class="course-overview-card bg-white p-4 rounded shadow-sm" dir="rtl">
+                            
+                <p class="fs-15 pb-2">
+                    🐍 پایتون یه زبان ساده، روان و فوق‌العاده پرکاربرده که هم مبتدی‌ها عاشقش می‌شن، هم حرفه‌ای‌ها! توی این بوت‌کمپ، قراره برنامه‌نویسی رو از پایه با پایتون یاد بگیریم — بدون نیاز به هیچ پیش‌زمینه‌ای.
+                </p>
+
+                <div class="bg-gray p-4 rounded mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">💡 چرا این بوت‌کمپ خاصه؟</h3>
+                    <ul class="generic-list-item overview-list-item">
+                    <li><i class="la la-check me-1 text-black"></i> آموزش مفهومی و مرحله‌به‌مرحله از صفر مطلق</li>
+                    <li><i class="la la-check me-1 text-black"></i> پروژه‌های واقعی مثل ماشین‌حساب، بازی حدس عدد و تحلیل داده ساده</li>
+                    <li><i class="la la-check me-1 text-black"></i> ترکیب تئوری و تمرین برای درک عمیق‌تر</li>
+                    <li><i class="la la-check me-1 text-black"></i> امکان یادگیری با سرعت خودت و بازبینی ویدیوها</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-success mt-4 rounded-3 text-center">
+                    🌱 برنامه‌نویسی رو با پایتون شروع کن و پایه‌ی ورودت به دنیای هوش مصنوعی، وب، تحلیل داده و اتوماسیون رو بچین.
+                </div>
+
+                <div class="course-overview-card mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">🚀 چرا نباید این فرصت رو از دست بدی؟</h3>
+                    <ul class="generic-list-item generic-list-item-bullet fs-15">
+                    <li>یادگیری سریع با روش آموزشی کاربردی</li>
+                    <li>دریافت فایل‌های تمرین، اسلاید و منابع تکمیلی</li>
+                    <li>فرصت پرسش و پاسخ مستقیم با مدرس</li>
+                    </ul>
+                </div>
+
+                </div>
+
+            ',
+            'level' => 'beginner',
+            'duration' => '5 هفته',
+            'start_time' => now(),
+            'end_time' => now()->addMonth(),
+            'capacity' => 50,
+            'lessons' => 5,
+            'quizzes' => 15,
+            'certification' => true,
+            'intro_video' => 'storage/videos/intro-laravel.mp4',
+            'price' => 2300000,
         ]);
 
         Bootcamp::create([
-            'slug' => 'advanced-laravel-techniques',
-            'title' => 'Advanced Laravel Techniques',
-            'category_id' => $category ? $category->id : 1,
-            'thumbnail' => 'storage/thumbnails/advanced-laravel.jpg',
-            'cover' => 'storage/covers/advanced-laravel-cover.jpg',
-            'intro' => 'Dive deep into advanced Laravel techniques for web developers with experience.',
+            'slug' => 'golang-programming',
+            'title' => 'برنامه نویسی فشرده golang',
+            'category_id' => 4, 
+            'thumbnail' => 'golang-programming.webp',
+            'cover' => 'golang-programming.webp',
+            'intro' => 'یادگیری فشرده و حرفه‌ای زبان Go — مخصوص علاقه‌مندان به سیستم‌های مقیاس‌پذیر و بک‌اند حرفه‌ای 🚀🐹',
             'body' => '
-                <div class="bootcamp-description">
-                    <h2>About This Bootcamp</h2>
-                    <p>This bootcamp is aimed at experienced developers who want to master advanced Laravel techniques and deepen their understanding of the Laravel ecosystem.</p>
+               <div class="course-overview-card bg-white p-4 rounded shadow-sm" dir="rtl">
 
-                    <h3>What You Will Learn</h3>
-                    <ul>
-                        <li><strong>Advanced Routing</strong>: Working with complex routes, route groups, and route model binding.</li>
-                        <li><strong>Queueing and Broadcasting</strong>: Handle large tasks asynchronously and broadcast events in real time.</li>
-                        <li><strong>Unit Testing and Debugging</strong>: Master testing and debugging techniques in Laravel.</li>
-                        <li><strong>Custom Middleware</strong>: Create and manage custom middleware to filter HTTP requests.</li>
-                        <li><strong>Optimizing Laravel Performance</strong>: Learn best practices for optimizing performance in Laravel applications.</li>
+                <p class="fs-15 pb-2">
+                    زبان Go (یا Golang) توسط گوگل طراحی شده تا سریع، ساده و قدرتمند باشه — یه انتخاب محبوب برای ساخت سرویس‌های بک‌اند، APIهای مقیاس‌پذیر، ابزارهای خط فرمان و حتی سرویس‌های Cloud-Native. تو این بوت‌کمپ فشرده، با تمرکز بالا و در زمان کم، به دنیای Go وارد می‌شی. 🐹⚡
+                </p>
+
+                <div class="bg-gray p-4 rounded mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">💡 چرا این بوت‌کمپ خاصه؟</h3>
+                    <ul class="generic-list-item overview-list-item">
+                    <li><i class="la la-check me-1 text-black"></i> آموزش سریع و کاربردی Go برای ورود به پروژه‌های واقعی</li>
+                    <li><i class="la la-check me-1 text-black"></i> ساخت میکروسرویس واقعی با Go و RESTful API</li>
+                    <li><i class="la la-check me-1 text-black"></i> یادگیری concurrent programming به ساده‌ترین شکل</li>
+                    <li><i class="la la-check me-1 text-black"></i> کار با ابزارهای حرفه‌ای مثل go mod، go test، و بیشتر</li>
                     </ul>
-
-                    <h3>Bootcamp Structure</h3>
-                    <p>This bootcamp consists of the following modules:</p>
-                    <ol>
-                        <li><strong>Module 1</strong>: Advanced Routing and Middleware – Explore routing techniques and how to use middleware.</li>
-                        <li><strong>Module 2</strong>: Queues and Broadcasting – Handle asynchronous tasks and broadcast real-time events.</li>
-                        <li><strong>Module 3</strong>: Laravel Performance Tuning – Learn techniques to optimize the performance of your application.</li>
-                    </ol>
-
-                    <h3>Prerequisites</h3>
-                    <ul>
-                        <li>Intermediate knowledge of Laravel</li>
-                        <li>Experience with databases and SQL</li>
-                        <li>Familiarity with modern PHP development practices</li>
-                    </ul>
-
-                    <h3>Enroll Now</h3>
-                    <p>If you want to advance your Laravel skills, <strong>enroll today</strong> and become an expert in the Laravel framework!</p>
                 </div>
+
+                <div class="alert alert-primary mt-4 rounded-3 text-center">
+                    ⏱️ این یه بوت‌کمپ سریع اما عمیقه — مخصوص کسایی که می‌خوان توی مدت کوتاه، حرفه‌ای‌تر از همیشه باشن.
+                </div>
+
+                <div class="course-overview-card mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">🎯 مناسب برای چه کساییه؟</h3>
+                    <ul class="generic-list-item generic-list-item-bullet fs-15">
+                    <li>برنامه‌نویس‌هایی که می‌خوان Go رو در عمل یاد بگیرن</li>
+                    <li>افرادی که به توسعه میکروسرویس‌ها و معماری مدرن علاقه‌مند هستن</li>
+                    <li>کسانی که زمان کمی دارن اما دنبال یه شروع جدی هستن</li>
+                    </ul>
+                </div>
+
+                </div>
+
+            ',
+            'level' => 'medium',
+            'duration' => '6 هفته',
+            'start_time' => now(),
+            'end_time' => now()->addMonth(),
+            'capacity' => 40,
+            'lessons' => 6,
+            'quizzes' => 25,
+            'certification' => true,
+            'intro_video' => 'storage/videos/intro-laravel.mp4',
+            'price' => 3500000,
+        ]);
+
+        Bootcamp::create([
+            'slug' => 'cpp-advanced-programming',
+            'title' => 'برنامه نویسی پیشرفته با C++',
+            'category_id' => 3, 
+            'thumbnail' => 'cpp-advanced-programming.webp',
+            'cover' => 'cpp-advanced-programming.webp',
+            'intro' => 'در دنیای حرفه‌ای‌ها با C++ پیشرفته قدم بگذار — از مفاهیم شی‌گرایی تا مدیریت حافظه و طراحی سیستم‌های پیچیده 🧠⚙️',
+            'body' => '
+              <div class="course-overview-card bg-white p-4 rounded shadow-sm" dir="rtl">
+
+                <p class="fs-15 pb-2">
+                    C++ فقط یک زبان نیست، یه ابزار قدرتمنده برای ساخت سیستم‌عامل‌ها، موتورهای بازی، نرم‌افزارهای صنعتی و هر چیزی که به سرعت و کنترل بالا نیاز داره. توی این بوت‌کمپ پیشرفته، قراره مفاهیم عمیق‌تر رو یاد بگیری، پروژه‌محور جلو بریم، و با ساختارهای پیچیده کدنویسی آشنا شی. 🚀💻
+                </p>
+
+                <div class="bg-gray p-4 rounded mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">💡 چرا این بوت‌کمپ خاصه؟</h3>
+                    <ul class="generic-list-item overview-list-item">
+                    <li><i class="la la-check me-1 text-black"></i> آموزش عمیق مفاهیم شی‌گرایی (OOP) در سطح پیشرفته</li>
+                    <li><i class="la la-check me-1 text-black"></i> مدیریت حافظه، پوینترهای هوشمند و تفاوت‌های stack vs heap</li>
+                    <li><i class="la la-check me-1 text-black"></i> آشنایی با Design Pattern های پرکاربرد در C++</li>
+                    <li><i class="la la-check me-1 text-black"></i> کدنویسی Multi-thread با استفاده از C++11 به بعد</li>
+                    <li><i class="la la-check me-1 text-black"></i> پروژه واقعی در پایان بوت‌کمپ برای تثبیت مطالب</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-warning mt-4 rounded-3 text-center">
+                    🧠 این دوره برای کساییه که از چالش استقبال می‌کنن و می‌خوان کنترل کامل روی برنامه‌هاشون داشته باشن.
+                </div>
+
+                <div class="course-overview-card mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">🎯 این بوت‌کمپ برای کیه؟</h3>
+                    <ul class="generic-list-item generic-list-item-bullet fs-15">
+                    <li>برنامه‌نویس‌هایی که C++ مقدماتی رو بلدن و دنبال رشد جدی هستن</li>
+                    <li>دانشجویان رشته مهندسی نرم‌افزار یا برق که با پروژه‌های سطح پایین سروکار دارن</li>
+                    <li>علاقه‌مندان به حوزه Embedded، بازی‌سازی یا توسعه سیستم‌های پیچیده</li>
+                    </ul>
+                </div>
+
+                </div>
+
             ',
             'level' => 'advanced',
-            'duration' => '6 weeks',
-            'capacity' => 25,
-            'lessons' => 12,
-            'quizzes' => 4,
+            'duration' => '5 هفته',
+            'start_time' => now(),
+            'end_time' => now()->addMonth(),
+            'capacity' => 40,
+            'lessons' => 5,
+            'quizzes' => 20,
             'certification' => true,
-            'intro_video' => 'storage/videos/intro-advanced-laravel.mp4',
-            'price' => 200,
+            'intro_video' => 'storage/videos/intro-laravel.mp4',
+            'price' => 2700000,
         ]);
+        
+        Bootcamp::create([
+            'slug' => 'web-development',
+            'title' => 'توسعه وب فشرده',
+            'category_id' => 4, 
+            'thumbnail' => 'web-development.webp',
+            'cover' => 'web-development.webp',
+            'intro' => 'آموزش کامل و فشرده توسعه وب با HTML، CSS و JavaScript — شروعی قدرتمند برای ورود به دنیای وب و طراحی سایت‌های حرفه‌ای 🌐🚀',
+            'body' => '
+              <div class="course-overview-card bg-white p-4 rounded shadow-sm" dir="rtl">
+
+                <p class="fs-15 pb-2">
+                    اگر می‌خواهی وارد دنیای طراحی وب بشی و مهارت‌های طراحی صفحات وب رو از پایه یاد بگیری، این بوت‌کمپ برای توست. با یادگیری HTML، CSS و JavaScript به‌صورت فشرده، می‌تونی سایت‌های پویا و جذاب بسازی و به سرعت وارد بازار کار بشی. 💻🎨
+                </p>
+
+                <div class="bg-gray p-4 rounded mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">💡 چرا این بوت‌کمپ خاصه؟</h3>
+                    <ul class="generic-list-item overview-list-item">
+                    <li><i class="la la-check me-1 text-black"></i> آموزش فشرده HTML و CSS با تمرکز بر طراحی ریسپانسیو و UX/UI</li>
+                    <li><i class="la la-check me-1 text-black"></i> آشنایی کامل با JavaScript و نحوه ایجاد تعاملات در صفحات وب</li>
+                    <li><i class="la la-check me-1 text-black"></i> ساخت پروژه‌های واقعی مثل صفحه فرود و وب‌سایت‌های پویا</li>
+                    <li><i class="la la-check me-1 text-black"></i> یادگیری اصول مهم توسعه وب، مانند دسترسی‌پذیری و بهینه‌سازی سایت</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-success mt-4 rounded-3 text-center">
+                    🏃‍♂️ این بوت‌کمپ برای کسانیه که می‌خواهند در کمترین زمان ممکن به یک توسعه‌دهنده وب حرفه‌ای تبدیل بشن.
+                </div>
+
+                <div class="course-overview-card mt-4">
+                    <h3 class="fs-24 font-weight-semi-bold pb-3">🎯 این بوت‌کمپ برای کیه؟</h3>
+                    <ul class="generic-list-item generic-list-item-bullet fs-15">
+                    <li>افرادی که هیچ تجربه‌ای در برنامه‌نویسی ندارند و می‌خواهند از صفر شروع کنند</li>
+                    <li>دانشجویان رشته‌های مهندسی نرم‌افزار یا علوم کامپیوتر که به دنبال یک مهارت جدید هستند</li>
+                    <li>علاقه‌مندان به طراحی وب و کسانی که می‌خواهند به دنیای توسعه وب وارد بشن</li>
+                    </ul>
+                </div>
+
+                </div>
+
+            ',
+            'level' => 'medium',
+            'duration' => '6 هفته',
+            'start_time' => now(),
+            'end_time' => now()->addMonth(),
+            'capacity' => 40,
+            'lessons' => 6,
+            'quizzes' => 20,
+            'certification' => true,
+            'intro_video' => 'storage/videos/intro-laravel.mp4',
+            'price' => 3200000,
+        ]);
+
     }
 }
 

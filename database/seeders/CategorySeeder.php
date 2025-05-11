@@ -10,13 +10,20 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Web Development'
+            'name' => 'مبانی برنامه نویسی'
         ]);
 
         Category::create([
-            'name' => 'Machine Learning'
+            'name' => 'توسعه وب'
+        ]);
+
+        Category::create([
+            'name' => 'برنامه نویسی پیشرفته'
+        ]);
+
+        Category::create([
+            'name' => 'بوت‌کمپ های فشرده'
         ]);
         
-        // Add 5-10 more categories similarly
     }
 }
