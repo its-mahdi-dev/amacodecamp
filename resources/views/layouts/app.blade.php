@@ -31,7 +31,7 @@
 
 </head>
 
-<body data-bs-theme="dark">
+<body>
   <!-- start cssload-loader -->
   <div class="preloader">
     <div class="loader">

@@ -19,9 +19,9 @@ class CampaignController extends Controller
             return Response::error(ResponseMessages::CAMPAIGN_EXISTED);
         }
         
-        $campaign = Campaign::where('ip_address' , $request->ip())->where('created_at' , '>', Carbon::now()->subMinutes(5))->first();
+        $campaign = Campaign::where('ip_address' , $request->ip())->where('created_at' , '>', Carbon::now()->subMinutes(1))->first();
         if($campaign != null){
-            return Response::error(ResponseMessages::CAMPAIGN_EXISTED);
+            return Response::error(ResponseMessages::CAMPAIGN_IP_USED);
         }
         Campaign::create([
             "phone" => $request->phone,
