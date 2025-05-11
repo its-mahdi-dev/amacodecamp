@@ -29,6 +29,8 @@ class StudentController extends Controller
         // Handle the avatar upload
         if ($request->hasFile('avatar') && $request->avatar != null) {
             // Delete the old avatar if it exists
+
+            // Delete previous avatar if it exists
             if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
                 Storage::disk('public')->delete($user->avatar);
             }
@@ -41,30 +43,32 @@ class StudentController extends Controller
             $newHeight = 150;
             $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
 
-            // Preserve transparency for PNG images
+            // Preserve transparency
             imagealphablending($resizedImage, false);
             imagesavealpha($resizedImage, true);
 
             list($width, $height) = getimagesize($request->file('avatar')->getRealPath());
             imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
 
-            // Define file path in storage
-            $fileName = 'avatars/' . time() . '.jpg';
-            $storagePath = storage_path('app/public/' . $fileName);
+            $publicStoragePath = base_path('../public_html/storage/avatars');
 
             // Make sure the directory exists
-            if (!file_exists(dirname($storagePath))) {
-                mkdir(dirname($storagePath), 0755, true);
+            if (!file_exists($publicStoragePath)) {
+                mkdir($publicStoragePath, 0755, true);
             }
 
+            // Generate filename
+            $fileName = time() . '.jpg';
+            $fullPath = $publicStoragePath . '/' . $fileName;
+
             // Save the resized image
-            imagejpeg($resizedImage, $storagePath, 90);
+            imagejpeg($resizedImage, $fullPath, 90);
 
             // Free memory
             imagedestroy($image);
             imagedestroy($resizedImage);
 
-            // Update user avatar path
+            // Save the avatar path relative to public_html
             $user->avatar = $fileName;
         }
 
