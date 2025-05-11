@@ -59,7 +59,7 @@
             <div class="col-lg-2">
               <div class="logo-box">
                 <a href="{{route('dashboard.home')}}" class="logo"
-                  ><img src="images/logo.png" alt="logo"
+                  ><img src="/assets/images/persian-blue2.webp" alt="logo"
                 /></a>
                 <div class="user-btn-action">
                   

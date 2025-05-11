@@ -7,6 +7,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
+  <meta name="description" content="سری کدکمپ های آموزش برنامه نویسی با برنامه نویس های مجرب از برترین دانشگاه های ایران" />
+<meta itemprop="name" content="آماکدکمپ | AmaCodeCamp" />
+<meta itemprop="author" content="آما کد کمپ" />
+<meta name="keywords" content="بوت کمپ, بوت کمپ برنامه نویسی, کدکمپ" >
+<meta itemprop="url" content="https://amacodecamp.ir" />
+
+<!--OPEN GRAPH / FACEBOOK-->
+<meta property="og:url" content="https://amacodecamp.ir" />
+<meta property="og:description" content="سری کدکمپ های آموزش برنامه نویسی با برنامه نویس های مجرب از برترین دانشگاه های ایران" />
+<meta property="og:locale" content="fa_IR">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/assets/images/logo.webp">
+<meta property="og:title" content="آماکدکمپ | AmaCodeCamp" />
+<meta property="og:site_name" content="آماکدکمپ | AmaCodeCamp" />
+<meta property="og:locale" content="fa_IR">
+<meta name="generator" content="amacodecamp">
+<meta name="HandheldFriendly" content="true">
+
+
+<meta name="robots" content="index">
+<meta name="apple-mobile-web-app-status-bar" content="#000">
+
   <title>آما - بوت کمپ های برنامه نویسی</title>
 
 
