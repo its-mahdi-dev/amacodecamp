@@ -15,15 +15,63 @@ class BootcampTeacherSeeder extends Seeder
     {
         BootcampTeacher::create([
             "bootcamp_id" => 1,
-            "teacher_id" => 1
-        ]);
-        BootcampTeacher::create([
-            "bootcamp_id" => 1,
             "teacher_id" => 2
         ]);
         BootcampTeacher::create([
+            "bootcamp_id" => 1,
+            "teacher_id" => 4
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 1,
+            "teacher_id" => 3
+        ]);
+
+        BootcampTeacher::create([
             "bootcamp_id" => 2,
             "teacher_id" => 1
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 2,
+            "teacher_id" => 3
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 2,
+            "teacher_id" => 4
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 3,
+            "teacher_id" => 1
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 3,
+            "teacher_id" => 3
+        ]);
+
+        BootcampTeacher::create([
+            "bootcamp_id" => 4,
+            "teacher_id" => 2
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 4,
+            "teacher_id" => 3
+        ]);
+
+
+        BootcampTeacher::create([
+            "bootcamp_id" => 5,
+            "teacher_id" => 1
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 5,
+            "teacher_id" => 2
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 5,
+            "teacher_id" => 3
+        ]);
+        BootcampTeacher::create([
+            "bootcamp_id" => 5,
+            "teacher_id" => 4
         ]);
     }
 }

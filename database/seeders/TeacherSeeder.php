@@ -14,18 +14,32 @@ class TeacherSeeder extends Seeder
     public function run(): void
     {
         Teacher::create([
-            'first_name' => 'teacher',
-            'last_name' => 'test',
-            'phone' => '09301234567',
-            'email' => 'john.doe@example.com',
+            'first_name' => 'مهدی',
+            'last_name' => 'رسول زاده',
+            'email' => 'info@itsmahdi.com',
+            'role' => 'مربی',
+            'avatar' => 'mahdi.webp',
         ]);
 
         Teacher::create([
-            'first_name' => 'new teacher',
-            'last_name' => 'tue',
-            'phone' => '09201234567',
-            'email' => 'test.last@example.com',
-            'bio' => 'bio'
+            'first_name' => 'امیرحسین',
+            'last_name' => 'معصومی',
+            'email' => 'hello@itsamir.com',
+            'role' => 'مربی',
+            'avatar' => 'amir.webp',
         ]);
+        Teacher::create([
+            'first_name' => 'ملیکا',
+            'last_name' => 'دریابک',
+            'role' => 'طراح',
+            'avatar' => 'melika.webp',
+        ]);
+        Teacher::create([
+            'first_name' => 'امیرحسین',
+            'last_name' => 'زمان زاده',
+            'role' => 'دوست پسر نهال',
+            'avatar' => 'amir-zaman.webp',
+        ]);
+
     }
 }

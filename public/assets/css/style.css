@@ -9489,7 +9489,7 @@ input[type=tel] {
   fill: #358ff7;
 }
 .dark-theme img {
-  filter: brightness(0.7) contrast(1.2);
+  filter: brightness(0.9) contrast(1.1);
 }
 .dark-theme .generic-list-item li {
   color: #eeeeee;

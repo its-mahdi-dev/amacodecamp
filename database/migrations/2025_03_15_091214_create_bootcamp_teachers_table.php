@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique()->nullable();
-            $table->string('phone')->unique();
+            $table->string('phone')->unique()->nullable();
             $table->string('avatar')->nullable();
-            $table->enum('role' , ['teacher' , 'admin' , 'TA']);
+            $table->string('role')->nullable();
             $table->text('bio')->nullable();
             $table->string('cv')->nullable();
             $table->timestamps();

@@ -34,8 +34,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 pb-5">
+                    <div id="thumbanailContainer" class="mt-4"></div>
                     <div class="course-details-content-wrap pt-90px">
-
                         <!-- end course-overview-card -->
                         <div class="course-overview-card">
                             <div class="container">
@@ -279,6 +279,8 @@
                     </div>
                 `;
 
+                document.getElementById("thumbanailContainer").innerHTML = `<img src="${d.thumbnail_url}" alt="${d.title}" class="img-fluid rounded-4"/>`
+
                 let episode_count = 0;
                 d.seasons.forEach((season, index) => {
                     let seasonEpisodes = '';
@@ -339,13 +341,13 @@
                 }
 
                 totalDuration.innerHTML = d.duration;
-                totalEpisodes = episode_count;
+                totalEpisodes.innerHTML = episode_count;
 
                 d.reviews.forEach(review => {
                     reviews.innerHTML += `
                         <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
                             <div class="media-img me-4 rounded-full">
-                                <img class="rounded-full lazy" src="images/img-loading.png"
+                                <img class="rounded-full lazy" src="${review.user.avatar_url}"
                                     data-src="${review.user.avatar_url}" alt="User image" />
                             </div>
                             <div class="media-body">
@@ -381,7 +383,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">
-                            <a href="teacher-detail.html">${teacher.full_name}</a>
+                            <a href="#">${teacher.full_name}</a>
                             </h5>
                             <p class="card-text">${teacher.role}</p>
                             <!--
@@ -471,7 +473,7 @@
                             </button>
                         </div>
                         <!-- end modal-header -->
-                        <div class="modal-body">
+                        <div class="modal-body" id="modal-body">
                             ${d.intro_video}
                         </div>
                         <!-- end modal-body -->
@@ -483,6 +485,27 @@
                     <!-- end modal -->
                 `;
 
+                setTimeout(() => {
+                const modalEl = document.getElementById("previewModal");
+
+                // Initialize the modal (required for dynamic content)
+                const bootstrapModal = new bootstrap.Modal(modalEl);
+
+                // Attach the close event
+                modalEl.addEventListener("hidden.bs.modal", () => {
+                    // alert("test");
+                    const iframe = modalEl.querySelector("iframe");
+                    if (iframe) {
+                        // Stop the video by resetting the src
+                        const src = iframe.src;
+                        iframe.src = "";      // Clear it first
+                        iframe.src = src;     // Reset it
+                    }
+                });
+
+                // Show the modal
+                // bootstrapModal.show();
+            }, 0);
             })
             .catch(function(error) {
                 console.log(error);
@@ -541,7 +564,10 @@
             `;
             if(data.is_student)
             {
-                buyingButtons = 'شما دانشجوی این دوره هستید❤️';
+                buyingButtons = `
+                <p>شما دانشجوی این دوره هستید❤️ </p>
+                <p class="my-3"> برای دریافت لایسنس دوره و گذرواژه ورود به کلاس، به اکانت <a href="https://t.me/amacodecamp_support">@amacodecamp_support </a> در تلگرام و یا شماره 
+                <a href="https://wa.me/+989938383698">09938383698</a> در واتساپ پیام دهید </p>`;
             }else if(isInBasket(data.slug)){
                 buyingButtons = `
                     <button type="button" class="btn theme-btn w-100 mb-2" onclick="removeFromBasketF(this, '${data.slug}')">
@@ -555,7 +581,7 @@
                 `;
             }else{//not student, not in basket
                 buyingButtons = `
-                    <button   button type="button" class="btn theme-btn w-100 mb-2" onclick="addToBasketF(this, '${data.slug}')">
+                    <button type="button" class="btn theme-btn w-100 mb-2" onclick="addToBasketF(this, '${data.slug}')">
                         <i class="la la-shopping-cart fs-18 me-1"></i>
                         <span>افزودن به سبد خرید</span>
                     </button>
@@ -578,7 +604,7 @@
                         <div class="card-body">
                             <div class="preview-course-video">
                                 <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#previewModal">
-                                    <img src="images/img-loading.png" data-src="${data.thumbnail_url}"
+                                    <img src="${data.thumbnail_url}" data-src="${data.thumbnail_url}"
                                         alt="course-img" class="w-100 rounded lazy" />
                                     <div class="preview-course-video-content">
                                         <div class="overlay"></div>
@@ -609,7 +635,7 @@
                                             </svg>
                                         </div>
                                         <p class="fs-15 font-weight-bold text-white pt-3">
-                                            معاينة هذه الدورة
+                                            مشاهده ویدیوی معرفی
                                         </p>
                                     </div>
                                 </a>
@@ -617,9 +643,9 @@
                             <!-- end preview-course-video -->
                             <div class="preview-course-feature-content pt-40px">
                                 <p class="d-flex align-items-center pb-2">
-                                    <span class="fs-35 font-weight-semi-bold text-black" id="price_final"></span>
-                                    <span class="before-price mx-1" id="price_real"></span>
-                                    <span class="price-discount" id="price_off"></span>
+                                    <span class="fs-35 font-weight-semi-bold text-black" id="price_final">${data.price_off.toLocaleString('en-US')}</span>
+                                    <span class="before-price mx-1" id="price_real">${data.off ? data.price.toLocaleString('en-US') : ""}</span>
+                                    <span class="price-discount" id="price_off">${data.off ? (data.off.percent ? data.off.percent + "%" : "") : ""}</span>
                                 </p>
                                 <p class="preview-price-discount-text pb-35px">
                                     <span class="text-color-3">${data.capacity} نفر</span>

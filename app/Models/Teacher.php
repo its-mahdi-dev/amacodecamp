@@ -18,7 +18,7 @@ class Teacher extends Model
      */
     public function getAvatarUrlAttribute()
     {
-        return asset('uploads/'.$this->avatar);
+        return asset('assets/images/teachers/'.$this->avatar);
     }
 
     public function getCvUrlAttribute()
