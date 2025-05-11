@@ -77,7 +77,7 @@ class StudentController extends Controller
         ]);
 
         // Return a successful response
-        return Response::success(public_path('uploads'));
+        return Response::success(storage_path());
     }
 
     public function add_wishlist(Request $request, $bootcamp_id)
