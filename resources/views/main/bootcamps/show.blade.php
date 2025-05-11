@@ -32,7 +32,7 @@
                               START COURSE DETAILS AREA
                         ======================================-->
     <section class="course-details-area pb-20px">
-        <div id="buyNowBtn" class="position-fixed bottom-0 mb-4 d-block d-md-none text-center">
+        <div id="buyNowBtn" class="position-fixed bottom-0 mb-4 d-block d-md-none text-center w-100">
 
         </div>
         <div class="container">
