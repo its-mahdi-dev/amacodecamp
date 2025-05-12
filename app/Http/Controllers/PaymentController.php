@@ -63,7 +63,7 @@ class PaymentController extends Controller
 
         $response = zarinpal()
             ->merchantId(env('ZARINPAL_MERCHANT_ID'))
-            ->amount(1000) // مبلغ تراکنش
+            ->amount($total_price) // مبلغ تراکنش
             ->request()
             ->description("buy for id: {$user->id}") // توضیحات تراکنش
             ->callbackUrl(env('APP_URL', 'http://localhost:8000') . "/dashboard/payment") // آدرس برگشت پس از پرداخت
@@ -108,7 +108,7 @@ class PaymentController extends Controller
 
         $response = zarinpal()
             ->merchantId(env('ZARINPAL_MERCHANT_ID'))
-            ->amount(1000)
+            ->amount($payment->amount)
             ->verification()
             ->authority($authority)
             ->send();
