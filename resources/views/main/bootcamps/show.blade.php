@@ -724,6 +724,7 @@
                                     <span><i class="la la-users me-2 text-color"></i>زمان شروع</span>
                                     ${data.start_time}
                                 </li>
+                                
                                 <li class="d-flex align-items-center justify-content-between">
                                     <span><i class="la la-certificate me-2 text-color"></i>مدرک</span>${data.certification ? 'دارد' : 'ندارد'}
                                 </li>
