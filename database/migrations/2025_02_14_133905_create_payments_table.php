@@ -13,7 +13,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('basket_id')->constrained()->onDelete('cascade');
             $table->string('authority')->nullable(); // ZarinPal authority code
-            $table->decimal('amount', 10, 2);
+            $table->integer('amount')->nullable();
             $table->string('referenceId')->nullable();
             $table->string('cardPan')->nullable();
             $table->enum('status', ['pending','paid','failed'])->default('pending');
