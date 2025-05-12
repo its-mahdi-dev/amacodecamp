@@ -84,6 +84,7 @@ class BootcampResource extends JsonResource
             "rate" => $rate,
             "is_student" => $isStudent,
             "is_login" =>  $user ? true : false,
+            "created_at" => Jalalian::forge($this->start_time)->format('%A, %d %B %y'),
             "created_at" => Jalalian::forge($this->created_at)->format('%A, %d %B %y'),
             "updated_at" => Jalalian::forge($this->updated_at)->format('%A, %d %B %y')
         ];
